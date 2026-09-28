@@ -248,7 +248,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 
 <nav role="tablist" aria-label="Project sections">
   <button class="active" role="tab" aria-selected="true" aria-controls="home" onclick="show('home', this)">Project</button>
-  <button role="tab" aria-selected="false" aria-controls="research" id="nav-research" onclick="show('research', this)">Research &amp; Essays (5)</button>
+  <button role="tab" aria-selected="false" aria-controls="research" id="nav-research" onclick="show('research', this)">Research &amp; Essays (10)</button>
   <button role="tab" aria-selected="false" aria-controls="datalab" onclick="show('datalab', this)">Data Lab &amp; Simulation</button>
   <button role="tab" aria-selected="false" aria-controls="methodology" onclick="show('methodology', this)">Methods &amp; Sources</button>
 </nav>
@@ -266,11 +266,11 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="label">Economies Compared</div>
         </div>
         <div class="home-stat">
-          <div class="num">5</div>
-          <div class="label">Published Papers &amp; Essays</div>
+          <div class="num">10</div>
+          <div class="label">Papers, Essays &amp; Notes</div>
         </div>
         <div class="home-text">
-          Macroeconomic Data Lab combines reproducible public data with interactive visualisation and original written research. It retrieves annual real GDP growth and consumer-price inflation for Turkey, the United States, Germany, the United Kingdom, and Japan from the World Bank API, alongside five working papers, macroeconomic essays, and strategic case studies available in the <a href="#research" onclick="document.getElementById('nav-research').click(); return false;">Research &amp; Essays</a> archive.
+          Macroeconomic Data Lab combines reproducible public data with interactive visualisation and original written research. It retrieves annual real GDP growth and consumer-price inflation for Turkey, the United States, Germany, the United Kingdom, and Japan from the World Bank API, alongside two Data Lab research notes and eight macroeconomic essays, working papers, and case studies available in the <a href="#research" onclick="document.getElementById('nav-research').click(); return false;">Research &amp; Essays</a> archive.
         </div>
       </div>
 
@@ -293,16 +293,65 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 
     <div id="research" class="section" role="tabpanel">
       <div class="section-title">Research <span>Archive &amp; Essays</span></div>
-      <div class="section-subtitle">Independent student working papers, macroeconomic policy essays, and strategic business case studies. Read directly in your browser or download as PDF.</div>
+      <div class="section-subtitle">Independent student working papers, Data Lab research notes, macroeconomic essays, and strategic business case studies. Read directly in your browser or download as PDF.</div>
       
       <div class="filter-bar" role="group" aria-label="Filter publications by category">
-        <button class="filter-chip active" onclick="filterPapers('all', this)">All Publications (5)</button>
-        <button class="filter-chip" onclick="filterPapers('macro', this)">Monetary Policy &amp; Macroeconomics (3)</button>
-        <button class="filter-chip" onclick="filterPapers('debates', this)">Economic &amp; Policy Debates (1)</button>
-        <button class="filter-chip" onclick="filterPapers('strategy', this)">Corporate Strategy Case Study (1)</button>
+        <button class="filter-chip active" onclick="filterPapers('all', this)">All Publications (10)</button>
+        <button class="filter-chip" onclick="filterPapers('datalab-note', this)">Data Lab Notes (2)</button>
+        <button class="filter-chip" onclick="filterPapers('macro', this)">Monetary Policy &amp; Markets (5)</button>
+        <button class="filter-chip" onclick="filterPapers('debates', this)">Political Economy &amp; Debates (2)</button>
+        <button class="filter-chip" onclick="filterPapers('strategy', this)">Corporate Strategy (1)</button>
       </div>
 
       <div class="card" style="padding:24px">
+
+        <!-- Data Lab Note 1 -->
+        <article class="pub-card" data-category="datalab-note">
+          <div class="pub-metadata">
+            <span>Data Lab Research Note I</span>
+            <span>3 Pages</span>
+            <span>World Bank Open Data (2019–2023)</span>
+          </div>
+          <h3 class="pub-title">One Shock, Five Trajectories: Comparing Real GDP Growth and Consumer-Price Inflation Across Five Economies (2019–2023)</h3>
+          <div class="pub-author">Independent Student Research Note</div>
+          <p class="pub-abstract">
+            <strong>Summary:</strong> Documents why I built the Macroeconomic Data Lab to test domestic versus global explanations of post-pandemic inflation against harmonised World Bank series (<code>NY.GDP.MKTP.KD.ZG</code> and <code>FP.CPI.TOTL.ZG</code>). Compares the uniform 2020 contraction across the US, Germany, the UK, and Japan with Turkey’s credit-fuelled rebound (11.4% growth in 2021) and subsequent inflation divergence (72.3% in 2022), while reflecting on what a two-indicator comparison can and cannot establish.
+          </p>
+          <div class="pub-taxonomies">
+            <span>World Bank API</span>
+            <span>Comparative Macroeconomics</span>
+            <span>Inflation Divergence</span>
+            <span>Data Lab Note</span>
+          </div>
+          <div class="pub-actions">
+            <button class="btn" onclick="openPdfModal('papers/Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf', 'One Shock, Five Trajectories: Data Lab Research Note I')">📖 Read PDF</button>
+            <a class="btn btn-outline" href="papers/Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf" download="Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf">⬇ Download PDF</a>
+          </div>
+        </article>
+
+        <!-- Data Lab Note 2 -->
+        <article class="pub-card" data-category="datalab-note">
+          <div class="pub-metadata">
+            <span>Data Lab Research Note II</span>
+            <span>2 Pages</span>
+            <span>Methodology &amp; Scenario Design</span>
+          </div>
+          <h3 class="pub-title">Assumptions Made Visible: What Building a Macroeconomic Scenario Simulator Taught Me About Empirical Modelling</h3>
+          <div class="pub-author">Independent Student Research Note</div>
+          <p class="pub-abstract">
+            <strong>Summary:</strong> Explains the construction and methodological limits of the Data Lab’s 2024–2025 Scenario Simulator. Details the country-specific elasticity weights assigned to policy-rate and supply-price shocks, and examines three fundamental reasons why a fixed-elasticity rule is a sensitivity illustration rather than an econometric forecast: assumed versus estimated parameters, the Lucas Critique under shifting central bank credibility, and simultaneous shock identification.
+          </p>
+          <div class="pub-taxonomies">
+            <span>Scenario Simulation</span>
+            <span>Elasticity Assumptions</span>
+            <span>Lucas Critique</span>
+            <span>Methodological Transparency</span>
+          </div>
+          <div class="pub-actions">
+            <button class="btn" onclick="openPdfModal('papers/Data-Lab-Note-02-Scenario-Modelling-and-Methodological-Limits.pdf', 'Assumptions Made Visible: Data Lab Research Note II')">📖 Read PDF</button>
+            <a class="btn btn-outline" href="papers/Data-Lab-Note-02-Scenario-Modelling-and-Methodological-Limits.pdf" download="Data-Lab-Note-02-Scenario-Modelling-and-Methodological-Limits.pdf">⬇ Download PDF</a>
+          </div>
+        </article>
         
         <!-- 1. Working Paper WP-01 -->
         <article class="pub-card" data-category="macro">
@@ -354,7 +403,59 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           </div>
         </article>
 
-        <!-- 3. Exchange Rate Pass-Through in Emerging Markets -->
+        <!-- 3. Essay 3: The Lira Doesn't Lie -->
+        <article class="pub-card" data-category="macro">
+          <div class="pub-metadata">
+            <span>Academic Essay · Essay 3</span>
+            <span>4 Pages</span>
+            <span>Currency &amp; Institutional Economics</span>
+          </div>
+          <h3 class="pub-title">The Lira Doesn’t Lie: Institutional Foundations of Currency Depreciation in Turkey</h3>
+          <div class="pub-subtitle">Monetary Credibility, Current Account Imbalances, and the Political Economy of Exchange Rate Decline</div>
+          <div class="pub-author">Independent Student Research Essay</div>
+          <p class="pub-abstract">
+            <strong>Summary:</strong> Argues that the multi-decade depreciation of the Turkish lira—from the 2001 banking crisis and the 2005 six-zero redenomination to the 2021–2023 unorthodox rate-cutting cycle—is at its root an institutional phenomenon rather than a purely monetary one. Traces how chronic productive insufficiency, structural current account deficits ($49.6B in 2023), and the erosion of judicial and central bank independence interact to make stabilisation incomplete without deeper institutional repair.
+          </p>
+          <div class="pub-taxonomies">
+            <span>Turkish Lira</span>
+            <span>Currency Depreciation</span>
+            <span>Current Account Deficit</span>
+            <span>Institutional Trust</span>
+            <span>Monetary Governance</span>
+          </div>
+          <div class="pub-actions">
+            <button class="btn" onclick="openPdfModal('papers/Essay3-The-Lira-Doesnt-Lie.pdf', 'The Lira Doesn’t Lie: Institutional Foundations of Currency Depreciation in Turkey')">📖 Read PDF</button>
+            <a class="btn btn-outline" href="papers/Essay3-The-Lira-Doesnt-Lie.pdf" download="Essay3-The-Lira-Doesnt-Lie.pdf">⬇ Download PDF</a>
+          </div>
+        </article>
+
+        <!-- 4. Borsa Istanbul Liquidity Essay -->
+        <article class="pub-card" data-category="macro">
+          <div class="pub-metadata">
+            <span>Financial Stability Essay</span>
+            <span>3 Pages</span>
+            <span>Capital Markets &amp; Microstructure</span>
+          </div>
+          <h3 class="pub-title">The Fragility of Liquidity: Asset Management Runs, Fire-Sale Contagion, and Macro-prudential Intervention in Borsa Istanbul</h3>
+          <div class="pub-subtitle">Market Microstructure, TEFAS Redemption Mismatches, and Regulatory Trade-offs</div>
+          <div class="pub-author">Independent Student Research Essay</div>
+          <p class="pub-abstract">
+            <strong>Summary:</strong> Investigates the structural mechanics of open-ended investment fund runs and fire-sale contagion in Borsa Istanbul. Analyzes how offering T+1/T+2 daily redemption liquidity on TEFAS while holding concentrated positions in low-float equities creates an acute liquidity mismatch, triggering forced selling of BIST 30 heavyweights, leveraged VIOP margin spirals, and regulatory intervention by the Capital Markets Board (SPK)—while evaluating the resulting moral hazard dilemma and proposing mandatory liquidity buffers and redemption notice periods.
+          </p>
+          <div class="pub-taxonomies">
+            <span>Borsa Istanbul</span>
+            <span>Liquidity Mismatch</span>
+            <span>Fire-Sale Contagion</span>
+            <span>TEFAS &amp; SPK</span>
+            <span>Macro-prudential Policy</span>
+          </div>
+          <div class="pub-actions">
+            <button class="btn" onclick="openPdfModal('papers/Borsa-Istanbul-Fragility-of-Liquidity.pdf', 'The Fragility of Liquidity: Asset Management Runs and Fire-Sale Contagion in Borsa Istanbul')">📖 Read PDF</button>
+            <a class="btn btn-outline" href="papers/Borsa-Istanbul-Fragility-of-Liquidity.pdf" download="Borsa-Istanbul-Fragility-of-Liquidity.pdf">⬇ Download PDF</a>
+          </div>
+        </article>
+
+        <!-- 5. Exchange Rate Pass-Through in Emerging Markets -->
         <article class="pub-card" data-category="macro">
           <div class="pub-metadata">
             <span>Academic Essay · Essay 1</span>
@@ -379,7 +480,33 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           </div>
         </article>
 
-        <!-- 4. Contested Terrain: Three Enduring Debates in Economics and Business -->
+        <!-- 6. Essay 4: The Paradox of Petrowealth -->
+        <article class="pub-card" data-category="debates">
+          <div class="pub-metadata">
+            <span>Political Economy Essay · Essay 4</span>
+            <span>5 Pages</span>
+            <span>Institutional Economics &amp; Inequality</span>
+          </div>
+          <h3 class="pub-title">The Paradox of Petrowealth: Resource Rents, Institutional Sequencing, and Inequality in the Gulf</h3>
+          <div class="pub-subtitle">Comparing the Arabian Peninsula and the Norwegian Model Through the Lens of Institutional Economics</div>
+          <div class="pub-author">Independent Student Research Essay</div>
+          <p class="pub-abstract">
+            <strong>Summary:</strong> Examines why the hydrocarbon wealth of the Gulf monarchies entrenched layered inequality while Norway’s 1969 petroleum discovery financed one of the world’s most egalitarian societies ($1.5T+ Government Pension Fund Global). Drawing on Piketty’s <em>r &gt; g</em>, Beblawi’s rentier state theory, and Acemoğlu and Robinson’s critical junctures framework, the essay argues that oil does not create institutional trajectories—it freezes the institutional settlement that existed at the moment of discovery.
+          </p>
+          <div class="pub-taxonomies">
+            <span>Rentier State</span>
+            <span>Resource Curse</span>
+            <span>Institutional Sequencing</span>
+            <span>Norwegian Paradox</span>
+            <span>Inequality</span>
+          </div>
+          <div class="pub-actions">
+            <button class="btn" onclick="openPdfModal('papers/Essay4-The-Paradox-of-Petrowealth.pdf', 'The Paradox of Petrowealth: Resource Rents, Institutional Sequencing, and Inequality in the Gulf')">📖 Read PDF</button>
+            <a class="btn btn-outline" href="papers/Essay4-The-Paradox-of-Petrowealth.pdf" download="Essay4-The-Paradox-of-Petrowealth.pdf">⬇ Download PDF</a>
+          </div>
+        </article>
+
+        <!-- 7. Contested Terrain: Three Enduring Debates in Economics and Business -->
         <article class="pub-card" data-category="debates">
           <div class="pub-metadata">
             <span>Analytical Essay · Essay 2</span>
@@ -405,7 +532,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           </div>
         </article>
 
-        <!-- 5. Inditex Case Study -->
+        <!-- 8. Inditex Case Study -->
         <article class="pub-card" data-category="strategy" style="margin-bottom:0;">
           <div class="pub-metadata">
             <span>Strategic Case Study</span>
@@ -522,6 +649,43 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
             <tr><td colspan="5" style="text-align:center; color:var(--silver);">Synchronizing World Bank metrics...</td></tr>
           </tbody>
         </table></div>
+
+        <div style="margin-top: 28px; border-top: 1px solid var(--border); padding-top: 24px;">
+          <h3 style="font-family:'Playfair Display', serif; font-size:20px; color:var(--fg); margin-bottom:6px;">Data Lab <span style="color:var(--accent)">Research Notes</span></h3>
+          <p style="font-size:13px; color:var(--fg-dim); margin-bottom:18px;">Two student research notes written to accompany this laboratory—examining the 2019–2023 empirical divergence and the methodological boundaries of the scenario simulator.</p>
+
+          <article class="pub-card">
+            <div class="pub-metadata">
+              <span>Data Lab Research Note I</span>
+              <span>3 Pages</span>
+              <span>Empirical Comparison (2019–2023)</span>
+            </div>
+            <h4 class="pub-title">One Shock, Five Trajectories: Comparing Real GDP Growth and Consumer-Price Inflation Across Five Economies (2019–2023)</h4>
+            <p class="pub-abstract">
+              <strong>Summary:</strong> Examines why a shared global disruption produced divergent growth and inflation paths across Turkey, the US, Germany, the UK, and Japan in the World Bank dataset—contrasting Turkey’s 2021 growth rebound and 2022 inflation surge with advanced-economy disinflation trade-offs.
+            </p>
+            <div class="pub-actions">
+              <button class="btn" onclick="openPdfModal('papers/Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf', 'One Shock, Five Trajectories: Data Lab Research Note I')">📖 Read Note I (PDF)</button>
+              <a class="btn btn-outline" href="papers/Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf" download="Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf">⬇ Download PDF</a>
+            </div>
+          </article>
+
+          <article class="pub-card" style="margin-bottom:0;">
+            <div class="pub-metadata">
+              <span>Data Lab Research Note II</span>
+              <span>2 Pages</span>
+              <span>Model Assumptions &amp; Limits</span>
+            </div>
+            <h4 class="pub-title">Assumptions Made Visible: What Building a Macroeconomic Scenario Simulator Taught Me About Empirical Modelling</h4>
+            <p class="pub-abstract">
+              <strong>Summary:</strong> Documents the country-level elasticity assumptions behind the 2024–2025 sliders above and explains why fixed-parameter sensitivity exercises differ from estimated econometric models—highlighting parameter uncertainty, the Lucas Critique, and shock identification.
+            </p>
+            <div class="pub-actions">
+              <button class="btn" onclick="openPdfModal('papers/Data-Lab-Note-02-Scenario-Modelling-and-Methodological-Limits.pdf', 'Assumptions Made Visible: Data Lab Research Note II')">📖 Read Note II (PDF)</button>
+              <a class="btn btn-outline" href="papers/Data-Lab-Note-02-Scenario-Modelling-and-Methodological-Limits.pdf" download="Data-Lab-Note-02-Scenario-Modelling-and-Methodological-Limits.pdf">⬇ Download PDF</a>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
 
