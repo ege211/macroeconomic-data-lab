@@ -236,6 +236,110 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 .pdf-modal-controls { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .pdf-modal-body { flex: 1; background: #1a2639; position: relative; }
 .pdf-modal-body iframe { width: 100%; height: 100%; border: none; }
+
+.author-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 6px 14px;
+  background: rgba(200, 169, 110, 0.08);
+  border: 1px solid rgba(200, 169, 110, 0.25);
+  border-radius: 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-light);
+}
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+@media(max-width: 700px) { .pillar-grid { grid-template-columns: 1fr; } }
+.pillar-card {
+  background: rgba(0,0,0,0.18);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  padding: 18px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pillar-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.pillar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  color: var(--fg);
+  font-weight: 600;
+}
+.pillar-desc {
+  font-size: 12.5px;
+  color: var(--fg-dim);
+  line-height: 1.6;
+}
+.pillar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.pillar-link {
+  background: var(--surface2);
+  border: 1px solid rgba(200,169,110,0.18);
+  color: var(--fg);
+  padding: 7px 10px;
+  border-radius: 3px;
+  font-size: 11.5px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pillar-link:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+  transform: translateX(2px);
+}
+.reading-card {
+  background: rgba(0,0,0,0.14);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-left: 3px solid var(--accent);
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 18px;
+}
+.reading-work {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--fg);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.reading-concept {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.reading-note {
+  font-size: 13.5px;
+  color: var(--fg-dim);
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 12px;
+}
 </style>
 </head>
 <body>
@@ -244,12 +348,18 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
   <div class="header-eyebrow">Independent Student Research Portfolio</div>
   <h1>Macroeconomic Data <span>Lab</span></h1>
   <p>World Bank Data &nbsp;·&nbsp; Comparative Macroeconomics &nbsp;·&nbsp; Transparent Modelling</p>
+  <div class="author-badge">
+    <span>Researcher: <strong>Ege Umut Can</strong></span>
+    <span>·</span>
+    <span>Macroeconomics, Monetary Policy &amp; Financial Markets</span>
+  </div>
 </header>
 
 <nav role="tablist" aria-label="Project sections">
-  <button class="active" role="tab" aria-selected="true" aria-controls="home" onclick="show('home', this)">Project</button>
+  <button class="active" role="tab" aria-selected="true" aria-controls="home" onclick="show('home', this)">Project &amp; Research Map</button>
   <button role="tab" aria-selected="false" aria-controls="research" id="nav-research" onclick="show('research', this)">Research &amp; Essays (10)</button>
-  <button role="tab" aria-selected="false" aria-controls="datalab" onclick="show('datalab', this)">Data Lab &amp; Simulation</button>
+  <button role="tab" aria-selected="false" aria-controls="datalab" id="nav-datalab" onclick="show('datalab', this)">Data Lab &amp; Simulators</button>
+  <button role="tab" aria-selected="false" aria-controls="reading" id="nav-reading" onclick="show('reading', this)">Reading List &amp; Influences (6)</button>
   <button role="tab" aria-selected="false" aria-controls="methodology" onclick="show('methodology', this)">Methods &amp; Sources</button>
 </nav>
 
@@ -259,7 +369,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
     
     <div id="home" class="section active" role="tabpanel">
       <div class="section-title">Project <span>Overview</span></div>
-      <div class="section-subtitle">An independent student project exploring how output growth and inflation differed across five economies after the pandemic shock.</div>
+      <div class="section-subtitle">An independent student project exploring how output growth, inflation persistence, and institutional credibility interact across emerging and advanced economies.</div>
       <div class="home-hero">
         <div class="home-stat">
           <div class="num">5</div>
@@ -287,6 +397,77 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="project-step"><div class="step-label">Method</div><h3>Public-data comparison</h3><p>Retrieve harmonised indicators from the World Bank API and present them in an interactive chart.</p></div>
           <div class="project-step"><div class="step-label">Finding</div><h3>Different paths</h3><p>The same global period produced markedly different inflation and growth patterns across the sample.</p></div>
           <div class="project-step"><div class="step-label">Next step</div><h3>Estimate, do not assume</h3><p>Extend the project with a documented econometric model and a wider set of policy variables.</p></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="font-family:'Playfair Display', serif; font-size:20px; color:var(--fg); margin-bottom:6px;">Conceptual Research <span style="color:var(--accent)">Architecture</span></h3>
+        <p style="font-size:13px; color:var(--fg-dim); line-height:1.6;">
+          How the ten written pieces and two interactive simulators in this portfolio connect across four analytical themes—moving from observations on Turkey’s inflation and currency dynamics to formal persistence modelling, capital-market liquidity runs, and comparative institutional economics. Click any title below to read the PDF directly:
+        </p>
+
+        <div class="pillar-grid">
+          <div class="pillar-card">
+            <div class="pillar-tag">Pillar I · Monetary Authority &amp; Expectations</div>
+            <div class="pillar-title">Central Bank Credibility &amp; Currency Decline</div>
+            <div class="pillar-desc">Why interest-rate adjustments fail when institutional independence is eroded, and how chronic current account deficits interact with unanchored expectations.</div>
+            <div class="pillar-links">
+              <button class="pillar-link" onclick="openPdfModal('papers/The-Credibility-Gap-Turkey-Central-Bank.pdf', 'The Credibility Gap: How Turkey’s Central Bank Lost and Tried to Reclaim Monetary Authority')">
+                <span>📄 The Credibility Gap: Turkey’s Central Bank</span><span style="color:var(--accent)">2p ↗</span>
+              </button>
+              <button class="pillar-link" onclick="openPdfModal('papers/Essay3-The-Lira-Doesnt-Lie.pdf', 'The Lira Doesn’t Lie: Institutional Foundations of Currency Depreciation in Turkey')">
+                <span>📄 Essay 3: The Lira Doesn’t Lie</span><span style="color:var(--accent)">4p ↗</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-tag">Pillar II · Empirical Transmission &amp; Data Lab</div>
+            <div class="pillar-title">Inflation Persistence (β ≈ 0.72) &amp; Pass-Through</div>
+            <div class="pillar-desc">Panel-data estimation of lagged inflation persistence across emerging markets, exchange-rate pass-through channels, and World Bank API scenario notes.</div>
+            <div class="pillar-links">
+              <button class="pillar-link" onclick="openPdfModal('papers/WP-01-Inflation-Persistence-Monetary-Policy.pdf', 'Inflation Persistence and Monetary Policy Effectiveness (WP-01)')">
+                <span>📄 WP-01: Inflation Persistence &amp; Monetary Policy</span><span style="color:var(--accent)">6p ↗</span>
+              </button>
+              <button class="pillar-link" onclick="openPdfModal('papers/Exchange-Rate-Pass-Through-Emerging-Markets.pdf', 'Exchange Rate Pass-Through in Emerging Markets')">
+                <span>📄 Essay 1: Exchange Rate Pass-Through (ERPT)</span><span style="color:var(--accent)">2p ↗</span>
+              </button>
+              <button class="pillar-link" onclick="openPdfModal('papers/Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf', 'One Shock, Five Trajectories: Data Lab Research Note I')">
+                <span>📄 Data Lab Notes I &amp; II (World Bank &amp; Simulator)</span><span style="color:var(--accent)">5p ↗</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-tag">Pillar III · Market Microstructure &amp; Regulation</div>
+            <div class="pillar-title">Liquidity Mismatch &amp; Contagion in Borsa Istanbul</div>
+            <div class="pillar-desc">How T+1 daily redemption promises in open-ended TEFAS funds holding low-float equities trigger fire-sales, VIOP margin spirals, and SPK moral hazard dilemmas.</div>
+            <div class="pillar-links">
+              <button class="pillar-link" onclick="openPdfModal('papers/Borsa-Istanbul-Fragility-of-Liquidity.pdf', 'The Fragility of Liquidity: Asset Management Runs and Fire-Sale Contagion in Borsa Istanbul')">
+                <span>📄 The Fragility of Liquidity in Borsa Istanbul</span><span style="color:var(--accent)">3p ↗</span>
+              </button>
+              <button class="pillar-link" onclick="document.getElementById('nav-datalab').click()">
+                <span>📊 Open Interactive Persistence &amp; Shock Simulators</span><span style="color:var(--accent)">Lab →</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-tag">Pillar IV · Institutions, Political Economy &amp; Strategy</div>
+            <div class="pillar-title">Comparative Institutions &amp; Strategic Trade-offs</div>
+            <div class="pillar-desc">Institutional sequencing in petrostates (Gulf vs. Norway), normative tensions in central banking/globalisation/ESG, and VRIO value-chain coordination at Inditex.</div>
+            <div class="pillar-links">
+              <button class="pillar-link" onclick="openPdfModal('papers/Essay4-The-Paradox-of-Petrowealth.pdf', 'The Paradox of Petrowealth: Resource Rents, Institutional Sequencing, and Inequality in the Gulf')">
+                <span>📄 Essay 4: The Paradox of Petrowealth</span><span style="color:var(--accent)">5p ↗</span>
+              </button>
+              <button class="pillar-link" onclick="openPdfModal('papers/Contested-Terrain-Debates-Economics-Business.pdf', 'Contested Terrain: Three Enduring Debates in Economics and Business')">
+                <span>📄 Essay 2: Three Enduring Debates in Economics</span><span style="color:var(--accent)">3p ↗</span>
+              </button>
+              <button class="pillar-link" onclick="openPdfModal('papers/Inditex-Competitive-Advantage-Strategic-Tradeoffs.pdf', 'Inditex: Competitive Advantage and Strategic Trade-offs in Global Fashion Retail')">
+                <span>📄 Case Study: Inditex Strategy &amp; VRIO Analysis</span><span style="color:var(--accent)">8p ↗</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -655,6 +836,56 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           </tbody>
         </table></div>
 
+        <!-- WP-01 Inflation Persistence & Shock Half-Life Visualizer -->
+        <div class="sim-panel" style="margin-top:28px; border-style:solid; border-color:rgba(200,169,110,0.3);">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:8px;">
+            <div>
+              <div class="header-eyebrow" style="margin-bottom:4px;">Empirical Working Paper WP-01 Companion Model</div>
+              <div class="sim-title" style="margin-bottom:0; font-size:18px;">Inflation Persistence (β ≈ 0.72) &amp; Shock Half-Life Simulator</div>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button type="button" class="btn btn-outline" style="padding:6px 12px; font-size:11px;" onclick="resetPersistenceSim()">↺ Reset</button>
+              <button type="button" class="btn" style="padding:6px 12px; font-size:11px;" onclick="openPdfModal('papers/WP-01-Inflation-Persistence-Monetary-Policy.pdf', 'Inflation Persistence and Monetary Policy Effectiveness (WP-01)')">📖 Read WP-01 (PDF)</button>
+            </div>
+          </div>
+          <p style="font-size:12.5px; color:var(--fg-dim); line-height:1.65; text-align:justify; margin-bottom:16px;">
+            In <strong>Working Paper WP-01</strong>, the autoregressive inflation equation <code>π<sub>i,t</sub> = α + βπ<sub>i,t−1</sub> + γMP<sub>i,t</sub> + ε<sub>i,t</sub></code> yields an estimated persistence coefficient of <strong>β ≈ 0.72</strong> across emerging economies—meaning 72% of an inflationary shock carries into the following year when expectations are backward-looking. Use the sliders below to compare how an initial price shock decays over 8 years in a high-persistence emerging market versus a credibility-anchored advanced economy (β = 0.30).
+          </p>
+
+          <div class="sim-row" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="sim-control">
+              <label for="persShock">Initial Inflation Shock (ε₀: +5% to +30%)</label>
+              <div class="sim-slider-row">
+                <input type="range" class="sim-slider" id="persShock" min="5" max="30" step="1" value="15" oninput="updatePersistenceChart()" onchange="updatePersistenceChart()">
+                <span class="sim-val-display" id="valPersShock">+15%</span>
+              </div>
+            </div>
+            <div class="sim-control">
+              <label for="persBeta">Emerging Market Persistence (β: 0.45 to 0.90)</label>
+              <div class="sim-slider-row">
+                <input type="range" class="sim-slider" id="persBeta" min="0.45" max="0.90" step="0.01" value="0.72" oninput="updatePersistenceChart()" onchange="updatePersistenceChart()">
+                <span class="sim-val-display" id="valPersBeta">0.72</span>
+              </div>
+            </div>
+            <div class="sim-control">
+              <label for="persPolicy">Annual Taylor-Rule Tightening Offset (γ·MP)</label>
+              <div class="sim-slider-row">
+                <input type="range" class="sim-slider" id="persPolicy" min="0" max="2.5" step="0.25" value="0.75" oninput="updatePersistenceChart()" onchange="updatePersistenceChart()">
+                <span class="sim-val-display" id="valPersPolicy">-0.75 pp</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="persMetricsRow" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; margin:14px 0;"></div>
+
+          <div class="chart-container" style="height:280px; margin-bottom:8px;">
+            <canvas id="persChart" role="img" aria-label="Impulse decay chart comparing inflation persistence over 8 years"></canvas>
+          </div>
+          <p class="chart-note" style="margin-top:4px; margin-bottom:0;">
+            Half-life formula: <code>t<sub>1/2</sub> = ln(0.5) / ln(β)</code>. At the WP-01 baseline (β = 0.72), a single shock takes <strong>2.11 years</strong> to lose half its intensity, compared to <strong>0.58 years</strong> under anchored expectations (β = 0.30).
+          </p>
+        </div>
+
         <div style="margin-top: 28px; border-top: 1px solid var(--border); padding-top: 24px;">
           <h3 style="font-family:'Playfair Display', serif; font-size:20px; color:var(--fg); margin-bottom:6px;">Data Lab <span style="color:var(--accent)">Research Notes</span></h3>
           <p style="font-size:13px; color:var(--fg-dim); margin-bottom:18px;">Two student research notes written to accompany this laboratory—examining the 2019–2023 empirical divergence and the methodological boundaries of the scenario simulator.</p>
@@ -694,6 +925,86 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
       </div>
     </div>
 
+    <!-- Annotated Reading List & Intellectual Influences -->
+    <div id="reading" class="section" role="tabpanel">
+      <div class="section-title">Reading List &amp; <span>Intellectual Influences</span></div>
+      <div class="section-subtitle">Foundational books, econometric papers, and regulatory texts that shaped my essays—alongside my student reflections on how each source changed the questions I asked.</div>
+
+      <div class="card" style="padding:24px;">
+
+        <div class="reading-card">
+          <div class="reading-concept">Institutional Economics &amp; Critical Junctures · Shaped Essay 3 &amp; Essay 4</div>
+          <div class="reading-work">Daron Acemoğlu &amp; James A. Robinson (2012) — <em>Why Nations Fail: The Origins of Power, Prosperity, and Poverty</em></div>
+          <p class="reading-note">
+            <strong>How it shaped my thinking:</strong> Before reading Acemoğlu and Robinson, my instinct was to treat currency depreciation or high inequality as the result of isolated technical policy mistakes. Their distinction between inclusive and extractive institutions—and how "critical junctures" lock in political equilibria—gave me the analytical spine for both my essay on the Turkish lira and my comparative essay on Gulf petrostates versus Norway. It pushed me to ask not merely <em>what</em> interest-rate or fiscal decision a government made, but <em>which institutional constraints</em> allowed that decision to persist.
+          </p>
+          <div class="pub-actions">
+            <button class="btn btn-outline" onclick="openPdfModal('papers/Essay3-The-Lira-Doesnt-Lie.pdf', 'Essay 3: The Lira Doesn’t Lie')">📄 See in Essay 3 (The Lira Doesn’t Lie)</button>
+            <button class="btn btn-outline" onclick="openPdfModal('papers/Essay4-The-Paradox-of-Petrowealth.pdf', 'Essay 4: The Paradox of Petrowealth')">📄 See in Essay 4 (Paradox of Petrowealth)</button>
+          </div>
+        </div>
+
+        <div class="reading-card">
+          <div class="reading-concept">Hybrid New Keynesian Phillips Curve (NKPC) · Shaped Working Paper WP-01 &amp; Credibility Gap Essay</div>
+          <div class="reading-work">Jordi Galí &amp; Mark Gertler (1999) — <em>Inflation Dynamics: A Structural Econometric Analysis</em> &amp; Guillermo Calvo (1983) — <em>Staggered Prices</em></div>
+          <p class="reading-note">
+            <strong>How it shaped my thinking:</strong> Galí and Gertler’s hybrid Phillips Curve specification helped me formalize a phenomenon I had witnessed firsthand in Turkey: why inflation keeps rising even after a central bank begins tightening. When institutional credibility erodes, price- and wage-setters abandon forward-looking targets and index their decisions to past inflation realizations. That shift from rational forward-looking expectations to adaptive backward-looking behavior is what produces the high autoregressive persistence coefficient (β ≈ 0.72) examined in WP-01.
+          </p>
+          <div class="pub-actions">
+            <button class="btn btn-outline" onclick="openPdfModal('papers/WP-01-Inflation-Persistence-Monetary-Policy.pdf', 'WP-01: Inflation Persistence and Monetary Policy Effectiveness')">📄 See in Working Paper WP-01</button>
+            <button class="btn btn-outline" onclick="openPdfModal('papers/The-Credibility-Gap-Turkey-Central-Bank.pdf', 'The Credibility Gap: Turkey’s Central Bank')">📄 See in The Credibility Gap</button>
+          </div>
+        </div>
+
+        <div class="reading-card">
+          <div class="reading-concept">Monetary Policy Rules &amp; Emerging Market Constraints · Shaped WP-01 &amp; Essay 1 (ERPT)</div>
+          <div class="reading-work">John B. Taylor (1993) — <em>Discretion Versus Policy Rules in Practice</em> &amp; Frederic S. Mishkin (2000) — <em>Inflation Targeting in Emerging-Market Countries</em></div>
+          <p class="reading-note">
+            <strong>How it shaped my thinking:</strong> Taylor (1993) demonstrates why nominal interest rates must rise more than one-for-one with inflation (the Taylor Principle) to raise the real interest rate and cool demand. Pairing Taylor’s rule with Mishkin (2000) clarified why monetary transmission is much more fragile in emerging economies: when fiscal dominance, foreign-currency liabilities, and high exchange-rate pass-through (ERPT) are present, interest-rate adjustments alone cannot anchor inflation without institutional and fiscal reform.
+          </p>
+          <div class="pub-actions">
+            <button class="btn btn-outline" onclick="openPdfModal('papers/Exchange-Rate-Pass-Through-Emerging-Markets.pdf', 'Essay 1: Exchange Rate Pass-Through in Emerging Markets')">📄 See in Essay 1 (ERPT in Emerging Markets)</button>
+            <button class="btn btn-outline" onclick="openPdfModal('papers/WP-01-Inflation-Persistence-Monetary-Policy.pdf', 'WP-01: Inflation Persistence and Monetary Policy Effectiveness')">📄 See in Working Paper WP-01</button>
+          </div>
+        </div>
+
+        <div class="reading-card">
+          <div class="reading-concept">Capital Accumulation (r &gt; g) &amp; Rentier State Theory · Shaped Essay 4 &amp; Essay 2</div>
+          <div class="reading-work">Thomas Piketty (2014) — <em>Capital in the Twenty-First Century</em> &amp; Hazem Beblawi (1987) — <em>The Rentier State in the Arab World</em></div>
+          <p class="reading-note">
+            <strong>How it shaped my thinking:</strong> Piketty’s <em>r &gt; g</em> inequality explains how capital returns compound faster than output growth in market economies, but it did not fully explain why hydrocarbon-rich Gulf monarchies exhibit such rigid political and social stratification compared to Norway. Beblawi’s "rentier bargain" supplied the missing mechanism: when a state finances itself through external resource rents rather than domestic taxation, it severs the historical link between taxation and representative accountability—freezing existing hierarchies in place.
+          </p>
+          <div class="pub-actions">
+            <button class="btn btn-outline" onclick="openPdfModal('papers/Essay4-The-Paradox-of-Petrowealth.pdf', 'Essay 4: The Paradox of Petrowealth')">📄 See in Essay 4 (Paradox of Petrowealth)</button>
+            <button class="btn btn-outline" onclick="openPdfModal('papers/Contested-Terrain-Debates-Economics-Business.pdf', 'Essay 2: Contested Terrain')">📄 See in Essay 2 (Contested Terrain)</button>
+          </div>
+        </div>
+
+        <div class="reading-card">
+          <div class="reading-concept">Liquidity Transformation, Fire-Sale Contagion &amp; Microstructure · Shaped Borsa Istanbul Essay</div>
+          <div class="reading-work">Capital Markets Board of Turkey (SPK) Communiqué III-52.1 &amp; Classic Open-Ended Fund Run Literature</div>
+          <p class="reading-note">
+            <strong>How it shaped my thinking:</strong> Analyzing the September 2026 TEFAS investment fund liquidations and VIOP margin calls in Borsa Istanbul taught me how regulatory rules interact with market microstructure. Offering T+1/T+2 daily cash redemptions on funds heavily concentrated in illiquid, low-float stocks creates a textbook liquidity mismatch: when redemptions spike, managers are forced to dump liquid BIST 30 heavyweights at fire-sale prices, transmitting a localized fund run into a market-wide margin spiral.
+          </p>
+          <div class="pub-actions">
+            <button class="btn btn-outline" onclick="openPdfModal('papers/Borsa-Istanbul-Fragility-of-Liquidity.pdf', 'The Fragility of Liquidity in Borsa Istanbul')">📄 See in Borsa Istanbul Liquidity Essay</button>
+          </div>
+        </div>
+
+        <div class="reading-card" style="margin-bottom:0;">
+          <div class="reading-concept">Resource-Based View (VRIO) &amp; Activity-System Complementarity · Shaped Inditex Case Study</div>
+          <div class="reading-work">Michael E. Porter (1985, 1996) — <em>Competitive Advantage &amp; What Is Strategy?</em> &amp; Jay Barney (1991) — <em>Firm Resources and Sustained Competitive Advantage</em></div>
+          <p class="reading-note">
+            <strong>How it shaped my thinking:</strong> Deconstructing Inditex through Porter’s Five Forces and Barney’s VRIO framework showed me why competitive advantage rarely resides in a single isolated capability like "fast shipping." Individual operational practices can be copied; what is difficult to imitate is a tightly coordinated feedback system linking store-level demand data, design, near-shore sourcing, and inventory allocation—though that same interdependence creates strategic trade-offs against ultra-fast C2M algorithms and sustainability mandates.
+          </p>
+          <div class="pub-actions">
+            <button class="btn btn-outline" onclick="openPdfModal('papers/Inditex-Competitive-Advantage-Strategic-Tradeoffs.pdf', 'Inditex: Competitive Advantage and Strategic Trade-offs')">📄 See in Inditex Strategic Case Study</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <div id="methodology" class="section" role="tabpanel">
       <div class="section-title">Methods & <span>Sources</span></div>
       <div class="section-subtitle">What this project measures, what it does not establish, and how to reproduce the displayed data.</div>
@@ -706,19 +1017,44 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
         </p>
       </div>
       <div class="card">
-        <h3 style="font-family:'Playfair Display', serif; font-size:18px; color:var(--accent); margin-bottom:10px;">Reproducibility checklist</h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:18px; color:var(--accent); margin-bottom:10px;">Reproducibility &amp; Open-Source Verification</h3>
         <ul class="source-list">
-          <li><strong>Source:</strong> World Bank Open Data API v2, country codes TR, US, DE, GB, and JP.</li>
-          <li><strong>Indicators:</strong> annual GDP growth and annual consumer-price inflation, 2019-2023.</li>
-          <li><strong>Scope:</strong> descriptive comparisons only; no causal inference is claimed.</li>
-          <li><strong>Next iteration:</strong> add a documented code repository, uncertainty checks, and an estimated model with explicitly stated identification choices.</li>
+          <li><strong>Author &amp; Maintainer:</strong> Ege Umut Can — Independent Student Research Portfolio.</li>
+          <li><strong>GitHub Source Repository:</strong> <a href="https://github.com/ege211/macroeconomic-data-lab" target="_blank" rel="noopener noreferrer">github.com/ege211/macroeconomic-data-lab</a> (Full HTML/JS source code and PDF archive).</li>
+          <li><strong>Live World Bank API Endpoints:</strong>
+            <a href="https://api.worldbank.org/v2/country/TR;US;DE;GB;JP/indicator/NY.GDP.MKTP.KD.ZG?date=2019:2023&format=json" target="_blank" rel="noopener noreferrer">Real GDP Growth JSON</a> &nbsp;·&nbsp;
+            <a href="https://api.worldbank.org/v2/country/TR;US;DE;GB;JP/indicator/FP.CPI.TOTL.ZG?date=2019:2023&format=json" target="_blank" rel="noopener noreferrer">CPI Inflation JSON</a>
+          </li>
+          <li><strong>Scope:</strong> Descriptive comparisons and transparent sensitivity illustrations; causal claims require formal identification.</li>
         </ul>
+        <div class="pub-actions" style="margin-top:16px;">
+          <a class="btn" href="https://github.com/ege211/macroeconomic-data-lab" target="_blank" rel="noopener noreferrer">🔗 View GitHub Repository</a>
+          <button class="btn btn-outline" onclick="exportDataCubeCSV()">📁 Download Full Panel Dataset (CSV)</button>
+        </div>
       </div>
     </div>
 
   </main>
 
   <aside role="complementary">
+    <div class="card" style="margin-bottom:24px;">
+      <div class="header-eyebrow" style="margin-bottom:6px;">About the Researcher</div>
+      <h2 style="font-family:'Playfair Display', serif; font-size:21px; color:var(--fg); margin-bottom:8px;">Ege Umut <span style="color:var(--accent)">Can</span></h2>
+      <p style="font-size:12.5px; color:var(--fg-dim); line-height:1.65; text-align:justify; margin-bottom:12px;">
+        High school student researcher focusing on comparative macroeconomics, monetary policy credibility, emerging-market inflation dynamics, and corporate strategy. I built this portfolio to connect my written essays with reproducible public data and transparent quantitative models.
+      </p>
+      <div class="pub-taxonomies" style="margin-bottom:14px;">
+        <span>Monetary Economics</span>
+        <span>Institutional Political Economy</span>
+        <span>Market Microstructure</span>
+        <span>Competitive Strategy</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <a class="btn btn-outline" style="width:100%; text-align:center;" href="https://github.com/ege211/macroeconomic-data-lab" target="_blank" rel="noopener noreferrer">💻 GitHub Source &amp; Replication</a>
+        <button class="btn btn-outline" style="width:100%; text-align:center;" onclick="document.getElementById('nav-reading').click()">📚 View Reading List &amp; Influences</button>
+      </div>
+    </div>
+
     <div class="card">
       <h2>Research Notes <span>& FAQ</span></h2>
       <p style="font-size:11px; color:var(--silver); margin-bottom:14px; line-height:1.5;">
@@ -734,7 +1070,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 </div>
 
 <footer>
-  Independent student research project. Data source: World Bank Open Data API. Last historical year shown: 2023.
+  Independent student research portfolio by <strong>Ege Umut Can</strong> &nbsp;·&nbsp; Data source: World Bank Open Data API v2 &nbsp;·&nbsp; <a href="https://github.com/ege211/macroeconomic-data-lab" target="_blank" rel="noopener noreferrer">Open-Source GitHub Repository</a>
 </footer>
 
 <script>
@@ -755,6 +1091,7 @@ let COUNTRY_DATA = {};
 let activeCountries = new Set(["TUR", "USA", "DEU"]);
 let activeMetric = "gdp";
 let compChart = null;
+let persChart = null;
 const HISTORICAL_YEARS = [2019, 2020, 2021, 2022, 2023];
 const YEARS = [...HISTORICAL_YEARS, 2024, 2025];
 
@@ -772,6 +1109,10 @@ function show(sectionId, btnElement) {
       if (compChart) {
         compChart.resize();
         updateChartDatasets();
+      }
+      if (persChart) {
+        persChart.resize();
+        updatePersistenceChart();
       }
     }, 30);
   }
@@ -1048,6 +1389,124 @@ function renderFaqChips() {
   });
 }
 
+const PERS_HORIZON = ["t=0 (Shock)", "t+1", "t+2", "t+3", "t+4", "t+5", "t+6", "t+7", "t+8"];
+
+function resetPersistenceSim() {
+  document.getElementById('persShock').value = 15;
+  document.getElementById('persBeta').value = 0.72;
+  document.getElementById('persPolicy').value = 0.75;
+  updatePersistenceChart();
+}
+
+function updatePersistenceChart() {
+  const shock0 = parseFloat(document.getElementById('persShock')?.value || 15);
+  const betaEM = parseFloat(document.getElementById('persBeta')?.value || 0.72);
+  const policyOffset = parseFloat(document.getElementById('persPolicy')?.value || 0.75);
+  const betaAdv = 0.30;
+
+  document.getElementById('valPersShock').innerText = `+${shock0.toFixed(0)}%`;
+  document.getElementById('valPersBeta').innerText = betaEM.toFixed(2);
+  document.getElementById('valPersPolicy').innerText = `-${policyOffset.toFixed(2)} pp`;
+
+  const unanchoredPath = [shock0];
+  const policyTightenedPath = [shock0];
+  const anchoredAdvPath = [shock0];
+
+  for (let t = 1; t <= 8; t++) {
+    unanchoredPath.push(Math.max(0, unanchoredPath[t - 1] * betaEM));
+    policyTightenedPath.push(Math.max(0, policyTightenedPath[t - 1] * betaEM - policyOffset));
+    anchoredAdvPath.push(Math.max(0, anchoredAdvPath[t - 1] * betaAdv));
+  }
+
+  const halfLifeEM = (Math.log(0.5) / Math.log(betaEM)).toFixed(2);
+  const halfLifeAdv = (Math.log(0.5) / Math.log(betaAdv)).toFixed(2);
+  const residualYr4 = unanchoredPath[4].toFixed(1);
+  const policyYr4 = policyTightenedPath[4].toFixed(1);
+
+  const metricsEl = document.getElementById('persMetricsRow');
+  if (metricsEl) {
+    metricsEl.innerHTML = `
+      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(200,169,110,0.2); padding:9px 12px; border-radius:4px; font-family:'DM Mono', monospace; font-size:11px;">
+        <div style="color:var(--silver); margin-bottom:3px;">Shock Half-Life (EM β=${betaEM.toFixed(2)})</div>
+        <div style="color:#ff6b6b; font-size:14px; font-weight:600;">${halfLifeEM} Years <span style="color:var(--silver); font-weight:400; font-size:11px;">(vs ${halfLifeAdv}y at β=0.30)</span></div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(200,169,110,0.2); padding:9px 12px; border-radius:4px; font-family:'DM Mono', monospace; font-size:11px;">
+        <div style="color:var(--silver); margin-bottom:3px;">Year t+4 Residual Inflation (No Tightening)</div>
+        <div style="color:var(--fg); font-size:14px; font-weight:600;">+${residualYr4}% <span style="color:var(--silver); font-weight:400; font-size:11px;">of +${shock0}% shock remains</span></div>
+      </div>
+      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(200,169,110,0.2); padding:9px 12px; border-radius:4px; font-family:'DM Mono', monospace; font-size:11px;">
+        <div style="color:var(--silver); margin-bottom:3px;">Year t+4 With Taylor-Rule Tightening</div>
+        <div style="color:#2ecc71; font-size:14px; font-weight:600;">+${policyYr4}% <span style="color:var(--silver); font-weight:400; font-size:11px;">(-${(residualYr4 - policyYr4).toFixed(1)} pp policy gain)</span></div>
+      </div>
+    `;
+  }
+
+  if (persChart) {
+    persChart.data.datasets[0].label = `Unanchored Emerging Market (β = ${betaEM.toFixed(2)})`;
+    persChart.data.datasets[0].data = unanchoredPath;
+    persChart.data.datasets[1].label = `EM + Active Monetary Tightening (-${policyOffset.toFixed(2)} pp/yr)`;
+    persChart.data.datasets[1].data = policyTightenedPath;
+    persChart.data.datasets[2].data = anchoredAdvPath;
+    persChart.update();
+  }
+}
+
+function initPersistenceChart() {
+  const canvasEl = document.getElementById('persChart');
+  if (!canvasEl) return;
+  const ctxP = canvasEl.getContext('2d');
+  persChart = new Chart(ctxP, {
+    type: 'line',
+    data: {
+      labels: PERS_HORIZON,
+      datasets: [
+        {
+          label: 'Unanchored Emerging Market (β = 0.72)',
+          data: [],
+          borderColor: '#ff6b6b',
+          backgroundColor: 'rgba(255,107,107,0.1)',
+          borderWidth: 2.5,
+          pointRadius: 3.5,
+          tension: 0.2
+        },
+        {
+          label: 'EM + Active Monetary Tightening (-0.75 pp/yr)',
+          data: [],
+          borderColor: '#2ecc71',
+          backgroundColor: 'rgba(46,204,113,0.1)',
+          borderWidth: 2.5,
+          borderDash: [6, 4],
+          pointRadius: 3.5,
+          tension: 0.2
+        },
+        {
+          label: 'Credibility-Anchored Benchmark (β = 0.30)',
+          data: [],
+          borderColor: '#4a9eff',
+          backgroundColor: 'rgba(74,158,255,0.1)',
+          borderWidth: 2,
+          pointRadius: 3,
+          tension: 0.2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 200 },
+      plugins: {
+        legend: { display: true, labels: { color: '#c8d3df', boxWidth: 12, font: { family: 'DM Sans' } } },
+        tooltip: { callbacks: { label: context => `${context.dataset.label}: +${context.parsed.y.toFixed(2)}% above target` } }
+      },
+      scales: {
+        x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#8fa3bc' }, title: { display: true, text: 'Years After Initial Inflation Shock (Impulse Decay)', color: '#8fa3bc' } },
+        y: { min: 0, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8fa3bc', callback: v => `+${v}%` }, title: { display: true, text: 'Residual Inflation Shock (pp)', color: '#8fa3bc' } }
+      }
+    }
+  });
+  updatePersistenceChart();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const ctx = document.getElementById('compChart').getContext('2d');
   const datasets = Object.entries(COUNTRY_CONFIG).map(([code, info]) => ({
@@ -1083,6 +1542,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  initPersistenceChart();
   fetchWorldBankData();
   renderFaqChips();
 });
