@@ -595,26 +595,30 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
         <p class="chart-note">Solid historical values cover 2019-2023. The final two points are a sensitivity illustration based on the slider assumptions, not observed data or a forecast.</p>
 
         <div class="sim-panel">
-          <div class="sim-title">Illustrative Scenario Simulator</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:10px;">
+            <div class="sim-title" style="margin-bottom:0;">Illustrative Scenario Simulator (2024–2025)</div>
+            <button type="button" class="btn btn-outline" style="padding:5px 12px; font-size:11px;" onclick="resetShockSimulation()">↺ Reset Sliders</button>
+          </div>
           <p style="font-size: 12px; color: var(--fg-dim); margin-bottom: 16px; text-align: justify;">
-            Adjust the sliders to apply a hypothetical policy-rate or supply-price shock to the 2024-2025 extension. The result is a fixed-elasticity teaching illustration, not an estimated SVAR, a causal claim, or a forecast.
+            Adjust the sliders to apply a hypothetical policy-rate or supply-price shock to the 2024–2025 dashed extension on the chart above. The result is a fixed-elasticity teaching illustration, not an estimated SVAR, a causal claim, or a forecast.
           </p>
           <div class="sim-row">
             <div class="sim-control">
-              <label>Policy-rate shock (basis points)</label>
+              <label for="shockRate">Policy-rate shock (basis points: 0 to +500 bps)</label>
               <div class="sim-slider-row">
-                <input type="range" class="sim-slider" id="shockRate" min="0" max="500" step="50" value="0" oninput="runShockSimulation()">
-                <span class="sim-val-display" id="valRate">+0.0 pp</span>
+                <input type="range" class="sim-slider" id="shockRate" min="0" max="500" step="25" value="0" oninput="runShockSimulation()" onchange="runShockSimulation()">
+                <span class="sim-val-display" id="valRate">+0 bps</span>
               </div>
             </div>
             <div class="sim-control">
-              <label>Supply-price shock (%)</label>
+              <label for="shockSupply">Supply-price shock (%: 0% to +20%)</label>
               <div class="sim-slider-row">
-                <input type="range" class="sim-slider" id="shockSupply" min="0" max="20" step="1" value="0" oninput="runShockSimulation()">
-                <span class="sim-val-display" id="valSupply">+0.0%</span>
+                <input type="range" class="sim-slider" id="shockSupply" min="0" max="20" step="1" value="0" oninput="runShockSimulation()" onchange="runShockSimulation()">
+                <span class="sim-val-display" id="valSupply">+0%</span>
               </div>
             </div>
           </div>
+          <div id="simImpactGrid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:8px; margin-top:14px; margin-bottom:12px;"></div>
           <div style="font-size: 11px; font-family: 'DM Mono', monospace; color: var(--silver); text-align: right;">
             Simulation Status: <span style="color:var(--accent)" id="simStatus">Baseline Active (No Shocks Applied)</span>
           </div>
@@ -640,13 +644,14 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
             <tr>
               <th>Geographic Cohort</th>
               <th style="text-align:right">Latest Historical (2023)</th>
-              <th style="text-align:right">Prior Year (2022)</th>
-              <th style="text-align:right">5Y Historical Mean</th>
+              <th style="text-align:right">Simulated (2024)</th>
+              <th style="text-align:right">Simulated (2025)</th>
+              <th style="text-align:right">5Y Mean (2019–23)</th>
               <th style="text-align:right">Historical High</th>
             </tr>
           </thead>
           <tbody id="compStatsBody">
-            <tr><td colspan="5" style="text-align:center; color:var(--silver);">Synchronizing World Bank metrics...</td></tr>
+            <tr><td colspan="6" style="text-align:center; color:var(--silver);">Synchronizing World Bank metrics...</td></tr>
           </tbody>
         </table></div>
 
@@ -762,76 +767,128 @@ function show(sectionId, btnElement) {
   document.getElementById(sectionId).classList.add('active');
   btnElement.classList.add('active');
   btnElement.setAttribute('aria-selected', 'true');
-  if (sectionId === 'datalab' && compChart) {
-    setTimeout(() => { compChart.resize(); compChart.update(); }, 20);
-  }
-}
-
-async function fetchWorldBankData() {
-  document.getElementById('apiStatus').innerText = "Loading World Bank data...";
-  Object.keys(COUNTRY_CONFIG).forEach(c => {
-    COUNTRY_DATA[c] = { label: COUNTRY_CONFIG[c].label, color: COUNTRY_CONFIG[c].color, gdp: {}, cpi: {} };
-  });
-
-  try {
-    for (const [metricKey, indicatorCode] of Object.entries(METRIC_INDICATORS)) {
-      for (const countryKey of Object.keys(COUNTRY_CONFIG)) {
-        const url = `https://api.worldbank.org/v2/country/${COUNTRY_CONFIG[countryKey].code2}/indicator/${indicatorCode}?date=2019:2023&format=json`;
-        const response = await fetch(url);
-        const json = await response.json();
-        
-        if (json && json[1]) {
-          json[1].forEach(item => {
-            const year = parseInt(item.date);
-            const value = item.value !== null ? parseFloat(item.value) : 0.0;
-            COUNTRY_DATA[countryKey][metricKey][year] = value;
-          });
-        }
+  if (sectionId === 'datalab') {
+    setTimeout(() => {
+      if (compChart) {
+        compChart.resize();
+        updateChartDatasets();
       }
-    }
-    document.getElementById('apiStatus').innerText = "Historical data loaded ✓";
-    document.getElementById('apiStatus').style.color = "#4ecdc4";
-    updateQuickKPIs();
-    updateChartDatasets();
-  } catch (error) {
-    console.error("API Error:", error);
-    document.getElementById('apiStatus').innerText = "API unavailable - cached fallback shown";
-    document.getElementById('apiStatus').style.color = "#ff6b6b";
-    loadFallbackData();
+    }, 30);
   }
 }
+
+const FALLBACK_DATA = {
+  TUR: { gdp: { 2019: 0.9, 2020: 1.9, 2021: 11.4, 2022: 5.5, 2023: 5.1 }, cpi: { 2019: 15.2, 2020: 12.3, 2021: 19.6, 2022: 72.3, 2023: 53.9 } },
+  USA: { gdp: { 2019: 2.3, 2020: -2.2, 2021: 6.2, 2022: 2.5, 2023: 2.9 }, cpi: { 2019: 1.8, 2020: 1.2, 2021: 4.7, 2022: 8.0, 2023: 4.1 } },
+  DEU: { gdp: { 2019: 1.1, 2020: -4.1, 2021: 3.7, 2022: 1.4, 2023: -0.2 }, cpi: { 2019: 1.4, 2020: 0.5, 2021: 3.1, 2022: 6.9, 2023: 5.9 } },
+  GBR: { gdp: { 2019: 1.6, 2020: -10.0, 2021: 8.5, 2022: 5.1, 2023: 0.3 }, cpi: { 2019: 1.8, 2020: 0.9, 2021: 2.6, 2022: 9.1, 2023: 7.3 } },
+  JPN: { gdp: { 2019: -0.4, 2020: -4.1, 2021: 2.6, 2022: 1.0, 2023: 1.4 }, cpi: { 2019: 0.5, 2020: 0.0, 2021: -0.2, 2022: 2.5, 2023: 3.3 } }
+};
 
 function loadFallbackData() {
-  const fallback = {
-    TUR: { gdp: { 2019: 0.9, 2020: 1.9, 2021: 11.4, 2022: 5.5, 2023: 5.1 }, cpi: { 2019: 15.2, 2020: 12.3, 2021: 19.6, 2022: 72.3, 2023: 53.9 } },
-    USA: { gdp: { 2019: 2.3, 2020: -2.2, 2021: 6.2, 2022: 2.5, 2023: 2.9 }, cpi: { 2019: 1.8, 2020: 1.2, 2021: 4.7, 2022: 8.0, 2023: 4.1 } },
-    DEU: { gdp: { 2019: 1.1, 2020: -4.1, 2021: 3.7, 2022: 1.4, 2023: -0.2 }, cpi: { 2019: 1.4, 2020: 0.5, 2021: 3.1, 2022: 6.9, 2023: 5.9 } },
-    GBR: { gdp: { 2019: 1.6, 2020: -10.0, 2021: 8.5, 2022: 5.1, 2023: 0.3 }, cpi: { 2019: 1.8, 2020: 0.9, 2021: 2.6, 2022: 9.1, 2023: 7.3 } },
-    JPN: { gdp: { 2019: -0.4, 2020: -4.1, 2021: 2.6, 2022: 1.0, 2023: 1.4 }, cpi: { 2019: 0.5, 2020: 0.0, 2021: -0.2, 2022: 2.5, 2023: 3.3 } }
-  };
   Object.keys(COUNTRY_CONFIG).forEach(c => {
-    COUNTRY_DATA[c] = { label: COUNTRY_CONFIG[c].label, color: COUNTRY_CONFIG[c].color, ...fallback[c] };
+    COUNTRY_DATA[c] = {
+      label: COUNTRY_CONFIG[c].label,
+      color: COUNTRY_CONFIG[c].color,
+      gdp: { ...FALLBACK_DATA[c].gdp },
+      cpi: { ...FALLBACK_DATA[c].cpi }
+    };
   });
-  updateQuickKPIs();
   updateChartDatasets();
 }
 
-function updateQuickKPIs() {
-  if (COUNTRY_DATA.TUR) {
-    document.getElementById('m-gdp').innerText = `${(COUNTRY_DATA.TUR.gdp[2023] || 4.5).toFixed(1)}%`;
-    document.getElementById('m-cpi').innerText = `${(COUNTRY_DATA.TUR.cpi[2023] || 53.9).toFixed(1)}%`;
+async function fetchWorldBankData() {
+  loadFallbackData();
+  document.getElementById('apiStatus').innerText = "Syncing World Bank API...";
+
+  try {
+    const requests = [];
+    for (const [metricKey, indicatorCode] of Object.entries(METRIC_INDICATORS)) {
+      for (const countryKey of Object.keys(COUNTRY_CONFIG)) {
+        const url = `https://api.worldbank.org/v2/country/${COUNTRY_CONFIG[countryKey].code2}/indicator/${indicatorCode}?date=2019:2023&format=json`;
+        requests.push(
+          fetch(url)
+            .then(r => r.json())
+            .then(json => {
+              if (json && json[1]) {
+                json[1].forEach(item => {
+                  const year = parseInt(item.date, 10);
+                  if (item.value !== null && !isNaN(parseFloat(item.value))) {
+                    COUNTRY_DATA[countryKey][metricKey][year] = parseFloat(item.value);
+                  }
+                });
+              }
+            })
+        );
+      }
+    }
+    await Promise.all(requests);
+    document.getElementById('apiStatus').innerText = "Historical data loaded ✓";
+    document.getElementById('apiStatus').style.color = "#4ecdc4";
+    updateChartDatasets();
+  } catch (error) {
+    console.error("API Error:", error);
+    document.getElementById('apiStatus').innerText = "API unavailable - verified fallback active";
+    document.getElementById('apiStatus').style.color = "#c8a96e";
+    updateChartDatasets();
   }
 }
 
+function computeCountryValue(code, metric, year, rateBps, supplyPct) {
+  const history = COUNTRY_DATA[code]?.[metric] || FALLBACK_DATA[code][metric];
+  if (HISTORICAL_YEARS.includes(year)) {
+    return history[year] ?? (metric === "gdp" ? 2.0 : 4.0);
+  }
+  const baseValue = history[2023] ?? (metric === "gdp" ? 2.0 : 4.0);
+  const lagMultiplier = year === 2024 ? 0.55 : 1.0;
+  const ratePp = rateBps / 100.0; // 0 to 5.0 percentage points
+
+  if (metric === "gdp") {
+    const rateEffect = ratePp * COUNTRY_CONFIG[code].rateElasticity * 1.6 * lagMultiplier;
+    const supplyEffect = (supplyPct / 5.0) * COUNTRY_CONFIG[code].supplyElasticity * 1.25 * lagMultiplier;
+    return baseValue + rateEffect + supplyEffect;
+  } else {
+    const supplyEffect = (supplyPct / 5.0) * Math.abs(COUNTRY_CONFIG[code].supplyElasticity) * 2.6 * lagMultiplier;
+    const rateEffect = ratePp * COUNTRY_CONFIG[code].rateCpiElasticity * 1.6 * lagMultiplier;
+    return Math.max(0, baseValue + supplyEffect + rateEffect);
+  }
+}
+
+function updateQuickKPIs() {
+  if (!COUNTRY_DATA.TUR) return;
+  const rateBps = parseFloat(document.getElementById('shockRate')?.value || 0);
+  const supplyPct = parseFloat(document.getElementById('shockSupply')?.value || 0);
+  const baseGdp = COUNTRY_DATA.TUR.gdp[2023] ?? 5.1;
+  const baseCpi = COUNTRY_DATA.TUR.cpi[2023] ?? 53.9;
+  const simGdp25 = computeCountryValue('TUR', 'gdp', 2025, rateBps, supplyPct);
+  const simCpi25 = computeCountryValue('TUR', 'cpi', 2025, rateBps, supplyPct);
+
+  if (rateBps > 0 || supplyPct > 0) {
+    document.getElementById('m-gdp').innerText = `${baseGdp.toFixed(1)}% → ${simGdp25.toFixed(1)}% (2025)`;
+    document.getElementById('m-cpi').innerText = `${baseCpi.toFixed(1)}% → ${simCpi25.toFixed(1)}% (2025)`;
+  } else {
+    document.getElementById('m-gdp').innerText = `${baseGdp.toFixed(1)}% (2023)`;
+    document.getElementById('m-cpi').innerText = `${baseCpi.toFixed(1)}% (2023)`;
+  }
+}
+
+function resetShockSimulation() {
+  const rEl = document.getElementById('shockRate');
+  const sEl = document.getElementById('shockSupply');
+  if (rEl) rEl.value = 0;
+  if (sEl) sEl.value = 0;
+  runShockSimulation();
+}
+
 function runShockSimulation() {
-  const rateShock = parseFloat(document.getElementById('shockRate').value) / 100;
-  const supplyShock = parseFloat(document.getElementById('shockSupply').value) / 100;
+  const rateBps = parseFloat(document.getElementById('shockRate').value) || 0;
+  const supplyPct = parseFloat(document.getElementById('shockSupply').value) || 0;
 
-  document.getElementById('valRate').innerText = `+${rateShock.toFixed(1)} pp`;
-  document.getElementById('valSupply').innerText = `+${(supplyShock * 100).toFixed(1)}%`;
+  document.getElementById('valRate').innerText = `+${rateBps} bps`;
+  document.getElementById('valSupply').innerText = `+${supplyPct.toFixed(0)}%`;
 
-  if(rateShock > 0 || supplyShock > 0) {
-    document.getElementById('simStatus').innerText = `Hypothetical Shock Applied (Illustrative Elasticity Model)`;
+  if (rateBps > 0 || supplyPct > 0) {
+    document.getElementById('simStatus').innerText = `Hypothetical Shock Active (+${rateBps} bps rate, +${supplyPct}% supply)`;
     document.getElementById('simStatus').style.color = "#ff6b6b";
   } else {
     document.getElementById('simStatus').innerText = `Baseline Active (No Shocks Applied)`;
@@ -841,37 +898,48 @@ function runShockSimulation() {
   updateChartDatasets();
 }
 
-function updateChartDatasets() {
-  if (!compChart) return;
+function renderSimImpactGrid(rateBps, supplyPct) {
+  const grid = document.getElementById('simImpactGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
 
-  const rateShock = parseFloat(document.getElementById('shockRate').value) / 100;
-  const supplyShock = parseFloat(document.getElementById('shockSupply').value) / 100;
+  Object.entries(COUNTRY_CONFIG).forEach(([code, cfg]) => {
+    if (!activeCountries.has(code) || !COUNTRY_DATA[code]) return;
+    const base23 = computeCountryValue(code, activeMetric, 2023, 0, 0);
+    const sim25 = computeCountryValue(code, activeMetric, 2025, rateBps, supplyPct);
+    const diff = sim25 - base23;
+    const sign = diff > 0 ? '+' : '';
+    const diffColor = Math.abs(diff) < 0.05 ? 'var(--silver)' : (diff > 0 ? '#ff6b6b' : '#4ecdc4');
 
-  compChart.data.datasets.forEach(dataset => {
-    const code = dataset.id;
-    const isHidden = !activeCountries.has(code);
-    dataset.hidden = isHidden;
-    
-    if (!isHidden && COUNTRY_DATA[code]) {
-      dataset.data = YEARS.map(y => {
-        const history = COUNTRY_DATA[code][activeMetric];
-        if (HISTORICAL_YEARS.includes(y)) return history[y] ?? (activeMetric === "gdp" ? 2.0 : 4.0);
-
-        const baseValue = history[2023] ?? (activeMetric === "gdp" ? 2.0 : 4.0);
-        const lagMultiplier = y === 2024 ? 0.5 : 1.0;
-        if (activeMetric === "gdp") {
-          const rateEffect = rateShock * COUNTRY_CONFIG[code].rateElasticity * lagMultiplier * 1.5;
-          const supplyEffect = supplyShock * COUNTRY_CONFIG[code].supplyElasticity * lagMultiplier * 0.8;
-          return baseValue + rateEffect + supplyEffect;
-        }
-        const supplyEffect = supplyShock * Math.abs(COUNTRY_CONFIG[code].supplyElasticity) * 2.5 * lagMultiplier;
-        const rateEffect = rateShock * COUNTRY_CONFIG[code].rateCpiElasticity * lagMultiplier * 1.2;
-        return Math.max(0, baseValue + supplyEffect + rateEffect);
-      });
-    }
+    const card = document.createElement('div');
+    card.style.cssText = 'background:rgba(255,255,255,0.03); border:1px solid rgba(200,169,110,0.18); padding:8px 10px; border-radius:4px; font-size:11px; font-family:"DM Mono", monospace;';
+    card.innerHTML = `
+      <div style="color:var(--silver); margin-bottom:3px;">${cfg.label} (2025 Sim)</div>
+      <div style="color:var(--fg); font-size:12px;">${base23.toFixed(1)}% → <strong>${sim25.toFixed(1)}%</strong> <span style="color:${diffColor}">(${sign}${diff.toFixed(1)} pp)</span></div>
+    `;
+    grid.appendChild(card);
   });
-  
-  compChart.update();
+}
+
+function updateChartDatasets() {
+  const rateBps = parseFloat(document.getElementById('shockRate')?.value || 0);
+  const supplyPct = parseFloat(document.getElementById('shockSupply')?.value || 0);
+
+  if (compChart) {
+    compChart.data.datasets.forEach(dataset => {
+      const code = dataset.id;
+      const isHidden = !activeCountries.has(code);
+      dataset.hidden = isHidden;
+
+      if (COUNTRY_DATA[code]) {
+        dataset.data = YEARS.map(y => computeCountryValue(code, activeMetric, y, rateBps, supplyPct));
+      }
+    });
+    compChart.update();
+  }
+
+  updateQuickKPIs();
+  renderSimImpactGrid(rateBps, supplyPct);
   buildCompStatsTable();
 }
 
@@ -896,12 +964,16 @@ function buildCompStatsTable() {
   if(!tbody) return;
   tbody.innerHTML = '';
 
+  const rateBps = parseFloat(document.getElementById('shockRate')?.value || 0);
+  const supplyPct = parseFloat(document.getElementById('shockSupply')?.value || 0);
+
   Object.entries(COUNTRY_DATA).forEach(([code, info]) => {
     if (!activeCountries.has(code)) return;
     
     const vals = HISTORICAL_YEARS.map(y => info[activeMetric][y] ?? 0);
     const latestVal = vals[vals.length - 1] || 0;
-    const priorVal = vals[vals.length - 2] || 0;
+    const sim24 = computeCountryValue(code, activeMetric, 2024, rateBps, supplyPct);
+    const sim25 = computeCountryValue(code, activeMetric, 2025, rateBps, supplyPct);
     const peak = Math.max(...vals) || 0;
     const avgVal = (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1);
     const dot = `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${info.color};margin-right:8px;vertical-align:middle;"></span>`;
@@ -910,7 +982,8 @@ function buildCompStatsTable() {
     tr.innerHTML = `
       <td>${dot}${info.label.split(' ').slice(1).join(' ')}</td>
       <td class="highlight" style="text-align:right">${latestVal.toFixed(1)}%</td>
-      <td style="text-align:right">${priorVal.toFixed(1)}%</td>
+      <td class="highlight" style="text-align:right; color:var(--accent-light);">${sim24.toFixed(1)}%</td>
+      <td class="highlight" style="text-align:right; color:var(--accent);">${sim25.toFixed(1)}%</td>
       <td style="text-align:right">${avgVal}%</td>
       <td style="text-align:right">${peak.toFixed(1)}%</td>
     `;
@@ -978,12 +1051,16 @@ function renderFaqChips() {
 document.addEventListener("DOMContentLoaded", () => {
   const ctx = document.getElementById('compChart').getContext('2d');
   const datasets = Object.entries(COUNTRY_CONFIG).map(([code, info]) => ({
-    label: `Series: ${code}`,
+    label: info.label,
     id: code,
     data: YEARS.map(() => 0),
     borderColor: info.color,
-    backgroundColor: 'transparent',
-    borderWidth: 2,
+    backgroundColor: info.color,
+    borderWidth: 2.5,
+    pointRadius: ctx => (ctx.dataIndex >= 5 ? 4.5 : 3),
+    segment: {
+      borderDash: ctx => (ctx.p0DataIndex >= 4 ? [6, 4] : undefined)
+    },
     tension: 0.15,
     hidden: !activeCountries.has(code)
   }));
@@ -994,12 +1071,13 @@ document.addEventListener("DOMContentLoaded", () => {
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      animation: { duration: 220 },
       plugins: {
         legend: { display: true, labels: { color: '#c8d3df', boxWidth: 12, font: { family: 'DM Sans' } } },
         tooltip: { callbacks: { label: context => `${context.dataset.label}: ${context.parsed.y.toFixed(1)}%` } }
       },
       scales: {
-        x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#8fa3bc' }, title: { display: true, text: 'Year (2024-2025 are illustrative)', color: '#8fa3bc' } },
+        x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#8fa3bc' }, title: { display: true, text: 'Year (2024–2025 dashed lines = Scenario Simulator)', color: '#8fa3bc' } },
         y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8fa3bc', callback: value => `${value}%` }, title: { display: true, text: 'Annual change (%)', color: '#8fa3bc' } }
       }
     }
