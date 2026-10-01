@@ -351,15 +351,17 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
   <div class="author-badge">
     <span>Researcher: <strong>Ege Umut Can</strong></span>
     <span>·</span>
-    <span>FMV Işık Schools, Istanbul (Class of 2027)</span>
+    <span>FMV Işık High School, Istanbul (Class of 2027)</span>
     <span>·</span>
-    <a href="#" onclick="openPdfModal('papers/Ege-Umut-Can-Academic-CV.pdf', 'Ege Umut Can — Academic & Research CV'); return false;" style="color:var(--accent); text-decoration:none; font-weight:600;">📄 View Academic CV (PDF)</a>
+    <a href="#" onclick="openPdfModal('papers/Ege-Umut-Can-Academic-CV.pdf', 'Ege Umut Can — Academic CV (English)'); return false;" style="color:var(--accent); text-decoration:none; font-weight:600;">📄 Academic CV (EN)</a>
+    <span>·</span>
+    <a href="#" onclick="openPdfModal('papers/Ege-Umut-Can-CV-Turkce.pdf', 'Ege Umut Can — Özgeçmiş (Türkçe)'); return false;" style="color:var(--accent); text-decoration:none; font-weight:600;">📄 CV (TR)</a>
   </div>
 </header>
 
 <nav role="tablist" aria-label="Project sections">
   <button class="active" role="tab" aria-selected="true" aria-controls="home" onclick="show('home', this)">Project &amp; Research Map</button>
-  <button role="tab" aria-selected="false" aria-controls="research" id="nav-research" onclick="show('research', this)">Research &amp; Essays (10)</button>
+  <button role="tab" aria-selected="false" aria-controls="research" id="nav-research" onclick="show('research', this)">Research &amp; Essays (12)</button>
   <button role="tab" aria-selected="false" aria-controls="datalab" id="nav-datalab" onclick="show('datalab', this)">Data Lab &amp; Simulators</button>
   <button role="tab" aria-selected="false" aria-controls="reading" id="nav-reading" onclick="show('reading', this)">Reading List &amp; Influences (6)</button>
   <button role="tab" aria-selected="false" aria-controls="methodology" onclick="show('methodology', this)">Methods &amp; Sources</button>
@@ -479,11 +481,11 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
       <div class="section-subtitle">Independent student working papers, Data Lab research notes, macroeconomic essays, and strategic business case studies. Read directly in your browser or download as PDF.</div>
       
       <div class="filter-bar" role="group" aria-label="Filter publications by category">
-        <button class="filter-chip active" onclick="filterPapers('all', this)">All Publications (10)</button>
-        <button class="filter-chip" onclick="filterPapers('datalab-note', this)">Data Lab Notes (2)</button>
+        <button class="filter-chip active" onclick="filterPapers('all', this)">All Publications (12)</button>
+        <button class="filter-chip" onclick="filterPapers('strategy', this)">Corporate Strategy &amp; Finance (3)</button>
         <button class="filter-chip" onclick="filterPapers('macro', this)">Monetary Policy &amp; Markets (5)</button>
+        <button class="filter-chip" onclick="filterPapers('datalab-note', this)">Data Lab Notes (2)</button>
         <button class="filter-chip" onclick="filterPapers('debates', this)">Political Economy &amp; Debates (2)</button>
-        <button class="filter-chip" onclick="filterPapers('strategy', this)">Corporate Strategy (1)</button>
       </div>
 
       <div class="card" style="padding:24px">
@@ -737,6 +739,62 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="pub-actions">
             <button class="btn" onclick="openPdfModal('papers/Inditex-Competitive-Advantage-Strategic-Tradeoffs.pdf', 'Inditex: Competitive Advantage and Strategic Trade-offs in Global Fashion Retail')">📖 Read PDF</button>
             <a class="btn btn-outline" href="papers/Inditex-Competitive-Advantage-Strategic-Tradeoffs.pdf" download="Inditex-Competitive-Advantage-Strategic-Tradeoffs.pdf">⬇ Download PDF</a>
+          </div>
+        </article>
+
+        <!-- 11. Arsenal FC Football Finance Case Study -->
+        <article class="pub-card" data-category="strategy">
+          <div class="pub-metadata">
+            <span>Longitudinal Case Study</span>
+            <span>17 Pages (10 Seasons)</span>
+            <span>Sports Economics &amp; Football Finance</span>
+          </div>
+          <h3 class="pub-title">Financial Resources, Investment Decisions, and Sporting Performance: A Longitudinal Investigation of Arsenal Football Club (2015/16–2024/25)</h3>
+          <div class="pub-subtitle">10-Season Empirical Panel: Companies House Statutory Accounts, Transfer Census &amp; Advanced Pitch Analytics</div>
+          <div class="pub-author">Independent Student Research Project · Ege Umut Can (FMV Işık High School)</div>
+          <p class="pub-abstract">
+            <strong>Summary:</strong> Investigates how corporate financial resources, transfer expenditures, and statutory staff costs relate to pitch performance across a decade of Arsenal FC's history (2015/16–2024/25). Utilizing audited annual reports from Companies House, a 128-transaction transfer census, and official Premier League / Understat analytics, the study reveals that while turnover nearly doubled (+97.1% to £691m), transfer investments exhibited substantially stronger positive associations with pitch output on a one-season lag ($t \to t+1$, $r = +0.6189$ with xPTS) rather than same-season results—quantifying the time required for squad investments to mature.
+          </p>
+          <div class="pub-taxonomies">
+            <span>Sports Economics</span>
+            <span>Arsenal FC</span>
+            <span>Football Finance</span>
+            <span>Transfer Expenditure</span>
+            <span>Expected Goals (xG)</span>
+            <span>Financial Fair Play</span>
+          </div>
+          <div class="pub-actions">
+            <button class="btn" onclick="openPdfModal('papers/Arsenal-FC-Football-Finance.pdf', 'Arsenal FC: Financial Resources, Investment Decisions, and Sporting Performance (2015/16–2024/25)')">📖 Read PDF</button>
+            <a class="btn btn-outline" href="papers/Arsenal-FC-Football-Finance.pdf" download="Arsenal-FC-Football-Finance.pdf">⬇ Download PDF</a>
+            <a class="btn btn-outline" href="https://github.com/ege211/sports-finance-performance" target="_blank" rel="noopener noreferrer">⚽ GitHub Repository</a>
+          </div>
+        </article>
+
+        <!-- 12. Strategic Capital Allocation in Investment Banking -->
+        <article class="pub-card" data-category="strategy">
+          <div class="pub-metadata">
+            <span>Comparative Longitudinal Study</span>
+            <span>20 Pages (2020–2024)</span>
+            <span>Corporate Finance &amp; Capital Markets</span>
+          </div>
+          <h3 class="pub-title">Strategic Capital Allocation in Investment Banking: A Comparative Longitudinal Study of Major U.S. Firms (2020–2024)</h3>
+          <div class="pub-subtitle">Comparing Bank Holding Companies (GS, MS, JPM, SF) and Independent Boutiques (EVR, LAZ, MC, JEF) across Market Cycles</div>
+          <div class="pub-author">Independent Student Research Project · Ege Can (FMV Işık High School)</div>
+          <p class="pub-abstract">
+            <strong>Summary:</strong> Examines how eight leading Wall Street investment banks and advisory firms allocated capital between business reinvestment, balance-sheet capital retention, and shareholder distributions across the 2020–2024 market cycle. Hand-collecting data from 40 primary SEC Form 10-K filings, the study analyzes $233.2 billion in shareholder payouts, contrasting how large bank holding companies governed by strict Federal Reserve CET1 solvency mandates compare with asset-light advisory boutiques that maintain compensation flexibility and distribute excess cash through cyclical share repurchases.
+          </p>
+          <div class="pub-taxonomies">
+            <span>Corporate Finance</span>
+            <span>Investment Banking</span>
+            <span>SEC Form 10-K</span>
+            <span>Capital Allocation</span>
+            <span>CET1 Solvency</span>
+            <span>Share Repurchases</span>
+          </div>
+          <div class="pub-actions">
+            <button class="btn" onclick="openPdfModal('papers/Strategic-Capital-Allocation-Investment-Banking.pdf', 'Strategic Capital Allocation in Investment Banking: Major U.S. Firms (2020–2024)')">📖 Read PDF</button>
+            <a class="btn btn-outline" href="papers/Strategic-Capital-Allocation-Investment-Banking.pdf" download="Strategic-Capital-Allocation-Investment-Banking.pdf">⬇ Download PDF</a>
+            <a class="btn btn-outline" href="https://github.com/ege211/strategic-capital-allocation-investment-banking" target="_blank" rel="noopener noreferrer">🏛️ GitHub Repository</a>
           </div>
         </article>
 
@@ -1062,8 +1120,12 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
       </div>
       <div style="display:flex; flex-direction:column; gap:8px;">
         <div style="display:grid; grid-template-columns: 1fr auto; gap:6px;">
-          <button class="btn" style="width:100%; text-align:center;" onclick="openPdfModal('papers/Ege-Umut-Can-Academic-CV.pdf', 'Ege Umut Can — Academic & Research CV')">📄 Read Academic CV (PDF)</button>
-          <a class="btn btn-outline" style="padding:9px 12px; text-align:center;" href="papers/Ege-Umut-Can-Academic-CV.pdf" download="Ege-Umut-Can-Academic-CV.pdf" title="Download Academic CV PDF">⬇</a>
+          <button class="btn" style="width:100%; text-align:center;" onclick="openPdfModal('papers/Ege-Umut-Can-Academic-CV.pdf', 'Ege Umut Can — Academic CV (English)')">📄 Academic CV (English)</button>
+          <a class="btn btn-outline" style="padding:9px 12px; text-align:center;" href="papers/Ege-Umut-Can-Academic-CV.pdf" download="Ege-Umut-Can-Academic-CV.pdf" title="Download English CV PDF">⬇</a>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr auto; gap:6px;">
+          <button class="btn btn-outline" style="width:100%; text-align:center;" onclick="openPdfModal('papers/Ege-Umut-Can-CV-Turkce.pdf', 'Ege Umut Can — Özgeçmiş (Türkçe)')">📄 Özgeçmiş (Türkçe CV)</button>
+          <a class="btn btn-outline" style="padding:9px 12px; text-align:center;" href="papers/Ege-Umut-Can-CV-Turkce.pdf" download="Ege-Umut-Can-CV-Turkce.pdf" title="Download Türkçe CV PDF">⬇</a>
         </div>
         <a class="btn btn-outline" style="width:100%; text-align:center;" href="https://github.com/ege211/macroeconomic-data-lab" target="_blank" rel="noopener noreferrer">💻 GitHub Source &amp; Replication</a>
         <button class="btn btn-outline" style="width:100%; text-align:center;" onclick="document.getElementById('nav-reading').click()">📚 View Reading List &amp; Influences</button>
