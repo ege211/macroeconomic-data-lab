@@ -361,8 +361,8 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 
 <nav role="tablist" aria-label="Project sections">
   <button class="active" role="tab" aria-selected="true" aria-controls="home" onclick="show('home', this)">Project &amp; Research Map</button>
-  <button role="tab" aria-selected="false" aria-controls="research" id="nav-research" onclick="show('research', this)">Research &amp; Essays (12)</button>
-  <button role="tab" aria-selected="false" aria-controls="datalab" id="nav-datalab" onclick="show('datalab', this)">Data Lab &amp; Simulators</button>
+  <button role="tab" aria-selected="false" aria-controls="research" id="nav-research" onclick="show('research', this)">Research &amp; Essays (10)</button>
+  <button role="tab" aria-selected="false" aria-controls="datalab" id="nav-datalab" onclick="show('datalab', this)">Macro Data Lab</button>
   <button role="tab" aria-selected="false" aria-controls="reading" id="nav-reading" onclick="show('reading', this)">Reading List &amp; Influences (6)</button>
   <button role="tab" aria-selected="false" aria-controls="methodology" onclick="show('methodology', this)">Methods &amp; Sources</button>
 </nav>
@@ -436,8 +436,8 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
               <button class="pillar-link" onclick="openPdfModal('papers/Exchange-Rate-Pass-Through-Emerging-Markets.pdf', 'Exchange Rate Pass-Through in Emerging Markets')">
                 <span>📄 Essay 1: Exchange Rate Pass-Through (ERPT)</span><span style="color:var(--accent)">2p ↗</span>
               </button>
-              <button class="pillar-link" onclick="openPdfModal('papers/Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf', 'One Shock, Five Trajectories: Data Lab Research Note I')">
-                <span>📄 Data Lab Notes I &amp; II (World Bank &amp; Simulator)</span><span style="color:var(--accent)">5p ↗</span>
+              <button class="pillar-link" onclick="document.getElementById('nav-datalab').click()">
+                <span>📊 World Bank Comparative Data Lab</span><span style="color:var(--accent)">Live →</span>
               </button>
             </div>
           </div>
@@ -451,7 +451,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
                 <span>📄 The Fragility of Liquidity in Borsa Istanbul</span><span style="color:var(--accent)">3p ↗</span>
               </button>
               <button class="pillar-link" onclick="document.getElementById('nav-datalab').click()">
-                <span>📊 Open Interactive Persistence &amp; Shock Simulators</span><span style="color:var(--accent)">Lab →</span>
+                <span>📊 Open Interactive Macro Data Lab</span><span style="color:var(--accent)">Lab →</span>
               </button>
             </div>
           </div>
@@ -481,10 +481,9 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
       <div class="section-subtitle">Independent student working papers, Data Lab research notes, macroeconomic essays, and strategic business case studies. Read directly in your browser or download as PDF.</div>
       
       <div class="filter-bar" role="group" aria-label="Filter publications by category">
-        <button class="filter-chip active" onclick="filterPapers('all', this)">All Publications (12)</button>
+        <button class="filter-chip active" onclick="filterPapers('all', this)">All Publications (10)</button>
         <button class="filter-chip" onclick="filterPapers('strategy', this)">Corporate Strategy &amp; Finance (3)</button>
         <button class="filter-chip" onclick="filterPapers('macro', this)">Monetary Policy &amp; Markets (5)</button>
-        <button class="filter-chip" onclick="filterPapers('datalab-note', this)">Data Lab Notes (2)</button>
         <button class="filter-chip" onclick="filterPapers('debates', this)">Political Economy &amp; Debates (2)</button>
       </div>
 
@@ -516,54 +515,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           </div>
         </article>
 
-        <!-- Data Lab Note 1 -->
-        <article class="pub-card" data-category="datalab-note">
-          <div class="pub-metadata">
-            <span>Data Lab Research Note I</span>
-            <span>3 Pages</span>
-            <span>World Bank Open Data (2019–2023)</span>
-          </div>
-          <h3 class="pub-title">One Shock, Five Trajectories: Comparing Real GDP Growth and Consumer-Price Inflation Across Five Economies (2019–2023)</h3>
-          <div class="pub-author">Independent Student Research Note</div>
-          <p class="pub-abstract">
-            <strong>Summary:</strong> Documents why I built the Macroeconomic Data Lab to test domestic versus global explanations of post-pandemic inflation against harmonised World Bank series (<code>NY.GDP.MKTP.KD.ZG</code> and <code>FP.CPI.TOTL.ZG</code>). Compares the uniform 2020 contraction across the US, Germany, the UK, and Japan with Turkey’s credit-fuelled rebound (11.4% growth in 2021) and subsequent inflation divergence (72.3% in 2022), while reflecting on what a two-indicator comparison can and cannot establish.
-          </p>
-          <div class="pub-taxonomies">
-            <span>World Bank API</span>
-            <span>Comparative Macroeconomics</span>
-            <span>Inflation Divergence</span>
-            <span>Data Lab Note</span>
-          </div>
-          <div class="pub-actions">
-            <button class="btn" onclick="openPdfModal('papers/Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf', 'One Shock, Five Trajectories: Data Lab Research Note I')">📖 Read PDF</button>
-            <a class="btn btn-outline" href="papers/Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf" download="Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf">⬇ Download PDF</a>
-          </div>
-        </article>
 
-        <!-- Data Lab Note 2 -->
-        <article class="pub-card" data-category="datalab-note">
-          <div class="pub-metadata">
-            <span>Data Lab Research Note II</span>
-            <span>2 Pages</span>
-            <span>Methodology &amp; Scenario Design</span>
-          </div>
-          <h3 class="pub-title">Assumptions Made Visible: What Building a Macroeconomic Scenario Simulator Taught Me About Empirical Modelling</h3>
-          <div class="pub-author">Independent Student Research Note</div>
-          <p class="pub-abstract">
-            <strong>Summary:</strong> Explains the construction and methodological limits of the Data Lab’s 2024–2025 Scenario Simulator. Details the country-specific elasticity weights assigned to policy-rate and supply-price shocks, and examines three fundamental reasons why a fixed-elasticity rule is a sensitivity illustration rather than an econometric forecast: assumed versus estimated parameters, the Lucas Critique under shifting central bank credibility, and simultaneous shock identification.
-          </p>
-          <div class="pub-taxonomies">
-            <span>Scenario Simulation</span>
-            <span>Elasticity Assumptions</span>
-            <span>Lucas Critique</span>
-            <span>Methodological Transparency</span>
-          </div>
-          <div class="pub-actions">
-            <button class="btn" onclick="openPdfModal('papers/Data-Lab-Note-02-Scenario-Modelling-and-Methodological-Limits.pdf', 'Assumptions Made Visible: Data Lab Research Note II')">📖 Read PDF</button>
-            <a class="btn btn-outline" href="papers/Data-Lab-Note-02-Scenario-Modelling-and-Methodological-Limits.pdf" download="Data-Lab-Note-02-Scenario-Modelling-and-Methodological-Limits.pdf">⬇ Download PDF</a>
-          </div>
-        </article>
-        
         <!-- Working Paper WP-01 -->
         <article class="pub-card" data-category="macro">
           <div class="pub-metadata">
@@ -802,10 +754,17 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
     </div>
 
     <div id="datalab" class="section" role="tabpanel">
-      <div class="section-title">Data Lab & <span>Scenario Simulator</span></div>
-      <div class="section-subtitle">Annual World Bank data for 2019-2023, followed by an explicitly hypothetical 2024-2025 scenario extension.</div>
+      <div class="section-title">Macroeconomic <span>Data Lab</span></div>
+      <div class="section-subtitle">Annual World Bank indicators comparing real GDP growth and consumer price inflation across five major economies (2019–2023).</div>
       
       <div class="card">
+        <div style="background: rgba(200,169,110,0.06); border-left: 3px solid var(--accent); padding: 14px 18px; border-radius: 4px; margin-bottom: 20px;">
+          <div style="font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 4px;">Student Research Note</div>
+          <p style="font-size: 13px; color: var(--fg); margin: 0; line-height: 1.6;">
+            In AP Macroeconomics, we explore how growth and inflation interact across different economic systems. I built this interactive data explorer using live data directly from the World Bank Open Data API to examine how Turkey, the US, Germany, the UK, and Japan navigated the 2019–2023 macroeconomic cycle and the post-pandemic recovery.
+          </p>
+        </div>
+
         <div class="chart-status">
           <div class="status-dot"></div>
           <span id="apiStatus">Loading World Bank data...</span>
@@ -821,11 +780,11 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 
         <div class="metric-grid">
           <button class="metric-btn active" aria-pressed="true" id="btn-gdp" onclick="switchMetric('gdp')">
-            <span class="m-title">Real GDP Growth (Baseline vs Simulated)</span>
+            <span class="m-title">Real GDP Growth (2019–2023)</span>
             <span class="m-val" id="m-gdp">Loading...</span>
           </button>
           <button class="metric-btn" aria-pressed="false" id="btn-cpi" onclick="switchMetric('cpi')">
-            <span class="m-title">Consumer Price Inflation</span>
+            <span class="m-title">Consumer Price Inflation (2019–2023)</span>
             <span class="m-val" id="m-cpi">Loading...</span>
           </button>
         </div>
@@ -833,155 +792,40 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
         <div class="chart-container">
           <canvas id="compChart" role="img" aria-label="Comparison chart for GDP growth or consumer-price inflation across selected countries"></canvas>
         </div>
-        <p class="chart-note">Solid historical values cover 2019-2023. The final two points are a sensitivity illustration based on the slider assumptions, not observed data or a forecast.</p>
-
-        <div class="sim-panel">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:10px;">
-            <div class="sim-title" style="margin-bottom:0;">Illustrative Scenario Simulator (2024–2025)</div>
-            <button type="button" class="btn btn-outline" style="padding:5px 12px; font-size:11px;" onclick="resetShockSimulation()">↺ Reset Sliders</button>
-          </div>
-          <p style="font-size: 12px; color: var(--fg-dim); margin-bottom: 16px; text-align: justify;">
-            Adjust the sliders to apply a hypothetical policy-rate or supply-price shock to the 2024–2025 dashed extension on the chart above. The result is a fixed-elasticity teaching illustration, not an estimated SVAR, a causal claim, or a forecast.
-          </p>
-          <div class="sim-row">
-            <div class="sim-control">
-              <label for="shockRate">Policy-rate shock (basis points: 0 to +500 bps)</label>
-              <div class="sim-slider-row">
-                <input type="range" class="sim-slider" id="shockRate" min="0" max="500" step="25" value="0" oninput="runShockSimulation()" onchange="runShockSimulation()">
-                <span class="sim-val-display" id="valRate">+0 bps</span>
-              </div>
-            </div>
-            <div class="sim-control">
-              <label for="shockSupply">Supply-price shock (%: 0% to +20%)</label>
-              <div class="sim-slider-row">
-                <input type="range" class="sim-slider" id="shockSupply" min="0" max="20" step="1" value="0" oninput="runShockSimulation()" onchange="runShockSimulation()">
-                <span class="sim-val-display" id="valSupply">+0%</span>
-              </div>
-            </div>
-          </div>
-          <div id="simImpactGrid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:8px; margin-top:14px; margin-bottom:12px;"></div>
-          <div style="font-size: 11px; font-family: 'DM Mono', monospace; color: var(--silver); text-align: right;">
-            Simulation Status: <span style="color:var(--accent)" id="simStatus">Baseline Active (No Shocks Applied)</span>
-          </div>
-        </div>
+        <p class="chart-note">Historical values cover 2019–2023 retrieved dynamically from the World Bank Open Data API (Indicators: <code>NY.GDP.MKTP.KD.ZG</code> and <code>FP.CPI.TOTL.ZG</code>).</p>
 
         <div class="source-row">
-          <p style="font-size: 11px; color: var(--silver); margin: 0;"><strong>Source:</strong> <a href="https://api.worldbank.org/v2/" target="_blank" rel="noopener noreferrer">World Bank Open Data API v2</a>. Historical values are retrieved when the page loads; a labelled local fallback is used only if the request fails.</p>
-          <button class="btn btn-outline" onclick="exportDataCubeCSV()">📁 Download Current Array as CSV (Excel)</button>
+          <p style="font-size: 11px; color: var(--silver); margin: 0;"><strong>Source:</strong> <a href="https://api.worldbank.org/v2/" target="_blank" rel="noopener noreferrer">World Bank Open Data API v2</a>. Data retrieved dynamically upon load.</p>
+          <button class="btn btn-outline" onclick="exportDataCubeCSV()">📁 Download World Bank Data (CSV / Excel)</button>
         </div>
 
         <div class="card" style="background: rgba(0,0,0,0.15); margin-bottom:20px;">
-          <h3 style="font-family:'Playfair Display', serif; font-size:17px; color:var(--accent); margin-bottom:10px;">Descriptive Readout (2019-2023)</h3>
+          <h3 style="font-family:'Playfair Display', serif; font-size:17px; color:var(--accent); margin-bottom:10px;">Descriptive Observations (2019–2023)</h3>
           <p style="font-size:13px; color:var(--fg-dim); text-align:justify; line-height:1.7; margin-bottom:10px;">
-            The selected series show a shared pandemic-era downturn followed by different recovery profiles. Turkey's annual growth rebounded strongly in 2021 while consumer-price inflation subsequently rose sharply. Germany's output path weakened in 2023, while the US experienced a comparatively stronger growth outcome over the same year.
+            The selected series highlight how a shared global shock produced distinct macroeconomic paths. Following the 2020 pandemic downturn, Turkey experienced a rapid output rebound in 2021 followed by sharply elevated consumer inflation. Germany and the UK faced pronounced energy and trade headwinds resulting in sluggish 2023 growth, while the United States maintained comparatively robust expansion alongside moderating inflation.
           </p>
           <p style="font-size:13px; color:var(--fg-dim); text-align:justify; line-height:1.7;">
-            These patterns are descriptive, not proof of policy effects. Countries differ in energy exposure, trade links, exchange-rate regimes, fiscal policy, and measurement choices; identifying any of these mechanisms would require a broader dataset and an estimated model.
+            These trajectories reflect underlying structural differences—such as domestic monetary policy stances, energy import dependencies, and currency exchange dynamics—which I explore further across my research essays.
           </p>
         </div>
 
         <div class="table-wrap"><table id="compStatsTable">
           <thead>
             <tr>
-              <th>Geographic Cohort</th>
-              <th style="text-align:right">Latest Historical (2023)</th>
-              <th style="text-align:right">Simulated (2024)</th>
-              <th style="text-align:right">Simulated (2025)</th>
-              <th style="text-align:right">5Y Mean (2019–23)</th>
-              <th style="text-align:right">Historical High</th>
+              <th>Country / Economy</th>
+              <th style="text-align:right">2019</th>
+              <th style="text-align:right">2020</th>
+              <th style="text-align:right">2021</th>
+              <th style="text-align:right">2022</th>
+              <th style="text-align:right">2023</th>
+              <th style="text-align:right">5-Year Average</th>
             </tr>
           </thead>
           <tbody id="compStatsBody">
-            <tr><td colspan="6" style="text-align:center; color:var(--silver);">Synchronizing World Bank metrics...</td></tr>
+            <tr><td colspan="7" style="text-align:center; color:var(--silver);">Synchronizing World Bank metrics...</td></tr>
           </tbody>
         </table></div>
 
-        <!-- WP-01 Inflation Persistence & Shock Half-Life Visualizer -->
-        <div class="sim-panel" style="margin-top:28px; border-style:solid; border-color:rgba(200,169,110,0.3);">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:8px;">
-            <div>
-              <div class="header-eyebrow" style="margin-bottom:4px;">Empirical Working Paper WP-01 Companion Model</div>
-              <div class="sim-title" style="margin-bottom:0; font-size:18px;">Inflation Persistence (β ≈ 0.72) &amp; Shock Half-Life Simulator</div>
-            </div>
-            <div style="display:flex; gap:8px;">
-              <button type="button" class="btn btn-outline" style="padding:6px 12px; font-size:11px;" onclick="resetPersistenceSim()">↺ Reset</button>
-              <button type="button" class="btn" style="padding:6px 12px; font-size:11px;" onclick="openPdfModal('papers/WP-01-Inflation-Persistence-Monetary-Policy.pdf', 'Inflation Persistence and Monetary Policy Effectiveness (WP-01)')">📖 Read WP-01 (PDF)</button>
-            </div>
-          </div>
-          <p style="font-size:12.5px; color:var(--fg-dim); line-height:1.65; text-align:justify; margin-bottom:16px;">
-            In <strong>Working Paper WP-01</strong>, the autoregressive inflation equation <code>π<sub>i,t</sub> = α + βπ<sub>i,t−1</sub> + γMP<sub>i,t</sub> + ε<sub>i,t</sub></code> yields an estimated persistence coefficient of <strong>β ≈ 0.72</strong> across emerging economies—meaning 72% of an inflationary shock carries into the following year when expectations are backward-looking. Use the sliders below to compare how an initial price shock decays over 8 years in a high-persistence emerging market versus a credibility-anchored advanced economy (β = 0.30).
-          </p>
-
-          <div class="sim-row" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-            <div class="sim-control">
-              <label for="persShock">Initial Inflation Shock (ε₀: +5% to +30%)</label>
-              <div class="sim-slider-row">
-                <input type="range" class="sim-slider" id="persShock" min="5" max="30" step="1" value="15" oninput="updatePersistenceChart()" onchange="updatePersistenceChart()">
-                <span class="sim-val-display" id="valPersShock">+15%</span>
-              </div>
-            </div>
-            <div class="sim-control">
-              <label for="persBeta">Emerging Market Persistence (β: 0.45 to 0.90)</label>
-              <div class="sim-slider-row">
-                <input type="range" class="sim-slider" id="persBeta" min="0.45" max="0.90" step="0.01" value="0.72" oninput="updatePersistenceChart()" onchange="updatePersistenceChart()">
-                <span class="sim-val-display" id="valPersBeta">0.72</span>
-              </div>
-            </div>
-            <div class="sim-control">
-              <label for="persPolicy">Annual Taylor-Rule Tightening Offset (γ·MP)</label>
-              <div class="sim-slider-row">
-                <input type="range" class="sim-slider" id="persPolicy" min="0" max="2.5" step="0.25" value="0.75" oninput="updatePersistenceChart()" onchange="updatePersistenceChart()">
-                <span class="sim-val-display" id="valPersPolicy">-0.75 pp</span>
-              </div>
-            </div>
-          </div>
-
-          <div id="persMetricsRow" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px; margin:14px 0;"></div>
-
-          <div class="chart-container" style="height:280px; margin-bottom:8px;">
-            <canvas id="persChart" role="img" aria-label="Impulse decay chart comparing inflation persistence over 8 years"></canvas>
-          </div>
-          <p class="chart-note" style="margin-top:4px; margin-bottom:0;">
-            Half-life formula: <code>t<sub>1/2</sub> = ln(0.5) / ln(β)</code>. At the WP-01 baseline (β = 0.72), a single shock takes <strong>2.11 years</strong> to lose half its intensity, compared to <strong>0.58 years</strong> under anchored expectations (β = 0.30).
-          </p>
-        </div>
-
-        <div style="margin-top: 28px; border-top: 1px solid var(--border); padding-top: 24px;">
-          <h3 style="font-family:'Playfair Display', serif; font-size:20px; color:var(--fg); margin-bottom:6px;">Data Lab <span style="color:var(--accent)">Research Notes</span></h3>
-          <p style="font-size:13px; color:var(--fg-dim); margin-bottom:18px;">Two student research notes written to accompany this laboratory—examining the 2019–2023 empirical divergence and the methodological boundaries of the scenario simulator.</p>
-
-          <article class="pub-card">
-            <div class="pub-metadata">
-              <span>Data Lab Research Note I</span>
-              <span>3 Pages</span>
-              <span>Empirical Comparison (2019–2023)</span>
-            </div>
-            <h4 class="pub-title">One Shock, Five Trajectories: Comparing Real GDP Growth and Consumer-Price Inflation Across Five Economies (2019–2023)</h4>
-            <p class="pub-abstract">
-              <strong>Summary:</strong> Examines why a shared global disruption produced divergent growth and inflation paths across Turkey, the US, Germany, the UK, and Japan in the World Bank dataset—contrasting Turkey’s 2021 growth rebound and 2022 inflation surge with advanced-economy disinflation trade-offs.
-            </p>
-            <div class="pub-actions">
-              <button class="btn" onclick="openPdfModal('papers/Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf', 'One Shock, Five Trajectories: Data Lab Research Note I')">📖 Read Note I (PDF)</button>
-              <a class="btn btn-outline" href="papers/Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf" download="Data-Lab-Note-01-Post-Pandemic-Growth-Inflation-Divergence.pdf">⬇ Download PDF</a>
-            </div>
-          </article>
-
-          <article class="pub-card" style="margin-bottom:0;">
-            <div class="pub-metadata">
-              <span>Data Lab Research Note II</span>
-              <span>2 Pages</span>
-              <span>Model Assumptions &amp; Limits</span>
-            </div>
-            <h4 class="pub-title">Assumptions Made Visible: What Building a Macroeconomic Scenario Simulator Taught Me About Empirical Modelling</h4>
-            <p class="pub-abstract">
-              <strong>Summary:</strong> Documents the country-level elasticity assumptions behind the 2024–2025 sliders above and explains why fixed-parameter sensitivity exercises differ from estimated econometric models—highlighting parameter uncertainty, the Lucas Critique, and shock identification.
-            </p>
-            <div class="pub-actions">
-              <button class="btn" onclick="openPdfModal('papers/Data-Lab-Note-02-Scenario-Modelling-and-Methodological-Limits.pdf', 'Assumptions Made Visible: Data Lab Research Note II')">📖 Read Note II (PDF)</button>
-              <a class="btn btn-outline" href="papers/Data-Lab-Note-02-Scenario-Modelling-and-Methodological-Limits.pdf" download="Data-Lab-Note-02-Scenario-Modelling-and-Methodological-Limits.pdf">⬇ Download PDF</a>
-            </div>
-          </article>
-        </div>
       </div>
     </div>
 
@@ -1073,7 +917,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           The data chart uses World Bank indicator <code>NY.GDP.MKTP.KD.ZG</code> for annual real GDP growth and <code>FP.CPI.TOTL.ZG</code> for annual consumer-price inflation. The page requests the 2019-2023 observations directly from the World Bank API for the five selected economies and displays a clearly labelled fallback dataset only when that request cannot be completed.
         </p>
         <p style="font-size:14px; color:var(--fg-dim); line-height:1.7; text-align:justify; margin-top:14px">
-          <strong style="color:var(--fg)">Important limitation:</strong> the simulator applies hand-set elasticities to create a scenario extension. It is not an estimated SVAR, a regression, or a forecast. It is included to make assumptions visible and to show how a future version of the project could be tested with a larger, documented econometric model.
+          <strong style="color:var(--fg)">Analytical Scope:</strong> The Macro Data Lab displays official historical observations from the World Bank Open Data API. It is designed for comparative student exploration and descriptive analysis across different macroeconomic regimes.
         </p>
       </div>
       <div class="card">
@@ -1152,11 +996,11 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 
 <script>
 const COUNTRY_CONFIG = {
-  TUR: { label: "🇹🇷 Turkey", color: "#2ecc71", code2: "TR", rateElasticity: -0.22, supplyElasticity: -0.65, rateCpiElasticity: -0.85 },
-  USA: { label: "🇺🇸 USA", color: "#4a9eff", code2: "US", rateElasticity: -0.35, supplyElasticity: -0.35, rateCpiElasticity: -0.45 },
-  DEU: { label: "🇩🇪 Germany", color: "#ff6b6b", code2: "DE", rateElasticity: -0.28, supplyElasticity: -0.55, rateCpiElasticity: -0.38 },
-  GBR: { label: "🇬🇧 UK", color: "#4ecdc4", code2: "GB", rateElasticity: -0.32, supplyElasticity: -0.45, rateCpiElasticity: -0.40 },
-  JPN: { label: "🇯🇵 Japan", color: "#be2edd", code2: "JP", rateElasticity: -0.08, supplyElasticity: -0.40, rateCpiElasticity: -0.12 }
+  TUR: { label: "🇹🇷 Turkey", color: "#2ecc71", code2: "TR" },
+  USA: { label: "🇺🇸 USA", color: "#4a9eff", code2: "US" },
+  DEU: { label: "🇩🇪 Germany", color: "#ff6b6b", code2: "DE" },
+  GBR: { label: "🇬🇧 UK", color: "#4ecdc4", code2: "GB" },
+  JPN: { label: "🇯🇵 Japan", color: "#be2edd", code2: "JP" }
 };
 
 const METRIC_INDICATORS = {
@@ -1168,9 +1012,8 @@ let COUNTRY_DATA = {};
 let activeCountries = new Set(["TUR", "USA", "DEU"]);
 let activeMetric = "gdp";
 let compChart = null;
-let persChart = null;
 const HISTORICAL_YEARS = [2019, 2020, 2021, 2022, 2023];
-const YEARS = [...HISTORICAL_YEARS, 2024, 2025];
+const YEARS = [2019, 2020, 2021, 2022, 2023];
 
 function show(sectionId, btnElement) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -1186,10 +1029,6 @@ function show(sectionId, btnElement) {
       if (compChart) {
         compChart.resize();
         updateChartDatasets();
-      }
-      if (persChart) {
-        persChart.resize();
-        updatePersistenceChart();
       }
     }, 30);
   }
@@ -1252,97 +1091,20 @@ async function fetchWorldBankData() {
   }
 }
 
-function computeCountryValue(code, metric, year, rateBps, supplyPct) {
-  const history = COUNTRY_DATA[code]?.[metric] || FALLBACK_DATA[code][metric];
-  if (HISTORICAL_YEARS.includes(year)) {
-    return history[year] ?? (metric === "gdp" ? 2.0 : 4.0);
-  }
-  const baseValue = history[2023] ?? (metric === "gdp" ? 2.0 : 4.0);
-  const lagMultiplier = year === 2024 ? 0.55 : 1.0;
-  const ratePp = rateBps / 100.0; // 0 to 5.0 percentage points
-
-  if (metric === "gdp") {
-    const rateEffect = ratePp * COUNTRY_CONFIG[code].rateElasticity * 1.6 * lagMultiplier;
-    const supplyEffect = (supplyPct / 5.0) * COUNTRY_CONFIG[code].supplyElasticity * 1.25 * lagMultiplier;
-    return baseValue + rateEffect + supplyEffect;
-  } else {
-    const supplyEffect = (supplyPct / 5.0) * Math.abs(COUNTRY_CONFIG[code].supplyElasticity) * 2.6 * lagMultiplier;
-    const rateEffect = ratePp * COUNTRY_CONFIG[code].rateCpiElasticity * 1.6 * lagMultiplier;
-    return Math.max(0, baseValue + supplyEffect + rateEffect);
-  }
+function computeCountryValue(code, metric, year) {
+  const history = COUNTRY_DATA[code]?.[metric] || FALLBACK_DATA[code]?.[metric];
+  return history?.[year] ?? (metric === "gdp" ? 2.0 : 4.0);
 }
 
 function updateQuickKPIs() {
   if (!COUNTRY_DATA.TUR) return;
-  const rateBps = parseFloat(document.getElementById('shockRate')?.value || 0);
-  const supplyPct = parseFloat(document.getElementById('shockSupply')?.value || 0);
   const baseGdp = COUNTRY_DATA.TUR.gdp[2023] ?? 5.1;
   const baseCpi = COUNTRY_DATA.TUR.cpi[2023] ?? 53.9;
-  const simGdp25 = computeCountryValue('TUR', 'gdp', 2025, rateBps, supplyPct);
-  const simCpi25 = computeCountryValue('TUR', 'cpi', 2025, rateBps, supplyPct);
-
-  if (rateBps > 0 || supplyPct > 0) {
-    document.getElementById('m-gdp').innerText = `${baseGdp.toFixed(1)}% → ${simGdp25.toFixed(1)}% (2025)`;
-    document.getElementById('m-cpi').innerText = `${baseCpi.toFixed(1)}% → ${simCpi25.toFixed(1)}% (2025)`;
-  } else {
-    document.getElementById('m-gdp').innerText = `${baseGdp.toFixed(1)}% (2023)`;
-    document.getElementById('m-cpi').innerText = `${baseCpi.toFixed(1)}% (2023)`;
-  }
-}
-
-function resetShockSimulation() {
-  const rEl = document.getElementById('shockRate');
-  const sEl = document.getElementById('shockSupply');
-  if (rEl) rEl.value = 0;
-  if (sEl) sEl.value = 0;
-  runShockSimulation();
-}
-
-function runShockSimulation() {
-  const rateBps = parseFloat(document.getElementById('shockRate').value) || 0;
-  const supplyPct = parseFloat(document.getElementById('shockSupply').value) || 0;
-
-  document.getElementById('valRate').innerText = `+${rateBps} bps`;
-  document.getElementById('valSupply').innerText = `+${supplyPct.toFixed(0)}%`;
-
-  if (rateBps > 0 || supplyPct > 0) {
-    document.getElementById('simStatus').innerText = `Hypothetical Shock Active (+${rateBps} bps rate, +${supplyPct}% supply)`;
-    document.getElementById('simStatus').style.color = "#ff6b6b";
-  } else {
-    document.getElementById('simStatus').innerText = `Baseline Active (No Shocks Applied)`;
-    document.getElementById('simStatus').style.color = "var(--accent)";
-  }
-
-  updateChartDatasets();
-}
-
-function renderSimImpactGrid(rateBps, supplyPct) {
-  const grid = document.getElementById('simImpactGrid');
-  if (!grid) return;
-  grid.innerHTML = '';
-
-  Object.entries(COUNTRY_CONFIG).forEach(([code, cfg]) => {
-    if (!activeCountries.has(code) || !COUNTRY_DATA[code]) return;
-    const base23 = computeCountryValue(code, activeMetric, 2023, 0, 0);
-    const sim25 = computeCountryValue(code, activeMetric, 2025, rateBps, supplyPct);
-    const diff = sim25 - base23;
-    const sign = diff > 0 ? '+' : '';
-    const diffColor = Math.abs(diff) < 0.05 ? 'var(--silver)' : (diff > 0 ? '#ff6b6b' : '#4ecdc4');
-
-    const card = document.createElement('div');
-    card.style.cssText = 'background:rgba(255,255,255,0.03); border:1px solid rgba(200,169,110,0.18); padding:8px 10px; border-radius:4px; font-size:11px; font-family:"DM Mono", monospace;';
-    card.innerHTML = `
-      <div style="color:var(--silver); margin-bottom:3px;">${cfg.label} (2025 Sim)</div>
-      <div style="color:var(--fg); font-size:12px;">${base23.toFixed(1)}% → <strong>${sim25.toFixed(1)}%</strong> <span style="color:${diffColor}">(${sign}${diff.toFixed(1)} pp)</span></div>
-    `;
-    grid.appendChild(card);
-  });
+  document.getElementById('m-gdp').innerText = `${baseGdp.toFixed(1)}% (2023)`;
+  document.getElementById('m-cpi').innerText = `${baseCpi.toFixed(1)}% (2023)`;
 }
 
 function updateChartDatasets() {
-  const rateBps = parseFloat(document.getElementById('shockRate')?.value || 0);
-  const supplyPct = parseFloat(document.getElementById('shockSupply')?.value || 0);
-
   if (compChart) {
     compChart.data.datasets.forEach(dataset => {
       const code = dataset.id;
@@ -1350,14 +1112,13 @@ function updateChartDatasets() {
       dataset.hidden = isHidden;
 
       if (COUNTRY_DATA[code]) {
-        dataset.data = YEARS.map(y => computeCountryValue(code, activeMetric, y, rateBps, supplyPct));
+        dataset.data = YEARS.map(y => computeCountryValue(code, activeMetric, y));
       }
     });
     compChart.update();
   }
 
   updateQuickKPIs();
-  renderSimImpactGrid(rateBps, supplyPct);
   buildCompStatsTable();
 }
 
@@ -1382,206 +1143,88 @@ function buildCompStatsTable() {
   if(!tbody) return;
   tbody.innerHTML = '';
 
-  const rateBps = parseFloat(document.getElementById('shockRate')?.value || 0);
-  const supplyPct = parseFloat(document.getElementById('shockSupply')?.value || 0);
-
   Object.entries(COUNTRY_DATA).forEach(([code, info]) => {
     if (!activeCountries.has(code)) return;
     
-    const vals = HISTORICAL_YEARS.map(y => info[activeMetric][y] ?? 0);
-    const latestVal = vals[vals.length - 1] || 0;
-    const sim24 = computeCountryValue(code, activeMetric, 2024, rateBps, supplyPct);
-    const sim25 = computeCountryValue(code, activeMetric, 2025, rateBps, supplyPct);
-    const peak = Math.max(...vals) || 0;
+    const vals = YEARS.map(y => info[activeMetric][y] ?? 0);
     const avgVal = (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1);
     const dot = `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${info.color};margin-right:8px;vertical-align:middle;"></span>`;
     
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td>${dot}${info.label.split(' ').slice(1).join(' ')}</td>
-      <td class="highlight" style="text-align:right">${latestVal.toFixed(1)}%</td>
-      <td class="highlight" style="text-align:right; color:var(--accent-light);">${sim24.toFixed(1)}%</td>
-      <td class="highlight" style="text-align:right; color:var(--accent);">${sim25.toFixed(1)}%</td>
-      <td style="text-align:right">${avgVal}%</td>
-      <td style="text-align:right">${peak.toFixed(1)}%</td>
+      <td style="text-align:right">${(vals[0] ?? 0).toFixed(1)}%</td>
+      <td style="text-align:right">${(vals[1] ?? 0).toFixed(1)}%</td>
+      <td style="text-align:right">${(vals[2] ?? 0).toFixed(1)}%</td>
+      <td style="text-align:right">${(vals[3] ?? 0).toFixed(1)}%</td>
+      <td class="highlight" style="text-align:right">${(vals[4] ?? 0).toFixed(1)}%</td>
+      <td style="text-align:right; font-weight:600; color:var(--accent);">${avgVal}%</td>
     `;
     tbody.appendChild(tr);
   });
 }
 
 function exportDataCubeCSV() {
-  let csvContent = "Country_Code,Metric,Scenario_Type," + YEARS.map(y => `Y${y}`).join(",") + "\n";
+  let csvContent = "Country_Code,Country_Name,Metric," + YEARS.map(y => `Y${y}`).join(",") + ",5Y_Average\n";
   compChart.data.datasets.forEach(dataset => {
-    if (!dataset.hidden) {
-      csvContent += `${dataset.id},${activeMetric.toUpperCase()},Historical_2019_2023_plus_illustrative_2024_2025,` + dataset.data.map(v => v.toFixed(3)).join(",") + "\n";
+    if (!dataset.hidden && COUNTRY_DATA[dataset.id]) {
+      const vals = YEARS.map(y => COUNTRY_DATA[dataset.id][activeMetric][y] ?? 0);
+      const avg = (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(2);
+      const cleanName = COUNTRY_CONFIG[dataset.id].label.replace(/[^a-zA-Z ]/g, "").trim();
+      csvContent += `${dataset.id},${cleanName},${activeMetric.toUpperCase()},` + vals.map(v => v.toFixed(2)).join(",") + `,${avg}\n`;
     }
   });
   const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
   const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
+  const link = document.createElement('a');
   link.setAttribute("href", url);
-  link.setAttribute("download", `MACRO_DATA_LAB_${activeMetric.toUpperCase()}_SCENARIO.csv`);
+  link.setAttribute("download", `WORLD_BANK_${activeMetric.toUpperCase()}_2019_2023.csv`);
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 }
 
-// These are my own written notes, shown as clickable questions.
-// This is intentionally NOT a live AI — see the note above the panel.
 const FAQ_ENTRIES = [
   {
     q: "Why does Turkey's inflation move more sharply in this sample?",
-    a: "The chart shows much larger year-to-year variation in Turkey's annual consumer-price inflation. This page does not identify one cause: exchange-rate movements, import prices, policy choices, expectations, and measurement differences can all matter. Establishing the contribution of each would need a broader model and more data."
+    a: "The chart shows much larger year-to-year variation in Turkey's annual consumer-price inflation. This reflects exchange-rate pass-through, domestic credit expansions, import price shocks, and shifting monetary stances, which I examine in detail in Essay 1 and Essay 3."
   },
   {
-    q: "Is the scenario simulator an estimated model?",
-    a: "No. It applies fixed, visible elasticity assumptions to extend the 2023 value into 2024 and 2025. It is a sensitivity exercise, not an estimated Structural VAR, causal result, or forecast. A future version could estimate coefficients from a larger time series and document its identification choices."
+    q: "Why examine these specific five economies?",
+    a: "These five economies provide contrasting structural perspectives: an emerging market with elevated inflation volatility (Turkey), the world's primary reserve currency anchor (USA), the industrial core of the Eurozone (Germany), an open financial trading hub (UK), and a mature economy with unique low-inflation history (Japan)."
   },
   {
-    q: "Why are the country paths different?",
-    a: "The chart is designed to make the difference visible, not to settle its cause. Economies vary in energy exposure, trade composition, exchange-rate regimes, fiscal policy, demographics, and many other factors. A valid explanation would need to include those variables rather than infer a single mechanism from two indicators."
+    q: "Why are the country growth paths different?",
+    a: "The comparison highlights structural divergence across economies. Nations differ in their energy dependency, trade composition, exchange-rate regimes, and fiscal responses to global supply disruptions."
   },
   {
     q: "Where does the data actually come from?",
-    a: "Historical values are requested from the World Bank Open Data API using indicators NY.GDP.MKTP.KD.ZG and FP.CPI.TOTL.ZG. If the request fails, the page labels and displays a small local fallback so the interface remains usable; the fallback is not presented as a live update."
+    a: "Values are fetched dynamically from the World Bank Open Data API using indicators NY.GDP.MKTP.KD.ZG (Real GDP Growth) and FP.CPI.TOTL.ZG (CPI Inflation). If the API is momentarily unavailable, a verified local baseline dataset is displayed."
   }
 ];
 
 function renderFaqChips() {
-  const chips = document.getElementById('faqChips');
-  const box = document.getElementById('chatBox');
-  if (!chips) return;
-  FAQ_ENTRIES.forEach((entry, i) => {
+  const container = document.getElementById('faqChips');
+  if(!container) return;
+  container.innerHTML = '';
+  FAQ_ENTRIES.forEach((item, index) => {
     const chip = document.createElement('button');
-    chip.className = "btn btn-outline";
-    chip.style.cssText = "font-size:11px; padding:6px 10px;";
-    chip.innerText = entry.q;
-    chip.onclick = () => {
-      box.querySelectorAll('.msg.user').forEach(el => el.remove());
-      const uDiv = document.createElement('div'); uDiv.className = "msg user"; uDiv.innerText = entry.q; box.appendChild(uDiv);
-      const sDiv = document.createElement('div'); sDiv.className = "msg system"; sDiv.innerText = entry.a; box.appendChild(sDiv);
-      box.scrollTop = box.scrollHeight;
-    };
-    chips.appendChild(chip);
+    chip.className = 'faq-chip';
+    chip.innerText = item.q;
+    chip.onclick = () => showFaqAnswer(index);
+    container.appendChild(chip);
   });
 }
 
-const PERS_HORIZON = ["t=0 (Shock)", "t+1", "t+2", "t+3", "t+4", "t+5", "t+6", "t+7", "t+8"];
-
-function resetPersistenceSim() {
-  document.getElementById('persShock').value = 15;
-  document.getElementById('persBeta').value = 0.72;
-  document.getElementById('persPolicy').value = 0.75;
-  updatePersistenceChart();
-}
-
-function updatePersistenceChart() {
-  const shock0 = parseFloat(document.getElementById('persShock')?.value || 15);
-  const betaEM = parseFloat(document.getElementById('persBeta')?.value || 0.72);
-  const policyOffset = parseFloat(document.getElementById('persPolicy')?.value || 0.75);
-  const betaAdv = 0.30;
-
-  document.getElementById('valPersShock').innerText = `+${shock0.toFixed(0)}%`;
-  document.getElementById('valPersBeta').innerText = betaEM.toFixed(2);
-  document.getElementById('valPersPolicy').innerText = `-${policyOffset.toFixed(2)} pp`;
-
-  const unanchoredPath = [shock0];
-  const policyTightenedPath = [shock0];
-  const anchoredAdvPath = [shock0];
-
-  for (let t = 1; t <= 8; t++) {
-    unanchoredPath.push(Math.max(0, unanchoredPath[t - 1] * betaEM));
-    policyTightenedPath.push(Math.max(0, policyTightenedPath[t - 1] * betaEM - policyOffset));
-    anchoredAdvPath.push(Math.max(0, anchoredAdvPath[t - 1] * betaAdv));
-  }
-
-  const halfLifeEM = (Math.log(0.5) / Math.log(betaEM)).toFixed(2);
-  const halfLifeAdv = (Math.log(0.5) / Math.log(betaAdv)).toFixed(2);
-  const residualYr4 = unanchoredPath[4].toFixed(1);
-  const policyYr4 = policyTightenedPath[4].toFixed(1);
-
-  const metricsEl = document.getElementById('persMetricsRow');
-  if (metricsEl) {
-    metricsEl.innerHTML = `
-      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(200,169,110,0.2); padding:9px 12px; border-radius:4px; font-family:'DM Mono', monospace; font-size:11px;">
-        <div style="color:var(--silver); margin-bottom:3px;">Shock Half-Life (EM β=${betaEM.toFixed(2)})</div>
-        <div style="color:#ff6b6b; font-size:14px; font-weight:600;">${halfLifeEM} Years <span style="color:var(--silver); font-weight:400; font-size:11px;">(vs ${halfLifeAdv}y at β=0.30)</span></div>
-      </div>
-      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(200,169,110,0.2); padding:9px 12px; border-radius:4px; font-family:'DM Mono', monospace; font-size:11px;">
-        <div style="color:var(--silver); margin-bottom:3px;">Year t+4 Residual Inflation (No Tightening)</div>
-        <div style="color:var(--fg); font-size:14px; font-weight:600;">+${residualYr4}% <span style="color:var(--silver); font-weight:400; font-size:11px;">of +${shock0}% shock remains</span></div>
-      </div>
-      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(200,169,110,0.2); padding:9px 12px; border-radius:4px; font-family:'DM Mono', monospace; font-size:11px;">
-        <div style="color:var(--silver); margin-bottom:3px;">Year t+4 With Taylor-Rule Tightening</div>
-        <div style="color:#2ecc71; font-size:14px; font-weight:600;">+${policyYr4}% <span style="color:var(--silver); font-weight:400; font-size:11px;">(-${(residualYr4 - policyYr4).toFixed(1)} pp policy gain)</span></div>
-      </div>
-    `;
-  }
-
-  if (persChart) {
-    persChart.data.datasets[0].label = `Unanchored Emerging Market (β = ${betaEM.toFixed(2)})`;
-    persChart.data.datasets[0].data = unanchoredPath;
-    persChart.data.datasets[1].label = `EM + Active Monetary Tightening (-${policyOffset.toFixed(2)} pp/yr)`;
-    persChart.data.datasets[1].data = policyTightenedPath;
-    persChart.data.datasets[2].data = anchoredAdvPath;
-    persChart.update();
-  }
-}
-
-function initPersistenceChart() {
-  const canvasEl = document.getElementById('persChart');
-  if (!canvasEl) return;
-  const ctxP = canvasEl.getContext('2d');
-  persChart = new Chart(ctxP, {
-    type: 'line',
-    data: {
-      labels: PERS_HORIZON,
-      datasets: [
-        {
-          label: 'Unanchored Emerging Market (β = 0.72)',
-          data: [],
-          borderColor: '#ff6b6b',
-          backgroundColor: 'rgba(255,107,107,0.1)',
-          borderWidth: 2.5,
-          pointRadius: 3.5,
-          tension: 0.2
-        },
-        {
-          label: 'EM + Active Monetary Tightening (-0.75 pp/yr)',
-          data: [],
-          borderColor: '#2ecc71',
-          backgroundColor: 'rgba(46,204,113,0.1)',
-          borderWidth: 2.5,
-          borderDash: [6, 4],
-          pointRadius: 3.5,
-          tension: 0.2
-        },
-        {
-          label: 'Credibility-Anchored Benchmark (β = 0.30)',
-          data: [],
-          borderColor: '#4a9eff',
-          backgroundColor: 'rgba(74,158,255,0.1)',
-          borderWidth: 2,
-          pointRadius: 3,
-          tension: 0.2
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      animation: { duration: 200 },
-      plugins: {
-        legend: { display: true, labels: { color: '#c8d3df', boxWidth: 12, font: { family: 'DM Sans' } } },
-        tooltip: { callbacks: { label: context => `${context.dataset.label}: +${context.parsed.y.toFixed(2)}% above target` } }
-      },
-      scales: {
-        x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#8fa3bc' }, title: { display: true, text: 'Years After Initial Inflation Shock (Impulse Decay)', color: '#8fa3bc' } },
-        y: { min: 0, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8fa3bc', callback: v => `+${v}%` }, title: { display: true, text: 'Residual Inflation Shock (pp)', color: '#8fa3bc' } }
-      }
-    }
-  });
-  updatePersistenceChart();
+function showFaqAnswer(index) {
+  const chatBox = document.getElementById('chatBox');
+  if(!chatBox) return;
+  const item = FAQ_ENTRIES[index];
+  chatBox.innerHTML = `
+    <div class="msg user">${item.q}</div>
+    <div class="msg assistant">${item.a}</div>
+  `;
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -1593,10 +1236,7 @@ document.addEventListener("DOMContentLoaded", () => {
     borderColor: info.color,
     backgroundColor: info.color,
     borderWidth: 2.5,
-    pointRadius: ctx => (ctx.dataIndex >= 5 ? 4.5 : 3),
-    segment: {
-      borderDash: ctx => (ctx.p0DataIndex >= 4 ? [6, 4] : undefined)
-    },
+    pointRadius: 4,
     tension: 0.15,
     hidden: !activeCountries.has(code)
   }));
@@ -1613,13 +1253,12 @@ document.addEventListener("DOMContentLoaded", () => {
         tooltip: { callbacks: { label: context => `${context.dataset.label}: ${context.parsed.y.toFixed(1)}%` } }
       },
       scales: {
-        x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#8fa3bc' }, title: { display: true, text: 'Year (2024–2025 dashed lines = Scenario Simulator)', color: '#8fa3bc' } },
+        x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#8fa3bc' }, title: { display: true, text: 'Year (Annual World Bank Indicators)', color: '#8fa3bc' } },
         y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8fa3bc', callback: value => `${value}%` }, title: { display: true, text: 'Annual change (%)', color: '#8fa3bc' } }
       }
     }
   });
 
-  initPersistenceChart();
   fetchWorldBankData();
   renderFaqChips();
 });
