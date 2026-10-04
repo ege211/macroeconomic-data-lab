@@ -382,7 +382,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
         </div>
         <div class="home-stat">
           <div class="num">4</div>
-          <div class="label">Code Repositories</div>
+          <div class="label">GitHub Projects</div>
         </div>
         <div class="home-stat">
           <div class="num">10</div>
@@ -483,14 +483,14 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
         <div class="card" style="border-left:4px solid var(--accent); background:linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); margin-top:20px;">
           <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
             <div style="flex:1; min-width:280px;">
-              <div class="badge" style="background:#e0e7ff; color:#1e3a8a; margin-bottom:8px; font-weight:600;">Open-Source Code Repositories</div>
-              <h3 style="font-family:'Playfair Display', serif; font-size:19px; color:var(--accent); margin:0 0 6px 0;">Interactive Research Labs on GitHub</h3>
+              <div class="badge" style="background:#e0e7ff; color:#1e3a8a; margin-bottom:8px; font-weight:600;">GitHub Projects</div>
+              <h3 style="font-family:'Playfair Display', serif; font-size:19px; color:var(--accent); margin:0 0 6px 0;">Research Projects on GitHub</h3>
               <p style="font-size:13.5px; color:#475569; margin:0; line-height:1.55;">
-                Explore my 4 open-source student research repositories featuring custom Python workflows, SEC EDGAR filing extractors, Premier League sports analytics, and World Bank banking crisis early warning indicators.
+                Four projects with published data and files: Arsenal FC finances, company annual reports, banking-crisis warning signs, and how investment banks use their profits.
               </p>
             </div>
             <button class="btn" onclick="document.getElementById('nav-coderepos').click();" style="align-self:center; white-space:nowrap; padding:10px 18px;">
-              Explore 4 Research Repositories &rarr;
+              See the 4 projects &rarr;
             </button>
           </div>
         </div>
@@ -501,210 +501,89 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
     <!-- 4 OPEN-SOURCE RESEARCH REPOSITORIES SECTION -->
     <!-- ========================================== -->
     <div id="coderepos" class="section" role="tabpanel">
-      <div class="section-title">Open-Source <span>Research Repositories</span></div>
+      <div class="section-title">Research <span>Repositories</span></div>
       <div class="section-subtitle">
-        Independent high school empirical projects combining Python programming, public APIs, and financial statement analysis to explore practical questions in economics and finance.
+        Four projects with their data and files published on GitHub. Each one starts from a question I wanted to answer about economics or finance.
       </div>
 
       <div style="display:grid; grid-template-columns:1fr; gap:22px; margin-top:20px;">
-
-        <!-- REPO 1: Arsenal FC Sports Finance -->
         <div class="pub-card" style="border:1px solid #e2e8f0; border-radius:8px; padding:22px; background:#ffffff; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
           <div class="pub-metadata" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
-            <span style="background:#eff6ff; color:#1e40af; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Sports Analytics &amp; Economics</span>
-            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Python &amp; Pandas</span>
-            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">10 Seasons (2015/16–2024/25)</span>
+            <span style="background:#eff6ff; color:#1e40af; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Sports Economics</span>
+            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Arsenal FC annual reports</span>
+            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">10 seasons (2015/16–2024/25)</span>
           </div>
-
-          <h3 class="pub-title" style="font-family:'Playfair Display', serif; font-size:20px; color:#0f172a; margin:0 0 6px 0;">
-            Arsenal FC: Sports Finance, Transfer Spending &amp; Pitch Performance
-          </h3>
-          <div class="pub-subtitle" style="font-size:13.5px; color:#64748b; margin-bottom:12px; font-weight:500;">
-            A Longitudinal Case Study of 10 Seasons of Financial Accounts, Squad Investments, and Premier League Results
+          <h3 class="pub-title" style="font-family:'Playfair Display', serif; font-size:20px; color:#0f172a; margin:0 0 10px 0;">Arsenal FC: Club Finances and Results on the Pitch</h3>
+          <div style="background:rgba(30,58,138,0.04); border-left:3px solid var(--accent); padding:10px 14px; margin-bottom:12px; border-radius:0 6px 6px 0; font-size:13px; color:#1e293b; line-height:1.5;">
+            <strong>Question:</strong> To what extent were changes in Arsenal’s revenue, wages and transfer spending associated with changes in league performance?
           </div>
-          <div class="pub-author" style="font-size:12.5px; color:#475569; margin-bottom:12px;">
-            <strong>Author &amp; Maintainer:</strong> Ege Umut Can — Lead Student Researcher
-          </div>
-
-          <div style="background:rgba(30,58,138,0.04); border-left:3px solid var(--accent); padding:10px 14px; margin-bottom:14px; border-radius:0 6px 6px 0; font-size:13px; color:#1e293b; line-height:1.5;">
-            <strong>Guiding Inquiry:</strong> "As a competitive high school football player and economics student, I wanted to know: Does spending more money on transfer fees and player salaries guarantee winning more points in the Premier League?"
-          </div>
-
           <div style="font-size:13.5px; color:#334155; line-height:1.6; margin-bottom:14px;">
-            <p style="margin:0 0 8px 0;">
-              <strong>What I Built &amp; Analyzed:</strong> I gathered 10 seasons of Arsenal FC’s audited annual financial statements and match statistics. Using Python and Pandas, I calculated net transfer spend, total wage bills, and points per season to understand how financial resources translate into on-pitch performance.
-            </p>
-            <p style="margin:0;">
-              <strong>Student Reflection:</strong> I discovered that while sustained wage investment is essential to build squad depth and stay near the top over several years, individual 90-minute matches still involve high randomness and luck. Money alone cannot replace tactical discipline, locker-room culture, and smart leadership.
-            </p>
+            <p style="margin:0 0 8px 0;"><strong>What the project does:</strong> Builds a 10-season dataset from Arsenal’s published annual reports and public match statistics (points, goal difference, expected-goal difference), then compares how the financial and sporting numbers moved together, including one-season lags.</p>
+            <p style="margin:0;"><strong>Main finding:</strong> With only ten seasons from one club, the project describes associations rather than proving cause and effect. Spending and wages moved with stronger results over time, but the pattern is not a simple “more money, more points” rule.</p>
           </div>
-
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">Python 3.10</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">Pandas</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">Matplotlib</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">Financial Ratio Analysis</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">MIT Open Source</span>
-          </div>
-
           <div class="pub-actions" style="display:flex; flex-wrap:wrap; gap:10px;">
-            <a class="btn" href="https://github.com/ege211/sports-finance-performance" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px;">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              View Repository on GitHub
-            </a>
-            <button class="btn btn-outline" onclick="openPdfModal('papers/Arsenal-FC-Football-Finance.pdf', 'Arsenal FC — Sports Finance &amp; Sporting Performance')">
-              📖 Project Methodology &amp; Models &rarr;
-            </button>
+            <a class="btn" href="https://github.com/ege211/sports-finance-performance" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
+            <button class="btn btn-outline" onclick="openPdfModal('papers/Arsenal-FC-Football-Finance.pdf', 'Arsenal FC — Club Finances and Results')">📄 Read Paper</button>
           </div>
         </div>
 
-        <!-- REPO 2: AI-Assisted Equity Valuation -->
         <div class="pub-card" style="border:1px solid #e2e8f0; border-radius:8px; padding:22px; background:#ffffff; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
           <div class="pub-metadata" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
-            <span style="background:#eff6ff; color:#1e40af; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Corporate Valuation &amp; Applied Tech</span>
-            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">SEC EDGAR Data Pipeline</span>
-            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Form 10-K Filings</span>
+            <span style="background:#eff6ff; color:#1e40af; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Company Valuation</span>
+            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">SEC Form 10-K filings</span>
+            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Python · Streamlit</span>
           </div>
-
-          <h3 class="pub-title" style="font-family:'Playfair Display', serif; font-size:20px; color:#0f172a; margin:0 0 6px 0;">
-            AI-Assisted Equity Valuation: Reading Corporate Annual Reports (Form 10-K)
-          </h3>
-          <div class="pub-subtitle" style="font-size:13.5px; color:#64748b; margin-bottom:12px; font-weight:500;">
-            A High-School Student Workflow to Parse Audited SEC Filings and Model Fundamental Business Health
+          <h3 class="pub-title" style="font-family:'Playfair Display', serif; font-size:20px; color:#0f172a; margin:0 0 10px 0;">Do Company Annual Reports Help Predict Future Profit Margins?</h3>
+          <div style="background:rgba(30,58,138,0.04); border-left:3px solid var(--accent); padding:10px 14px; margin-bottom:12px; border-radius:0 6px 6px 0; font-size:13px; color:#1e293b; line-height:1.5;">
+            <strong>Question:</strong> Does the written text in U.S. company annual reports (Form 10-K) add useful information for predicting future operating margins, beyond standard accounting numbers?
           </div>
-          <div class="pub-author" style="font-size:12.5px; color:#475569; margin-bottom:12px;">
-            <strong>Author &amp; Maintainer:</strong> Ege Umut Can — Lead Student Researcher
-          </div>
-
-          <div style="background:rgba(30,58,138,0.04); border-left:3px solid var(--accent); padding:10px 14px; margin-bottom:14px; border-radius:0 6px 6px 0; font-size:13px; color:#1e293b; line-height:1.5;">
-            <strong>Guiding Inquiry:</strong> "How can an aspiring economics student learn to read dense 150-page corporate annual reports and calculate fundamental valuation metrics without getting lost in legal jargon?"
-          </div>
-
           <div style="font-size:13.5px; color:#334155; line-height:1.6; margin-bottom:14px;">
-            <p style="margin:0 0 8px 0;">
-              <strong>What I Built &amp; Analyzed:</strong> I created a Python-based pipeline that downloads public Form 10-K annual reports from the U.S. SEC EDGAR archive. The scripts parse primary balance sheets and cash flow statements, computing fundamental valuation ratios (P/E, EV/EBITDA, Operating Margins) and basic discounted cash flow (DCF) scenarios.
-            </p>
-            <p style="margin:0;">
-              <strong>Student Reflection:</strong> This project demystified company financial statements for me. I learned that daily stock price movements are often noisy, while sustainable business value is anchored in predictable cash generation, manageable debt, and disciplined capital allocation.
-            </p>
+            <p style="margin:0 0 8px 0;"><strong>What the project does:</strong> Collects 10-K filings and financial data from the SEC EDGAR database, only uses information that was public at each date (no “looking ahead”), and includes a simple discounted-cash-flow valuation tool and a dashboard.</p>
+            <p style="margin:0;"><strong>Main finding:</strong> Tested in time order, the text-based features did not clearly beat the plain accounting ratios. A negative result, but an honest one.</p>
           </div>
-
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">Python 3.9</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">SEC EDGAR API</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">Financial Statement Analysis</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">DCF Scenarios</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">MIT Open Source</span>
-          </div>
-
           <div class="pub-actions" style="display:flex; flex-wrap:wrap; gap:10px;">
-            <a class="btn" href="https://github.com/ege211/ai-assisted-equity-valuation" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px;">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              View Repository on GitHub
-            </a>
-            <button class="btn btn-outline" onclick="window.open('https://github.com/ege211/ai-assisted-equity-valuation#readme', '_blank')">
-              📖 Project Methodology &amp; Models &rarr;
-            </button>
+            <a class="btn" href="https://github.com/ege211/ai-assisted-equity-valuation" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
+            <a class="btn btn-outline" href="https://github.com/ege211/ai-assisted-equity-valuation#readme" target="_blank" rel="noopener noreferrer">📖 Project README</a>
           </div>
         </div>
 
-        <!-- REPO 3: Global Financial Crisis Early Warning System -->
         <div class="pub-card" style="border:1px solid #e2e8f0; border-radius:8px; padding:22px; background:#ffffff; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
           <div class="pub-metadata" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
-            <span style="background:#eff6ff; color:#1e40af; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Financial Stability &amp; Macroeconomics</span>
-            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">World Bank Historical API</span>
-            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Credit Risk Indicators</span>
+            <span style="background:#eff6ff; color:#1e40af; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Banking Crises</span>
+            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">World Bank + IMF crisis dates</span>
+            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Python</span>
           </div>
-
-          <h3 class="pub-title" style="font-family:'Playfair Display', serif; font-size:20px; color:#0f172a; margin:0 0 6px 0;">
-            Global Financial Crisis Early Warning Signals &amp; Banking System Health
-          </h3>
-          <div class="pub-subtitle" style="font-size:13.5px; color:#64748b; margin-bottom:12px; font-weight:500;">
-            Examining Historical Credit Booms, Non-Performing Loans, and Liquidity Cushions Across International Economies
+          <h3 class="pub-title" style="font-family:'Playfair Display', serif; font-size:20px; color:#0f172a; margin:0 0 10px 0;">Can Public Data Give Early Warning of Banking Crises?</h3>
+          <div style="background:rgba(30,58,138,0.04); border-left:3px solid var(--accent); padding:10px 14px; margin-bottom:12px; border-radius:0 6px 6px 0; font-size:13px; color:#1e293b; line-height:1.5;">
+            <strong>Question:</strong> Using publicly available economic data, can simple models flag countries at higher risk of a systemic banking crisis one year ahead?
           </div>
-          <div class="pub-author" style="font-size:12.5px; color:#475569; margin-bottom:12px;">
-            <strong>Author &amp; Maintainer:</strong> Ege Umut Can — Lead Student Researcher
-          </div>
-
-          <div style="background:rgba(30,58,138,0.04); border-left:3px solid var(--accent); padding:10px 14px; margin-bottom:14px; border-radius:0 6px 6px 0; font-size:13px; color:#1e293b; line-height:1.5;">
-            <strong>Guiding Inquiry:</strong> "Why do sudden banking crises happen, and what early warning signs can students identify in publicly available economic data?"
-          </div>
-
           <div style="font-size:13.5px; color:#334155; line-height:1.6; margin-bottom:14px;">
-            <p style="margin:0 0 8px 0;">
-              <strong>What I Built &amp; Analyzed:</strong> I collected historical banking indicators from the World Bank API across multiple international crisis episodes. Using Python, I evaluated trends in domestic private-sector credit growth, loan-to-deposit ratios, and non-performing loan spikes leading into economic slowdowns.
-            </p>
-            <p style="margin:0;">
-              <strong>Student Reflection:</strong> I learned that rapid, uncontrolled credit growth is often the most dangerous red flag in an economy. When banks expand lending too aggressively without sufficient equity cushions, even minor liquidity shocks can ripple across the entire financial system.
-            </p>
+            <p style="margin:0 0 8px 0;"><strong>What the project does:</strong> Combines World Bank indicators for 76 economies (1990–2025) with the IMF’s list of banking-crisis dates, and tests simple models year by year (2000–2008), training only on past data each time.</p>
+            <p style="margin:0;"><strong>Main finding:</strong> Adding credit-growth measures helped, but most of the improvement came from the period just before the 2008 global financial crisis, so the results were not stable across time.</p>
           </div>
-
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">Python 3.12</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">World Bank API</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">Banking Stability</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">Historical Risk Modeling</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">MIT Open Source</span>
-          </div>
-
           <div class="pub-actions" style="display:flex; flex-wrap:wrap; gap:10px;">
-            <a class="btn" href="https://github.com/ege211/global-financial-crisis-ews" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px;">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              View Repository on GitHub
-            </a>
-            <button class="btn btn-outline" onclick="openPdfModal('papers/Borsa-Istanbul-Fragility-of-Liquidity.pdf', 'The Fragility of Liquidity in Banking &amp; Asset Management')">
-              📖 Project Methodology &amp; Models &rarr;
-            </button>
+            <a class="btn" href="https://github.com/ege211/global-financial-crisis-ews" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
+            <a class="btn btn-outline" href="https://github.com/ege211/global-financial-crisis-ews#readme" target="_blank" rel="noopener noreferrer">📖 Project README</a>
           </div>
         </div>
 
-        <!-- REPO 4: Strategic Capital Allocation in Investment Banking -->
         <div class="pub-card" style="border:1px solid #e2e8f0; border-radius:8px; padding:22px; background:#ffffff; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
           <div class="pub-metadata" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
-            <span style="background:#eff6ff; color:#1e40af; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Corporate Strategy &amp; Banking</span>
-            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Comparative 10-K Analysis</span>
-            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Major U.S. Firms (2020–2024)</span>
+            <span style="background:#eff6ff; color:#1e40af; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Investment Banking</span>
+            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">40 SEC 10-K reports</span>
+            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">8 U.S. firms (2020–2024)</span>
           </div>
-
-          <h3 class="pub-title" style="font-family:'Playfair Display', serif; font-size:20px; color:#0f172a; margin:0 0 6px 0;">
-            Strategic Capital Allocation in U.S. Investment Banking (2020–2024)
-          </h3>
-          <div class="pub-subtitle" style="font-size:13.5px; color:#64748b; margin-bottom:12px; font-weight:500;">
-            A Comparative Student Investigation into How Leading Wall Street Banks Allocate Capital Between Reserves, Dividends, and Growth
+          <h3 class="pub-title" style="font-family:'Playfair Display', serif; font-size:20px; color:#0f172a; margin:0 0 10px 0;">How Do Investment Banks Use Their Profits?</h3>
+          <div style="background:rgba(30,58,138,0.04); border-left:3px solid var(--accent); padding:10px 14px; margin-bottom:12px; border-radius:0 6px 6px 0; font-size:13px; color:#1e293b; line-height:1.5;">
+            <strong>Question:</strong> How did eight U.S. investment-banking firms split their capital between keeping reserves, reinvesting, and paying shareholders between 2020 and 2024?
           </div>
-          <div class="pub-author" style="font-size:12.5px; color:#475569; margin-bottom:12px;">
-            <strong>Author &amp; Maintainer:</strong> Ege Umut Can — Lead Student Researcher
-          </div>
-
-          <div style="background:rgba(30,58,138,0.04); border-left:3px solid var(--accent); padding:10px 14px; margin-bottom:14px; border-radius:0 6px 6px 0; font-size:13px; color:#1e293b; line-height:1.5;">
-            <strong>Guiding Inquiry:</strong> "How do leading global investment banks (such as Bank of America, Citi, and Goldman Sachs) decide how much capital to retain for safety versus returning to shareholders during shifting interest rate environments?"
-          </div>
-
           <div style="font-size:13.5px; color:#334155; line-height:1.6; margin-bottom:14px;">
-            <p style="margin:0 0 8px 0;">
-              <strong>What I Built &amp; Analyzed:</strong> I studied 5 years of public annual financial disclosures (2020–2024) across major U.S. investment banks. I compared their regulatory Common Equity Tier 1 (CET1) capital buffers, share buyback programs, and advisory performance across changing market cycles.
-            </p>
-            <p style="margin:0;">
-              <strong>Student Reflection:</strong> I observed that banks must constantly balance regulatory safety rules with growth ambitions. Firms that maintained disciplined, conservative balance sheets were able to support clients steadily during market turbulence, while overly aggressive strategies increased vulnerability.
-            </p>
+            <p style="margin:0 0 8px 0;"><strong>What the project does:</strong> Collects figures from 40 annual reports of Goldman Sachs, Morgan Stanley, JPMorgan, Stifel, Evercore, Lazard, Moelis and Jefferies, and compares large banks with smaller advisory firms.</p>
+            <p style="margin:0;"><strong>Main finding:</strong> Dividends grew steadily while share buybacks rose and fell with profits. Large banks kept regulatory capital (CET1) ratios of roughly 13–17%, and buybacks showed almost no link with the next year’s return on equity.</p>
           </div>
-
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">Comparative Analysis</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">Form 10-K Audits</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">Capital Adequacy (CET1)</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">Banking Governance</span>
-            <span style="background:#f8fafc; border:1px solid #cbd5e1; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; color:#475569;">MIT Open Source</span>
-          </div>
-
           <div class="pub-actions" style="display:flex; flex-wrap:wrap; gap:10px;">
-            <a class="btn" href="https://github.com/ege211/strategic-capital-allocation-investment-banking" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px;">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              View Repository on GitHub
-            </a>
-            <button class="btn btn-outline" onclick="openPdfModal('papers/Strategic-Capital-Allocation-Investment-Banking.pdf', 'Strategic Capital Allocation in Investment Banking')">
-              📖 Project Methodology &amp; Models &rarr;
-            </button>
+            <a class="btn" href="https://github.com/ege211/strategic-capital-allocation-investment-banking" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
+            <button class="btn btn-outline" onclick="openPdfModal('papers/Strategic-Capital-Allocation-Investment-Banking.pdf', 'How Do Investment Banks Use Their Profits?')">📄 Read Paper</button>
           </div>
         </div>
 
