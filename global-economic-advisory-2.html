@@ -354,15 +354,13 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
     <span>FMV Işık High School, Istanbul (Class of 2027)</span>
     <span>·</span>
     <a href="#" onclick="openPdfModal('papers/Ege-Umut-Can-Academic-CV.pdf', 'Ege Umut Can — Academic CV (English)'); return false;" style="color:var(--accent); text-decoration:none; font-weight:600;">📄 Academic CV (EN)</a>
-    <span>·</span>
-    <a href="#" onclick="openPdfModal('papers/Ege-Umut-Can-CV-Turkce.pdf', 'Ege Umut Can — Özgeçmiş (Türkçe)'); return false;" style="color:var(--accent); text-decoration:none; font-weight:600;">📄 CV (TR)</a>
   </div>
 </header>
 
 <nav role="tablist" aria-label="Project sections">
   <button class="active" role="tab" aria-selected="true" aria-controls="home" onclick="show('home', this)">Project &amp; Research Map</button>
   <button role="tab" aria-selected="false" aria-controls="coderepos" id="nav-coderepos" onclick="show('coderepos', this)">Research Repositories (4)</button>
-  <button role="tab" aria-selected="false" aria-controls="research" id="nav-research" onclick="show('research', this)">Research &amp; Essays (9)</button>
+  <button role="tab" aria-selected="false" aria-controls="research" id="nav-research" onclick="show('research', this)">Research &amp; Essays (8)</button>
   <button role="tab" aria-selected="false" aria-controls="datalab" id="nav-datalab" onclick="show('datalab', this)">Macro Data Lab</button>
   <button role="tab" aria-selected="false" aria-controls="reading" id="nav-reading" onclick="show('reading', this)">Reading List &amp; Influences (6)</button>
   <button role="tab" aria-selected="false" aria-controls="methodology" onclick="show('methodology', this)">Methods &amp; Sources</button>
@@ -385,11 +383,11 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="label">GitHub Projects</div>
         </div>
         <div class="home-stat">
-          <div class="num">9</div>
+          <div class="num">8</div>
           <div class="label">Papers &amp; Essays</div>
         </div>
         <div class="home-text">
-          Macroeconomic Data Lab combines reproducible public data with interactive visualisation and original written research. It retrieves annual real GDP growth and consumer-price inflation for Turkey, the United States, Germany, the United Kingdom, and Japan from the World Bank API, alongside two Data Lab research notes and seven macroeconomic essays, working papers, and case studies available in the <a href="#research" onclick="document.getElementById('nav-research').click(); return false;">Research &amp; Essays</a> archive.
+          Macroeconomic Data Lab combines reproducible public data with interactive visualisation and original written research. It retrieves annual real GDP growth and consumer-price inflation for Turkey, the United States, Germany, the United Kingdom, and Japan from the World Bank API, alongside eight essays, working papers and case studies available in the <a href="#research" onclick="document.getElementById('nav-research').click(); return false;">Research &amp; Essays</a> archive.
         </div>
       </div>
 
@@ -412,7 +410,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
       <div class="card">
         <h3 style="font-family:'Playfair Display', serif; font-size:20px; color:var(--fg); margin-bottom:6px;">Conceptual Research <span style="color:var(--accent)">Architecture</span></h3>
         <p style="font-size:13px; color:var(--fg-dim); line-height:1.6;">
-          How the nine written pieces and two interactive simulators in this portfolio connect across four analytical themes—moving from observations on Turkey’s inflation and currency dynamics to formal persistence modelling, capital-market liquidity runs, and comparative institutional economics. Click any title below to read the PDF directly:
+          How the eight written pieces and the interactive Data Lab in this portfolio connect across four analytical themes—moving from observations on Turkey’s inflation and currency dynamics to capital-market liquidity runs, and comparative institutional economics. Click any title below to read the PDF directly:
         </p>
 
         <div class="pillar-grid">
@@ -432,12 +430,9 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 
           <div class="pillar-card">
             <div class="pillar-tag">Pillar II · Empirical Transmission &amp; Data Lab</div>
-            <div class="pillar-title">Inflation Persistence (β ≈ 0.72) &amp; Pass-Through</div>
-            <div class="pillar-desc">Panel-data estimation of lagged inflation persistence across emerging markets, exchange-rate pass-through channels, and World Bank API scenario notes.</div>
+            <div class="pillar-title">Comparing Growth &amp; Inflation Across Economies</div>
+            <div class="pillar-desc">Live World Bank data comparing real GDP growth and consumer-price inflation in Turkey, the United States, Germany, the United Kingdom and Japan, 2019 to 2023.</div>
             <div class="pillar-links">
-              <button class="pillar-link" onclick="openPdfModal('papers/WP-01-Inflation-Persistence-Monetary-Policy.pdf', 'Inflation Persistence and Monetary Policy Effectiveness (WP-01)')">
-                <span>📄 WP-01: Inflation Persistence &amp; Monetary Policy</span><span style="color:var(--accent)">6p ↗</span>
-              </button>
               <button class="pillar-link" onclick="document.getElementById('nav-datalab').click()">
                 <span>📊 World Bank Comparative Data Lab</span><span style="color:var(--accent)">Live →</span>
               </button>
@@ -449,7 +444,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
             <div class="pillar-title">Liquidity Mismatch &amp; Contagion in Borsa Istanbul</div>
             <div class="pillar-desc">How T+1 daily redemption promises in open-ended TEFAS funds holding low-float equities trigger fire-sales, VIOP margin spirals, and SPK moral hazard dilemmas.</div>
             <div class="pillar-links">
-              <button class="pillar-link" onclick="openPdfModal('papers/Borsa-Istanbul-Fragility-of-Liquidity.pdf', 'The Fragility of Liquidity: Asset Management Runs and Fire-Sale Contagion in Borsa Istanbul')">
+              <button class="pillar-link" onclick="openPdfModal('papers/Borsa-Istanbul-Fragility-of-Liquidity.pdf', 'The Fragility of Liquidity: Fund Runs, Fire Sales and Regulatory Intervention in Borsa Istanbul')">
                 <span>📄 The Fragility of Liquidity in Borsa Istanbul</span><span style="color:var(--accent)">4p ↗</span>
               </button>
               <button class="pillar-link" onclick="document.getElementById('nav-datalab').click()">
@@ -589,12 +584,12 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 
     <div id="research" class="section" role="tabpanel">
       <div class="section-title">Research <span>Archive &amp; Essays</span></div>
-      <div class="section-subtitle">Independent student working papers, Data Lab research notes, macroeconomic essays, and strategic business case studies. Read directly in your browser or download as PDF.</div>
+      <div class="section-subtitle">Independent student working papers, macroeconomic essays and business case studies. Read directly in your browser or download as PDF.</div>
       
       <div class="filter-bar" role="group" aria-label="Filter publications by category">
-        <button class="filter-chip active" onclick="filterPapers('all', this)">All Publications (9)</button>
+        <button class="filter-chip active" onclick="filterPapers('all', this)">All Publications (8)</button>
         <button class="filter-chip" onclick="filterPapers('strategy', this)">Corporate Strategy &amp; Finance (3)</button>
-        <button class="filter-chip" onclick="filterPapers('macro', this)">Monetary Policy &amp; Markets (4)</button>
+        <button class="filter-chip" onclick="filterPapers('macro', this)">Monetary Policy &amp; Markets (3)</button>
         <button class="filter-chip" onclick="filterPapers('debates', this)">Political Economy &amp; Debates (2)</button>
       </div>
 
@@ -607,7 +602,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
             <span>4 Pages</span>
             <span>Capital Markets &amp; Microstructure</span>
           </div>
-          <h3 class="pub-title">The Fragility of Liquidity: Asset Management Runs, Fire-Sale Contagion, and Macro-prudential Intervention in Borsa Istanbul</h3>
+          <h3 class="pub-title">The Fragility of Liquidity: Fund Runs, Fire Sales and Regulatory Intervention in Borsa Istanbul</h3>
           <div class="pub-subtitle">Market Microstructure, TEFAS Redemption Mismatches, and Regulatory Trade-offs</div>
           <div class="pub-author">Independent Student Research Essay</div>
           <p class="pub-abstract">
@@ -621,34 +616,8 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
             <span>Macro-prudential Policy</span>
           </div>
           <div class="pub-actions">
-            <button class="btn" onclick="openPdfModal('papers/Borsa-Istanbul-Fragility-of-Liquidity.pdf', 'The Fragility of Liquidity: Asset Management Runs and Fire-Sale Contagion in Borsa Istanbul')">📖 Read PDF</button>
+            <button class="btn" onclick="openPdfModal('papers/Borsa-Istanbul-Fragility-of-Liquidity.pdf', 'The Fragility of Liquidity: Fund Runs, Fire Sales and Regulatory Intervention in Borsa Istanbul')">📖 Read PDF</button>
             <a class="btn btn-outline" href="papers/Borsa-Istanbul-Fragility-of-Liquidity.pdf" download="Borsa-Istanbul-Fragility-of-Liquidity.pdf">⬇ Download PDF</a>
-          </div>
-        </article>
-
-
-        <!-- Working Paper WP-01 -->
-        <article class="pub-card" data-category="macro">
-          <div class="pub-metadata">
-            <span>Working Paper · WP-01</span>
-            <span>6 Pages</span>
-            <span>JEL: E31, E52, E58, F41</span>
-          </div>
-          <h3 class="pub-title">Inflation Persistence and Monetary Policy Effectiveness: Evidence from Emerging Economies</h3>
-          <div class="pub-author">Ege Umut Can — Independent High School Student Study</div>
-          <p class="pub-abstract">
-            <strong>Abstract:</strong> This paper investigates the relationship between inflation persistence and monetary policy effectiveness in emerging economies. Using panel data from a cross-section of emerging markets, an autoregressive model of inflation and a fixed-effects panel specification are evaluated to analyze monetary policy instruments, exchange rate dynamics, and institutional factors. Empirical results indicate that inflation persistence is high, with the lagged inflation coefficient estimated at approximately 0.72. While contractionary monetary policy exerts a statistically significant downward pressure on inflation, its effectiveness is constrained by structural vulnerabilities including exchange rate pass-through, fiscal imbalances, and weak institutional frameworks.
-          </p>
-          <div class="pub-taxonomies">
-            <span>Inflation Persistence</span>
-            <span>Monetary Policy</span>
-            <span>Emerging Economies</span>
-            <span>Panel Data</span>
-            <span>Taylor Rule</span>
-          </div>
-          <div class="pub-actions">
-            <button class="btn" onclick="openPdfModal('papers/WP-01-Inflation-Persistence-Monetary-Policy.pdf', 'Inflation Persistence and Monetary Policy Effectiveness (WP-01)')">📖 Read PDF</button>
-            <a class="btn btn-outline" href="papers/WP-01-Inflation-Persistence-Monetary-Policy.pdf" download="WP-01-Inflation-Persistence-Monetary-Policy.pdf">⬇ Download PDF</a>
           </div>
         </article>
 
@@ -935,25 +904,24 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
         </div>
 
         <div class="reading-card">
-          <div class="reading-concept">Hybrid New Keynesian Phillips Curve (NKPC) · Shaped Working Paper WP-01 &amp; Credibility Gap Essay</div>
+          <div class="reading-concept">Hybrid New Keynesian Phillips Curve (NKPC) · Shaped The Credibility Gap</div>
           <div class="reading-work">Jordi Galí &amp; Mark Gertler (1999) — <em>Inflation Dynamics: A Structural Econometric Analysis</em> &amp; Guillermo Calvo (1983) — <em>Staggered Prices</em></div>
           <p class="reading-note">
-            <strong>How it shaped my thinking:</strong> Galí and Gertler’s hybrid Phillips Curve specification helped me formalize a phenomenon I had witnessed firsthand in Turkey: why inflation keeps rising even after a central bank begins tightening. When institutional credibility erodes, price- and wage-setters abandon forward-looking targets and index their decisions to past inflation realizations. That shift from rational forward-looking expectations to adaptive backward-looking behavior is what produces the high autoregressive persistence coefficient (β ≈ 0.72) examined in WP-01.
+            <strong>How it shaped my thinking:</strong> Galí and Gertler’s hybrid Phillips Curve specification helped me formalize a phenomenon I had witnessed firsthand in Turkey: why inflation keeps rising even after a central bank begins tightening. When institutional credibility erodes, price- and wage-setters abandon forward-looking targets and index their decisions to past inflation realizations. That shift from forward-looking to backward-looking expectations is the mechanism I explore in my essay on the Turkish central bank.
           </p>
           <div class="pub-actions">
-            <button class="btn btn-outline" onclick="openPdfModal('papers/WP-01-Inflation-Persistence-Monetary-Policy.pdf', 'WP-01: Inflation Persistence and Monetary Policy Effectiveness')">📄 See in Working Paper WP-01</button>
             <button class="btn btn-outline" onclick="openPdfModal('papers/The-Credibility-Gap-Turkey-Central-Bank.pdf', 'The Credibility Gap: Turkey’s Central Bank')">📄 See in The Credibility Gap</button>
           </div>
         </div>
 
         <div class="reading-card">
-          <div class="reading-concept">Monetary Policy Rules &amp; Emerging Market Constraints · Shaped WP-01</div>
+          <div class="reading-concept">Monetary Policy Rules &amp; Emerging Market Constraints · Shaped The Lira Doesn’t Lie</div>
           <div class="reading-work">John B. Taylor (1993) — <em>Discretion Versus Policy Rules in Practice</em> &amp; Frederic S. Mishkin (2000) — <em>Inflation Targeting in Emerging-Market Countries</em></div>
           <p class="reading-note">
             <strong>How it shaped my thinking:</strong> Taylor (1993) demonstrates why nominal interest rates must rise more than one-for-one with inflation (the Taylor Principle) to raise the real interest rate and cool demand. Pairing Taylor’s rule with Mishkin (2000) clarified why monetary transmission is much more fragile in emerging economies: when fiscal dominance, foreign-currency liabilities, and high exchange-rate pass-through (ERPT) are present, interest-rate adjustments alone cannot anchor inflation without institutional and fiscal reform.
           </p>
           <div class="pub-actions">
-            <button class="btn btn-outline" onclick="openPdfModal('papers/WP-01-Inflation-Persistence-Monetary-Policy.pdf', 'WP-01: Inflation Persistence and Monetary Policy Effectiveness')">📄 See in Working Paper WP-01</button>
+            <button class="btn btn-outline" onclick="openPdfModal('papers/Essay3-The-Lira-Doesnt-Lie.pdf', 'The Lira Doesn’t Lie')">📄 See in The Lira Doesn’t Lie</button>
           </div>
         </div>
 
@@ -1050,10 +1018,6 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
         <div style="display:grid; grid-template-columns: 1fr auto; gap:6px;">
           <button class="btn" style="width:100%; text-align:center;" onclick="openPdfModal('papers/Ege-Umut-Can-Academic-CV.pdf', 'Ege Umut Can — Academic CV (English)')">📄 Academic CV (English)</button>
           <a class="btn btn-outline" style="padding:9px 12px; text-align:center;" href="papers/Ege-Umut-Can-Academic-CV.pdf" download="Ege-Umut-Can-Academic-CV.pdf" title="Download English CV PDF">⬇</a>
-        </div>
-        <div style="display:grid; grid-template-columns: 1fr auto; gap:6px;">
-          <button class="btn btn-outline" style="width:100%; text-align:center;" onclick="openPdfModal('papers/Ege-Umut-Can-CV-Turkce.pdf', 'Ege Umut Can — Özgeçmiş (Türkçe)')">📄 Özgeçmiş (Türkçe CV)</button>
-          <a class="btn btn-outline" style="padding:9px 12px; text-align:center;" href="papers/Ege-Umut-Can-CV-Turkce.pdf" download="Ege-Umut-Can-CV-Turkce.pdf" title="Download Türkçe CV PDF">⬇</a>
         </div>
         <a class="btn btn-outline" style="width:100%; text-align:center;" href="https://github.com/ege211/macroeconomic-data-lab" target="_blank" rel="noopener noreferrer">💻 GitHub Source &amp; Replication</a>
         <button class="btn btn-outline" style="width:100%; text-align:center;" onclick="document.getElementById('nav-reading').click()">📚 View Reading List &amp; Influences</button>
