@@ -347,9 +347,9 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 <header role="banner">
   <div class="header-eyebrow">Independent Student Research Portfolio</div>
   <h1>Macroeconomic Data <span>Lab</span></h1>
-  <p>World Bank Data &nbsp;·&nbsp; Comparative Macroeconomics &nbsp;·&nbsp; Transparent Modelling</p>
+  <p>World Bank data &nbsp;·&nbsp; Company filings &nbsp;·&nbsp; Written research</p>
   <div class="author-badge">
-    <span>Researcher: <strong>Ege Umut Can</strong></span>
+    <span>By <strong>Ege Umut Can</strong></span>
     <span>·</span>
     <span>FMV Işık High School, Istanbul (Class of 2027)</span>
     <span>·</span>
@@ -358,11 +358,11 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 </header>
 
 <nav role="tablist" aria-label="Project sections">
-  <button class="active" role="tab" aria-selected="true" aria-controls="home" onclick="show('home', this)">Project &amp; Research Map</button>
-  <button role="tab" aria-selected="false" aria-controls="coderepos" id="nav-coderepos" onclick="show('coderepos', this)">Research Repositories (4)</button>
-  <button role="tab" aria-selected="false" aria-controls="research" id="nav-research" onclick="show('research', this)">Research &amp; Essays (8)</button>
+  <button class="active" role="tab" aria-selected="true" aria-controls="home" onclick="show('home', this)">Overview</button>
+  <button role="tab" aria-selected="false" aria-controls="coderepos" id="nav-coderepos" onclick="show('coderepos', this)">GitHub Projects (4)</button>
+  <button role="tab" aria-selected="false" aria-controls="research" id="nav-research" onclick="show('research', this)">Essays &amp; Papers (8)</button>
   <button role="tab" aria-selected="false" aria-controls="datalab" id="nav-datalab" onclick="show('datalab', this)">Macro Data Lab</button>
-  <button role="tab" aria-selected="false" aria-controls="reading" id="nav-reading" onclick="show('reading', this)">Reading List &amp; Influences (6)</button>
+  <button role="tab" aria-selected="false" aria-controls="reading" id="nav-reading" onclick="show('reading', this)">Reading List &amp; Influences (7)</button>
   <button role="tab" aria-selected="false" aria-controls="methodology" onclick="show('methodology', this)">Methods &amp; Sources</button>
 </nav>
 
@@ -372,11 +372,11 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
     
     <div id="home" class="section active" role="tabpanel">
       <div class="section-title">Project <span>Overview</span></div>
-      <div class="section-subtitle">An independent student project exploring how output growth, inflation persistence, and institutional credibility interact across emerging and advanced economies.</div>
+      <div class="section-subtitle">I am Ege, a high-school student in Istanbul applying for business and management. This site holds my independent research: 8 written pieces, 4 GitHub projects and a small World Bank data tool.</div>
       <div class="home-hero">
         <div class="home-stat">
           <div class="num">5</div>
-          <div class="label">Economies Compared</div>
+          <div class="label">Economies compared</div>
         </div>
         <div class="home-stat">
           <div class="num">4</div>
@@ -384,40 +384,40 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
         </div>
         <div class="home-stat">
           <div class="num">8</div>
-          <div class="label">Papers &amp; Essays</div>
+          <div class="label">Publications</div>
         </div>
         <div class="home-text">
-          Macroeconomic Data Lab combines reproducible public data with interactive visualisation and original written research. It retrieves annual real GDP growth and consumer-price inflation for Turkey, the United States, Germany, the United Kingdom, and Japan from the World Bank API, alongside eight essays, working papers and case studies available in the <a href="#research" onclick="document.getElementById('nav-research').click(); return false;">Research &amp; Essays</a> archive.
+          The Data Lab shows annual real GDP growth and consumer-price inflation for Turkey, the United States, Germany, the United Kingdom and Japan, taken from the World Bank API. The <a href="#research" onclick="document.getElementById('nav-research').click(); return false;">Essays &amp; Papers</a> tab has my eight essays, papers and case studies.
         </div>
       </div>
 
       <div class="card" style="margin-top:24px;">
-        <h3 style="font-family:'Playfair Display', serif; font-size:19px; color:var(--accent); margin-bottom:12px;">Why I Built This</h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:19px; color:var(--accent); margin-bottom:12px;">Why I built this</h3>
         <p style="font-size:14px; color:var(--fg-dim); line-height:1.7; text-align:justify; margin-bottom:12px;">
-          I built this project to move beyond headlines and compare the same macroeconomic measures across economies exposed to a shared global disruption. The contrast between Turkey, advanced European economies, the United States, and Japan made it a useful way to ask how similar shocks can be associated with very different inflation and growth paths.
+          Living in a country with high inflation made me want to look at the data, not only the headlines. So I compared the same two measures, real GDP growth and inflation, in five economies from 2019 to 2023. Turkey’s inflation was far higher than in the other four.
         </p>
         <p style="font-size:14px; color:var(--fg-dim); line-height:1.7; text-align:justify;">
-          The main lesson was methodological: a transparent model with stated assumptions is more useful than a sophisticated label without evidence. Working with API data also made clear why definitions, missing observations, and the difference between correlation and causation matter in empirical economics.
+          My work follows one question. First, how much people trust institutions: my essays on Turkey’s central bank and the lira. Then, how firms decide when they cannot trust the system around them: my projects on company annual reports (10-Ks) and investment banks. Then, how a firm keeps control of its own system: my Inditex case study. The numbers show me what happened, but they do not prove why. Working with API data also showed me that definitions and missing data matter, and that correlation is not causation.
         </p>
         <div class="project-grid">
-          <div class="project-step"><div class="step-label">Question</div><h3>What changed?</h3><p>Compare annual output growth and consumer-price inflation over 2019-2023.</p></div>
-          <div class="project-step"><div class="step-label">Method</div><h3>Public-data comparison</h3><p>Retrieve harmonised indicators from the World Bank API and present them in an interactive chart.</p></div>
-          <div class="project-step"><div class="step-label">Finding</div><h3>Different paths</h3><p>The same global period produced markedly different inflation and growth patterns across the sample.</p></div>
-          <div class="project-step"><div class="step-label">Next step</div><h3>Estimate, do not assume</h3><p>Extend the project with a documented econometric model and a wider set of policy variables.</p></div>
+          <div class="project-step"><div class="step-label">Question</div><h3>What changed?</h3><p>Compare annual real GDP growth and consumer-price inflation, 2019 to 2023.</p></div>
+          <div class="project-step"><div class="step-label">Method</div><h3>Public data</h3><p>Take the indicators from the World Bank API and show them in an interactive chart.</p></div>
+          <div class="project-step"><div class="step-label">Finding</div><h3>Different paths</h3><p>In the same period, Turkey’s inflation was far higher than in the other four economies.</p></div>
+          <div class="project-step"><div class="step-label">Next step</div><h3>Add a model</h3><p>Add a model with stated assumptions and more variables.</p></div>
         </div>
       </div>
 
       <div class="card">
-        <h3 style="font-family:'Playfair Display', serif; font-size:20px; color:var(--fg); margin-bottom:6px;">Conceptual Research <span style="color:var(--accent)">Architecture</span></h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:20px; color:var(--fg); margin-bottom:6px;">How the work <span style="color:var(--accent)">connects</span></h3>
         <p style="font-size:13px; color:var(--fg-dim); line-height:1.6;">
-          How the eight written pieces and the interactive Data Lab in this portfolio connect across four analytical themes, moving from observations on Turkey’s inflation and currency dynamics to capital-market liquidity runs, and comparative institutional economics. Click any title below to read the PDF directly:
+          The eight written pieces and the Data Lab fall into four themes. They start with Turkey’s inflation and currency, then a fund run in Borsa Istanbul, then institutions and firm strategy. Click a title to read the PDF.
         </p>
 
         <div class="pillar-grid">
           <div class="pillar-card">
-            <div class="pillar-tag">Pillar I · Monetary Authority &amp; Expectations</div>
-            <div class="pillar-title">Central Bank Credibility &amp; Currency Decline</div>
-            <div class="pillar-desc">Why interest-rate adjustments fail when institutional independence is eroded, and how chronic current account deficits interact with unanchored expectations.</div>
+            <div class="pillar-tag">Theme I · Trust in the central bank</div>
+            <div class="pillar-title">Central bank credibility and the lira</div>
+            <div class="pillar-desc">I argue that weak trust in Turkey’s central bank was one reason for high inflation and a falling lira. The rate cuts that followed also played a part, so this is only one explanation.</div>
             <div class="pillar-links">
               <button class="pillar-link" onclick="openPdfModal('papers/The-Credibility-Gap-Turkey-Central-Bank.pdf', 'The Credibility Gap: How Turkey’s Central Bank Lost and Tried to Reclaim Monetary Authority')">
                 <span>📄 The Credibility Gap: Turkey’s Central Bank</span><span style="color:var(--accent)">1p ↗</span>
@@ -429,8 +429,8 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           </div>
 
           <div class="pillar-card">
-            <div class="pillar-tag">Pillar II · Empirical Transmission &amp; Data Lab</div>
-            <div class="pillar-title">Comparing Growth &amp; Inflation Across Economies</div>
+            <div class="pillar-tag">Theme II · Data Lab</div>
+            <div class="pillar-title">Growth and inflation in five economies</div>
             <div class="pillar-desc">Live World Bank data comparing real GDP growth and consumer-price inflation in Turkey, the United States, Germany, the United Kingdom and Japan, 2019 to 2023.</div>
             <div class="pillar-links">
               <button class="pillar-link" onclick="document.getElementById('nav-datalab').click()">
@@ -440,9 +440,9 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           </div>
 
           <div class="pillar-card">
-            <div class="pillar-tag">Pillar III · Market Microstructure &amp; Regulation</div>
-            <div class="pillar-title">Liquidity Mismatch &amp; Contagion in Borsa Istanbul</div>
-            <div class="pillar-desc">How T+1 daily redemption promises in open-ended TEFAS funds holding low-float equities trigger fire-sales, VIOP margin spirals, and SPK moral hazard dilemmas.</div>
+            <div class="pillar-tag">Theme III · Fund runs and regulation</div>
+            <div class="pillar-title">A fund run in Borsa Istanbul</div>
+            <div class="pillar-desc">Funds promised investors their money back within one or two days, but held shares that are hard to sell. In September 2026 regulators suspended 131 funds. The paper looks at forced sales and proposes liquidity buffers and longer notice periods.</div>
             <div class="pillar-links">
               <button class="pillar-link" onclick="openPdfModal('papers/Borsa-Istanbul-Fragility-of-Liquidity.pdf', 'The Fragility of Liquidity: Fund Runs, Fire Sales and Regulatory Intervention in Borsa Istanbul')">
                 <span>📄 The Fragility of Liquidity in Borsa Istanbul</span><span style="color:var(--accent)">4p ↗</span>
@@ -454,9 +454,9 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           </div>
 
           <div class="pillar-card">
-            <div class="pillar-tag">Pillar IV · Institutions, Political Economy &amp; Strategy</div>
-            <div class="pillar-title">Comparative Institutions &amp; Strategic Trade-offs</div>
-            <div class="pillar-desc">Institutional sequencing in petrostates (Gulf vs. Norway), why firms take ESG seriously only as far as it pays, and VRIO value-chain coordination at Inditex.</div>
+            <div class="pillar-tag">Theme IV · Institutions and firms</div>
+            <div class="pillar-title">Institutions and firm strategy</div>
+            <div class="pillar-desc">Gulf oil wealth compared with Norway, why firms take ESG seriously only as far as it pays, and why Inditex’s linked system is hard to copy and also fragile.</div>
             <div class="pillar-links">
               <button class="pillar-link" onclick="openPdfModal('papers/Essay4-The-Paradox-of-Petrowealth.pdf', 'The Paradox of Petrowealth: Resource Rents, Institutional Sequencing, and Inequality in the Gulf')">
                 <span>📄 Essay 4: The Paradox of Petrowealth</span><span style="color:var(--accent)">3p ↗</span>
@@ -478,7 +478,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
               <div class="badge" style="background:#e0e7ff; color:#1e3a8a; margin-bottom:8px; font-weight:600;">GitHub Projects</div>
               <h3 style="font-family:'Playfair Display', serif; font-size:19px; color:var(--accent); margin:0 0 6px 0;">Research Projects on GitHub</h3>
               <p style="font-size:13.5px; color:#475569; margin:0; line-height:1.55;">
-                Four projects with published data and files: Arsenal FC finances, company annual reports, banking-crisis warning signs, and how investment banks use their profits.
+                Four projects with their data and files: warning signs of banking crises in 76 economies, how eight investment banks use their profits (40 10-K filings), whether annual-report text predicts profit margins (30 firms), and Arsenal FC finances over 10 seasons.
               </p>
             </div>
             <button class="btn" onclick="document.getElementById('nav-coderepos').click();" style="align-self:center; white-space:nowrap; padding:10px 18px;">
@@ -503,15 +503,15 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="pub-metadata" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
             <span style="background:#eff6ff; color:#1e40af; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Sports Economics</span>
             <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Arsenal FC annual reports</span>
-            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">10 seasons (2015/16–2024/25)</span>
+            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">10 seasons (2015/16 to 2024/25)</span>
           </div>
           <h3 class="pub-title" style="font-family:'Playfair Display', serif; font-size:20px; color:#0f172a; margin:0 0 10px 0;">Arsenal FC: Club Finances and Results on the Pitch</h3>
           <div style="background:rgba(30,58,138,0.04); border-left:3px solid var(--accent); padding:10px 14px; margin-bottom:12px; border-radius:0 6px 6px 0; font-size:13px; color:#1e293b; line-height:1.5;">
             <strong>Question:</strong> To what extent were changes in Arsenal’s revenue, wages and transfer spending associated with changes in league performance?
           </div>
           <div style="font-size:13.5px; color:#334155; line-height:1.6; margin-bottom:14px;">
-            <p style="margin:0 0 8px 0;"><strong>What the project does:</strong> Builds a 10-season dataset from Arsenal’s published annual reports and public match statistics (points, goal difference, expected-goal difference), then compares how the financial and sporting numbers moved together, including one-season lags.</p>
-            <p style="margin:0;"><strong>Main finding:</strong> With only ten seasons from one club, the project describes associations rather than proving cause and effect. Spending and wages moved with stronger results over time, but the pattern is not a simple “more money, more points” rule.</p>
+            <p style="margin:0 0 8px 0;"><strong>Data and method:</strong> A 10-season dataset from Arsenal’s audited accounts (Companies House), 128 transfers and public match statistics (points, goal difference, expected-goal difference). I compare how the money and the results moved together, including with a one-season lag.</p>
+            <p style="margin:0;"><strong>Result and limit:</strong> Transfer spending was more closely linked to the next season’s expected points than to the same season’s (r = 0.62, nine season pairs). The limit is the size: nine pairs from one club. I treat it as a pattern to test, not as proof.</p>
           </div>
           <div class="pub-actions" style="display:flex; flex-wrap:wrap; gap:10px;">
             <a class="btn" href="https://github.com/ege211/sports-finance-performance" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
@@ -530,8 +530,8 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
             <strong>Question:</strong> Does the written text in U.S. company annual reports (Form 10-K) add useful information for predicting future operating margins, beyond standard accounting numbers?
           </div>
           <div style="font-size:13.5px; color:#334155; line-height:1.6; margin-bottom:14px;">
-            <p style="margin:0 0 8px 0;"><strong>What the project does:</strong> Collects 10-K filings and financial data from the SEC EDGAR database, only uses information that was public at each date (no “looking ahead”), and includes a simple discounted-cash-flow valuation tool and a dashboard.</p>
-            <p style="margin:0;"><strong>Main finding:</strong> Tested in time order, the text-based features did not clearly beat the plain accounting ratios. A negative result, but an honest one.</p>
+            <p style="margin:0 0 8px 0;"><strong>Data and method:</strong> 10-K filings and financial data from SEC EDGAR for 30 US non-financial firms, 2014 to 2024. I test whether text features improve forecasts of changes in operating margin, using only information public at each filing date (no “looking ahead”). The repository also has a simple discounted-cash-flow valuation tool and a dashboard.</p>
+            <p style="margin:0;"><strong>Result and limit:</strong> Negative. The text added no predictive power over accounting ratios (p = 0.23), and adding all twelve text features made the forecasts worse. The limit is the sample: 30 firms, and no financial firms.</p>
           </div>
           <div class="pub-actions" style="display:flex; flex-wrap:wrap; gap:10px;">
             <a class="btn" href="https://github.com/ege211/ai-assisted-equity-valuation" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
@@ -550,8 +550,8 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
             <strong>Question:</strong> Using publicly available economic data, can simple models flag countries at higher risk of a systemic banking crisis one year ahead?
           </div>
           <div style="font-size:13.5px; color:#334155; line-height:1.6; margin-bottom:14px;">
-            <p style="margin:0 0 8px 0;"><strong>What the project does:</strong> Combines World Bank indicators for 76 economies (1990–2025) with the IMF’s list of banking-crisis dates, and tests simple models year by year (2000–2008), training only on past data each time.</p>
-            <p style="margin:0;"><strong>Main finding:</strong> Adding credit-growth measures helped, but most of the improvement came from the period just before the 2008 global financial crisis, so the results were not stable across time.</p>
+            <p style="margin:0 0 8px 0;"><strong>Data and method:</strong> World Bank indicators for 76 economies (1990 to 2025) and the IMF’s banking-crisis dates. For each year from 2000 to 2008, I test whether simple indicators flag a crisis one year ahead, training only on earlier years.</p>
+            <p style="margin:0;"><strong>Result and limit:</strong> Adding private credit and current-account balances raised the crises caught from 4 to 9 of 19. But all nine came in the year before 2008, and outside that year the model caught 0 of 4. So the result is unstable over time. Random forests did not beat logistic regression.</p>
           </div>
           <div class="pub-actions" style="display:flex; flex-wrap:wrap; gap:10px;">
             <a class="btn" href="https://github.com/ege211/global-financial-crisis-ews" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
@@ -563,15 +563,15 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="pub-metadata" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
             <span style="background:#eff6ff; color:#1e40af; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">Investment Banking</span>
             <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">40 SEC 10-K reports</span>
-            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">8 U.S. firms (2020–2024)</span>
+            <span style="background:#f1f5f9; color:#475569; font-size:11.5px; font-weight:600; padding:3px 10px; border-radius:12px;">8 U.S. firms (2020 to 2024)</span>
           </div>
           <h3 class="pub-title" style="font-family:'Playfair Display', serif; font-size:20px; color:#0f172a; margin:0 0 10px 0;">How Do Investment Banks Use Their Profits?</h3>
           <div style="background:rgba(30,58,138,0.04); border-left:3px solid var(--accent); padding:10px 14px; margin-bottom:12px; border-radius:0 6px 6px 0; font-size:13px; color:#1e293b; line-height:1.5;">
             <strong>Question:</strong> How did eight U.S. investment-banking firms split their capital between keeping reserves, reinvesting, and paying shareholders between 2020 and 2024?
           </div>
           <div style="font-size:13.5px; color:#334155; line-height:1.6; margin-bottom:14px;">
-            <p style="margin:0 0 8px 0;"><strong>What the project does:</strong> Collects figures from 40 annual reports of Goldman Sachs, Morgan Stanley, JPMorgan, Stifel, Evercore, Lazard, Moelis and Jefferies, and compares large banks with smaller advisory firms.</p>
-            <p style="margin:0;"><strong>Main finding:</strong> Dividends grew steadily while share buybacks rose and fell with profits. Large banks kept regulatory capital (CET1) ratios of roughly 13–17%, and buybacks showed almost no link with the next year’s return on equity.</p>
+            <p style="margin:0 0 8px 0;"><strong>Data and method:</strong> Figures I collected by hand from 40 Form 10-K reports of Goldman Sachs, Morgan Stanley, JPMorgan Chase, Stifel, Evercore, Lazard, Moelis and Jefferies. I compare the large banks with the smaller advisory firms.</p>
+            <p style="margin:0;"><strong>Result and limit:</strong> Buybacks rose and fell with profits and had almost no link to the large banks’ next-year return on equity (r = -0.049). The large banks kept CET1 (regulatory capital) ratios of 13.1% to 17.4%. In the 2023 slowdown, advisory boutiques absorbed lower fees through pay, with compensation reaching 72% of revenue. The limit: eight firms show what they did, not why.</p>
           </div>
           <div class="pub-actions" style="display:flex; flex-wrap:wrap; gap:10px;">
             <a class="btn" href="https://github.com/ege211/strategic-capital-allocation-investment-banking" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px;"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
@@ -584,7 +584,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 
     <div id="research" class="section" role="tabpanel">
       <div class="section-title">Research <span>Archive &amp; Essays</span></div>
-      <div class="section-subtitle">Independent student working papers, macroeconomic essays and business case studies. Read directly in your browser or download as PDF.</div>
+      <div class="section-subtitle">My essays on Turkey and economic policy, and my case studies of companies. Each one says what I asked, what I found and where it falls short. You can read them here or download the PDF.</div>
       
       <div class="filter-bar" role="group" aria-label="Filter publications by category">
         <button class="filter-chip active" onclick="filterPapers('all', this)">All Publications (8)</button>
@@ -606,7 +606,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="pub-subtitle">Market Microstructure, TEFAS Redemption Mismatches, and Regulatory Trade-offs</div>
           <div class="pub-author">Independent Student Research Essay</div>
           <p class="pub-abstract">
-            <strong>Summary:</strong> Examines the September 2026 disruption in which the Capital Markets Board (SPK) halted 131 investment funds run by seven portfolio managers and ordered them into liquidation. Explains how funds promising redemptions within one or two days while holding concentrated positions in low-float shares were forced into fire sales, how VİOP margin calls spread the stress, and how each stage matches the research on bank runs, fund outflows, fire sales and liquidity spirals. Discusses the moral hazard created by intervention and proposes liquidity buffers, concentration limits and longer redemption notice periods.
+            <strong>Summary:</strong> In September 2026 the Capital Markets Board (SPK) suspended 131 funds on TEFAS, Turkey's online fund platform, and ordered them into liquidation. I asked why. These funds promised to pay investors back within one or two days but held large stakes in shares that trade very little, so when many investors asked for their money at once the funds had to sell fast at low prices (a fire sale), which pushed prices down further. I propose liquidity buffers, limits on concentrated positions and longer notice periods for redemptions, but rescuing funds has a cost too: if managers expect help, they may take the same risks again.
           </p>
           <div class="pub-taxonomies">
             <span>Borsa Istanbul</span>
@@ -631,7 +631,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <h3 class="pub-title">The Credibility Gap: How Turkey’s Central Bank Lost and Tried to Reclaim Monetary Authority</h3>
           <div class="pub-author">Independent Student Research Essay</div>
           <p class="pub-abstract">
-            <strong>Summary:</strong> When a central bank raises interest rates, the usual expectation is that inflation will fall, but this depends on the belief that the bank is able and willing to follow through. Examining Turkey's replacement of four Central Bank governors between 2019 and 2023, the March 2021 dismissal two days after a rate rise to 19%, and the post-2023 return to orthodox policy, this essay argues that Turkey’s inflation crisis was primarily the product of eroded institutional credibility and unanchored expectations rather than a single miscalculated interest rate.
+            <strong>Summary:</strong> I asked why Turkey's inflation stayed so high. A rate rise only works if people believe the central bank will keep going, and Turkey replaced four central bank governors between July 2019 and June 2023. Governor Ağbal was dismissed in March 2021, two days after raising the policy rate to 19%, and after 2023 the bank went back to orthodox policy. I argue that lost trust was one main cause, but the rate cuts that followed also played a part.
           </p>
           <div class="pub-taxonomies">
             <span>Central Bank Credibility</span>
@@ -657,7 +657,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="pub-subtitle">Monetary Credibility, Current Account Imbalances, and the Political Economy of Exchange Rate Decline</div>
           <div class="pub-author">Independent Student Research Essay</div>
           <p class="pub-abstract">
-            <strong>Summary:</strong> Argues that the lira's long decline, about 97% against the dollar between 2008 and mid-2025, is best understood as an institutional problem rather than only a monetary one. Traces how a narrow productive base, a persistent current account deficit (about $45.2B in 2023) and weaker central bank credibility interact, and why short-term stabilisation needs lasting institutional change to hold.
+            <strong>Summary:</strong> The lira lost about 97% of its value against the dollar between 2008 and mid-2025, and I wanted to know why. I argue that the main reason is weak institutions, not only monetary policy: Turkey produces a narrow range of goods, has a large current account deficit (about $45.2 billion in 2023, meaning it buys much more from abroad than it sells) and has a central bank that people trust less. Short-term fixes can calm the currency, but I think they will not last without deeper institutional change.
           </p>
           <div class="pub-taxonomies">
             <span>Turkish Lira</span>
@@ -683,7 +683,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="pub-subtitle">Comparing the Arabian Peninsula and the Norwegian Model Through the Lens of Institutional Economics</div>
           <div class="pub-author">Independent Student Research Essay</div>
           <p class="pub-abstract">
-            <strong>Summary:</strong> Examines why the hydrocarbon wealth of the Gulf monarchies entrenched layered inequality while Norway’s 1969 petroleum discovery financed one of the world’s most equal societies (a Government Pension Fund Global worth about $2.27 trillion in 2026). Drawing on Piketty’s <em>r &gt; g</em>, Beblawi’s rentier state theory, and Acemoğlu and Robinson’s critical junctures framework, the essay argues that oil amplifies the institutions a country already has when it is discovered.
+            <strong>Summary:</strong> I asked why oil made the Gulf monarchies more unequal while Norway, which found oil in 1969, became one of the most equal countries, with a state fund worth about $2.27 trillion by mid-2026. Using Piketty's <em>r &gt; g</em>, Beblawi's idea of the rentier state (a state that lives on oil income instead of taxes) and Acemoğlu and Robinson's critical junctures, I argue that oil makes stronger whatever institutions a country already has when it finds it. This is a comparison of a few countries, so it shows a pattern, not a rule.
           </p>
           <div class="pub-taxonomies">
             <span>Rentier State</span>
@@ -709,7 +709,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="pub-subtitle">Reputation, Cost of Capital, Carbon Pricing and the Limits of ESG Ratings</div>
           <div class="pub-author">Independent Student Essay</div>
           <p class="pub-abstract">
-            <strong>Summary:</strong> Argues that for most firms profit comes first and ESG second, so companies take ESG seriously as far as it pays and protects their reputation. Shows where ESG does pay (reputation, cheaper borrowing through good governance, access to EU markets under the Carbon Border Adjustment Mechanism) and where it does not (greenwashing, ESG ratings that disagree with an average correlation of 0.54). Concludes, building on Friedman, that the rules decide which behaviour is profitable, so policies such as carbon pricing change behaviour more than appeals to goodwill.
+            <strong>Summary:</strong> My view is that for most firms profit comes first, so ESG works when it pays. It pays through reputation, cheaper borrowing for well-governed firms and access to EU markets under the Carbon Border Adjustment Mechanism (CBAM), a carbon charge on some imports from 1 January 2026. It fails with greenwashing and with ratings that disagree: Berg, Kölbel and Rigobon found an average correlation of only 0.54 between ESG raters, and 0.30 for governance. So, building on Friedman, I think rules such as carbon pricing change company behaviour more than asking firms to be good.
           </p>
           <div class="pub-taxonomies">
             <span>ESG</span>
@@ -734,7 +734,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <h3 class="pub-title">Inditex: Competitive Advantage and Strategic Trade-offs in Global Fashion Retail</h3>
           <div class="pub-author">Independent Student Case Study</div>
           <p class="pub-abstract">
-            <strong>Abstract:</strong> This case study investigates the strategic mechanisms underlying Inditex’s competitive advantage in the global fashion retail industry. Applying Porter’s Five Forces, Value Chain, and VRIO (Value, Rarity, Inimitability, Organization) frameworks, the research explores how systemic coordination of product design, near-market sourcing (2–3 week lead times), agile logistics, and omnichannel retail establishes a responsive feedback loop, while analyzing key strategic trade-offs concerning demand uncertainty, ultra-fast fashion C2M disruption (Shein/Temu), and the structural paradox of sustainability.
+            <strong>Summary:</strong> I asked why rivals find it so hard to copy Zara's owner, Inditex. Using Porter's Five Forces, the value chain and VRIO (value, rarity, how hard it is to copy, organisation), I found that rivals can copy single parts, like near-market production with lead times of two to three weeks, but not the way Inditex links store data, design, production and stock into one system. The same links also make it fragile, because a problem in one part slows the whole system, and cheaper online rivals such as Shein and Temu put pressure on its model.
           </p>
           <div class="pub-taxonomies">
             <span>Competitive Strategy</span>
@@ -756,11 +756,11 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
             <span>15 Pages (10 Seasons)</span>
             <span>Sports Economics &amp; Football Finance</span>
           </div>
-          <h3 class="pub-title">Financial Resources, Investment Decisions, and Sporting Performance: A Longitudinal Investigation of Arsenal Football Club (2015/16–2024/25)</h3>
+          <h3 class="pub-title">Financial Resources, Investment Decisions, and Sporting Performance: A Longitudinal Investigation of Arsenal Football Club (2015/16 to 2024/25)</h3>
           <div class="pub-subtitle">10-Season Empirical Panel: Companies House Statutory Accounts, Transfer Census &amp; Advanced Pitch Analytics</div>
           <div class="pub-author">Independent Student Research Project · Ege Umut Can (FMV Işık High School)</div>
           <p class="pub-abstract">
-            <strong>Summary:</strong> Investigates how corporate financial resources, transfer expenditures, and statutory staff costs relate to pitch performance across a decade of Arsenal FC's history (2015/16–2024/25). Utilizing audited annual reports from Companies House, a 128-transaction transfer census, and official Premier League / Understat analytics, the study found that while turnover nearly doubled (+97.1% to £691m), transfer investments showed stronger positive associations with pitch output on a one-season lag ($t \to t+1$, $r = +0.6189$ with xPTS) rather than same-season results. With only nine season pairs, this is a pattern worth testing further, not proof that spending causes results.
+            <strong>Summary:</strong> I asked whether Arsenal's spending explains its results over ten seasons, 2015/16 to 2024/25. I built a dataset from audited Companies House accounts, 128 transfers and Premier League and Understat match statistics. Revenue nearly doubled (up 97.1% to £691m), and transfer spending was more closely linked to the next season's expected points (r = 0.62) than to the same season's. With only nine season pairs, this is a pattern to test further, not proof that spending causes results.
           </p>
           <div class="pub-taxonomies">
             <span>Sports Economics</span>
@@ -781,14 +781,14 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
         <article class="pub-card" data-category="strategy">
           <div class="pub-metadata">
             <span>Comparative Longitudinal Study</span>
-            <span>20 Pages (2020–2024)</span>
+            <span>20 Pages (2020 to 2024)</span>
             <span>Corporate Finance &amp; Capital Markets</span>
           </div>
-          <h3 class="pub-title">Strategic Capital Allocation in Investment Banking: A Comparative Longitudinal Study of Major U.S. Firms (2020–2024)</h3>
+          <h3 class="pub-title">Strategic Capital Allocation in Investment Banking: A Comparative Longitudinal Study of Major U.S. Firms (2020 to 2024)</h3>
           <div class="pub-subtitle">Comparing Bank Holding Companies (GS, MS, JPM, SF) and Independent Boutiques (EVR, LAZ, MC, JEF) across Market Cycles</div>
           <div class="pub-author">Independent Student Research Project · Ege Can (FMV Işık High School)</div>
           <p class="pub-abstract">
-            <strong>Summary:</strong> Examines how eight leading Wall Street investment banks and advisory firms allocated capital between business reinvestment, balance-sheet capital retention, and shareholder distributions across the 2020–2024 market cycle. Hand-collecting data from 40 primary SEC Form 10-K filings, the study analyzes $233.2 billion in shareholder payouts, contrasting how large bank holding companies governed by strict Federal Reserve CET1 solvency mandates compare with asset-light advisory boutiques that maintain compensation flexibility and distribute excess cash through cyclical share repurchases.
+            <strong>Summary:</strong> I asked how eight US investment banks and advisory firms used their money from 2020 to 2024: keeping it as capital, paying staff, or returning it to shareholders ($233.2 billion in total payouts). I collected the data by hand from 40 Form 10-K filings. Buybacks rose and fell with profits and had almost no link to the large banks' next-year return on equity (r = -0.049); the large banks kept CET1 capital ratios (a regulatory measure of safety) of 13.1% to 17.4%, while the advisory boutiques handled the 2023 slowdown through pay, which reached 72% of revenue. Eight firms over five years is a small sample, so these are patterns, not causes.
           </p>
           <div class="pub-taxonomies">
             <span>Corporate Finance</span>
@@ -810,13 +810,13 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 
     <div id="datalab" class="section" role="tabpanel">
       <div class="section-title">Macroeconomic <span>Data Lab</span></div>
-      <div class="section-subtitle">Annual World Bank indicators comparing real GDP growth and consumer price inflation across five major economies (2019–2023).</div>
+      <div class="section-subtitle">Real GDP growth and consumer price inflation (CPI) for Turkey, the US, Germany, the UK and Japan, 2019 to 2023. Data: World Bank.</div>
       
       <div class="card">
         <div style="background: rgba(200,169,110,0.06); border-left: 3px solid var(--accent); padding: 14px 18px; border-radius: 4px; margin-bottom: 20px;">
           <div style="font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 4px;">Student Research Note</div>
           <p style="font-size: 13px; color: var(--fg); margin: 0; line-height: 1.6;">
-            While self-studying AP Macroeconomics, I wanted to see how growth and inflation interact across different economic systems. I built this interactive data explorer using live data directly from the World Bank Open Data API to examine how Turkey, the US, Germany, the UK, and Japan navigated the 2019–2023 macroeconomic cycle and the post-pandemic recovery.
+            I made this chart while self-studying AP Macroeconomics, because I wanted to look at the data myself. It loads yearly World Bank figures for five countries. Pick countries with the buttons, then switch between GDP growth (how fast the economy grew, adjusted for prices) and CPI inflation (how fast consumer prices rose). The table below the chart shows the same numbers for each year.
           </p>
         </div>
 
@@ -835,11 +835,11 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 
         <div class="metric-grid">
           <button class="metric-btn active" aria-pressed="true" id="btn-gdp" onclick="switchMetric('gdp')">
-            <span class="m-title">Real GDP Growth (2019–2023)</span>
+            <span class="m-title">Real GDP growth, 2019 to 2023</span>
             <span class="m-val" id="m-gdp">Loading...</span>
           </button>
           <button class="metric-btn" aria-pressed="false" id="btn-cpi" onclick="switchMetric('cpi')">
-            <span class="m-title">Consumer Price Inflation (2019–2023)</span>
+            <span class="m-title">CPI inflation, 2019 to 2023</span>
             <span class="m-val" id="m-cpi">Loading...</span>
           </button>
         </div>
@@ -847,7 +847,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
         <div class="chart-container">
           <canvas id="compChart" role="img" aria-label="Comparison chart for GDP growth or consumer-price inflation across selected countries"></canvas>
         </div>
-        <p class="chart-note">Historical values cover 2019–2023 retrieved dynamically from the World Bank Open Data API (Indicators: <code>NY.GDP.MKTP.KD.ZG</code> and <code>FP.CPI.TOTL.ZG</code>).</p>
+        <p class="chart-note">Values for 2019 to 2023 come from the World Bank Open Data API (indicators <code>NY.GDP.MKTP.KD.ZG</code> and <code>FP.CPI.TOTL.ZG</code>). Both are percent change on the previous year.</p>
 
         <div class="source-row">
           <p style="font-size: 11px; color: var(--silver); margin: 0;"><strong>Source:</strong> <a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">World Bank Open Data API v2</a>. Data retrieved dynamically upon load.</p>
@@ -855,12 +855,12 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
         </div>
 
         <div class="card" style="background: rgba(0,0,0,0.15); margin-bottom:20px;">
-          <h3 style="font-family:'Playfair Display', serif; font-size:17px; color:var(--accent); margin-bottom:10px;">Descriptive Observations (2019–2023)</h3>
+          <h3 style="font-family:'Playfair Display', serif; font-size:17px; color:var(--accent); margin-bottom:10px;">What I see in the chart</h3>
           <p style="font-size:13px; color:var(--fg-dim); text-align:justify; line-height:1.7; margin-bottom:10px;">
-            The selected series highlight how a shared global shock produced distinct macroeconomic paths. Following the 2020 pandemic downturn, Turkey experienced a rapid output rebound in 2021 followed by sharply elevated consumer inflation. Germany and the UK faced pronounced energy and trade headwinds resulting in sluggish 2023 growth, while the United States maintained comparatively robust expansion alongside moderating inflation.
+            The clearest thing I see is that Turkey's inflation is far higher than the other four countries in these years. Turn on all five countries and the CPI line for Turkey sits well above the rest. The GDP growth lines are much closer together.
           </p>
           <p style="font-size:13px; color:var(--fg-dim); text-align:justify; line-height:1.7;">
-            These trajectories reflect underlying structural differences, such as domestic monetary policy stances, energy import dependencies, and currency exchange dynamics, which I explore further across my research essays.
+            Limits: the chart shows a pattern, not a cause. It cannot tell me why Turkey's inflation was higher. It has no interest-rate data, so I cannot say anything about interest rates from it. It also covers only five countries and five years.
           </p>
         </div>
 
@@ -887,7 +887,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
     <!-- Annotated Reading List & Intellectual Influences -->
     <div id="reading" class="section" role="tabpanel">
       <div class="section-title">Reading List &amp; <span>Intellectual Influences</span></div>
-      <div class="section-subtitle">Foundational books, econometric papers, and regulatory texts that shaped my essays, alongside my student reflections on how each source changed the questions I asked.</div>
+      <div class="section-subtitle">Books, papers and rules that helped me write my essays, with a short note on what I took from each one.</div>
 
       <div class="card" style="padding:24px;">
 
@@ -895,7 +895,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="reading-concept">Institutional Economics &amp; Critical Junctures · Shaped Essay 3 &amp; Essay 4</div>
           <div class="reading-work">Daron Acemoğlu &amp; James A. Robinson (2012) <em>Why Nations Fail: The Origins of Power, Prosperity, and Poverty</em></div>
           <p class="reading-note">
-            <strong>How it shaped my thinking:</strong> Before reading Acemoğlu and Robinson, my instinct was to treat currency depreciation or high inequality as the result of isolated technical policy mistakes. Their distinction between inclusive and extractive institutions, and how "critical junctures" lock in political equilibria, gave me the analytical spine for both my essay on the Turkish lira and my comparative essay on Gulf petrostates versus Norway. It pushed me to ask not merely <em>what</em> interest-rate or fiscal decision a government made, but <em>which institutional constraints</em> allowed that decision to persist.
+            <strong>How it shaped my thinking:</strong> Before reading this book, I thought problems like a falling currency or high inequality came from separate policy mistakes. Acemoğlu and Robinson showed me that institutions matter: some countries have rules that work for most people, and others have rules that work for a small group at the top. After this, I started to ask which rules allowed a bad decision to continue for so long. This idea is behind my essay on the Turkish lira and my essay comparing the Gulf oil states with Norway.
           </p>
           <div class="pub-actions">
             <button class="btn btn-outline" onclick="openPdfModal('papers/Essay3-The-Lira-Doesnt-Lie.pdf', 'Essay 3: The Lira Doesn’t Lie')">📄 See in Essay 3 (The Lira Doesn’t Lie)</button>
@@ -918,7 +918,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="reading-concept">Monetary Policy Rules &amp; Emerging Market Constraints · Shaped The Lira Doesn’t Lie</div>
           <div class="reading-work">John B. Taylor (1993) <em>Discretion Versus Policy Rules in Practice</em> &amp; Frederic S. Mishkin (2000) <em>Inflation Targeting in Emerging-Market Countries</em></div>
           <p class="reading-note">
-            <strong>How it shaped my thinking:</strong> Taylor (1993) demonstrates why nominal interest rates must rise more than one-for-one with inflation (the Taylor Principle) to raise the real interest rate and cool demand. Pairing Taylor’s rule with Mishkin (2000) clarified why monetary transmission is much more fragile in emerging economies: when fiscal dominance, foreign-currency liabilities, and high exchange-rate pass-through (ERPT) are present, interest-rate adjustments alone cannot anchor inflation without institutional and fiscal reform.
+            <strong>How it shaped my thinking:</strong> At first I thought a central bank could stop inflation just by raising interest rates. From Taylor (1993) I learned the main idea: when inflation goes up, the interest rate has to go up by more, so that the real rate rises and people spend less. Mishkin (2000) showed me why this works less well in emerging countries like Turkey, where government spending and debts in foreign currency make rate changes weaker. I used these ideas in my essay The Lira Doesn&#8217;t Lie.
           </p>
           <div class="pub-actions">
             <button class="btn btn-outline" onclick="openPdfModal('papers/Essay3-The-Lira-Doesnt-Lie.pdf', 'The Lira Doesn’t Lie')">📄 See in The Lira Doesn’t Lie</button>
@@ -929,7 +929,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="reading-concept">Capital Accumulation (r &gt; g) &amp; Rentier State Theory · Shaped Essay 4</div>
           <div class="reading-work">Thomas Piketty (2014) <em>Capital in the Twenty-First Century</em> &amp; Hazem Beblawi (1987) <em>The Rentier State in the Arab World</em></div>
           <p class="reading-note">
-            <strong>How it shaped my thinking:</strong> Piketty’s <em>r &gt; g</em> inequality explains how capital returns compound faster than output growth in market economies, but it did not fully explain why hydrocarbon-rich Gulf monarchies exhibit such rigid political and social stratification compared to Norway. Beblawi’s "rentier bargain" supplied the missing mechanism: when a state finances itself through external resource rents rather than domestic taxation, it severs the historical link between taxation and representative accountability, freezing existing hierarchies in place.
+            <strong>How it shaped my thinking:</strong> Piketty&#8217;s idea <em>r &gt; g</em>, that money earned from wealth grows faster than the economy, helps explain inequality, but it did not explain why the Gulf oil states keep such fixed social and political hierarchies compared with Norway. From Beblawi (1987) I learned the main idea of the rentier state: when a government lives on oil money instead of taxes, people have less power to ask it for anything in return. This idea is at the centre of my essay The Paradox of Petrowealth.
           </p>
           <div class="pub-actions">
             <button class="btn btn-outline" onclick="openPdfModal('papers/Essay4-The-Paradox-of-Petrowealth.pdf', 'Essay 4: The Paradox of Petrowealth')">📄 See in Essay 4 (Paradox of Petrowealth)</button>
@@ -940,7 +940,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="reading-concept">Liquidity Transformation, Fire-Sale Contagion &amp; Microstructure · Shaped Borsa Istanbul Essay</div>
           <div class="reading-work">Capital Markets Board of Turkey (SPK) Communiqué III-52.1 &amp; Classic Open-Ended Fund Run Literature</div>
           <p class="reading-note">
-            <strong>How it shaped my thinking:</strong> Analyzing the September 2026 TEFAS investment fund liquidations and VIOP margin calls in Borsa Istanbul taught me how regulatory rules interact with market microstructure. Offering T+1/T+2 daily cash redemptions on funds heavily concentrated in illiquid, low-float stocks creates a textbook liquidity mismatch: when redemptions spike, managers are forced to dump liquid BIST 30 heavyweights at fire-sale prices, transmitting a localized fund run into a market-wide margin spiral.
+            <strong>How it shaped my thinking:</strong> When I studied the September 2026 fund suspensions, I saw a simple problem: funds promised to pay investors cash within one or two days, but many of them held shares in small companies that are hard to sell quickly. When many investors asked for their money at once in September 2026, managers had to sell the big, easy-to-sell BIST 30 shares at low prices, and the losses spread across the market. This is the main idea of my Borsa Istanbul essay, The Fragility of Liquidity.
           </p>
           <div class="pub-actions">
             <button class="btn btn-outline" onclick="openPdfModal('papers/Borsa-Istanbul-Fragility-of-Liquidity.pdf', 'The Fragility of Liquidity in Borsa Istanbul')">📄 See in Borsa Istanbul Liquidity Essay</button>
@@ -951,7 +951,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           <div class="reading-concept">Resource-Based View (VRIO) &amp; Activity-System Complementarity · Shaped Inditex Case Study</div>
           <div class="reading-work">Michael E. Porter (1985, 1996) <em>Competitive Advantage &amp; What Is Strategy?</em> &amp; Jay Barney (1991) <em>Firm Resources and Sustained Competitive Advantage</em></div>
           <p class="reading-note">
-            <strong>How it shaped my thinking:</strong> Deconstructing Inditex through Porter’s Five Forces and Barney’s VRIO framework showed me why competitive advantage rarely resides in a single isolated capability like "fast shipping." Individual operational practices can be copied; what is difficult to imitate is a tightly coordinated feedback system linking store-level demand data, design, near-shore sourcing, and inventory allocation, though that same interdependence creates strategic trade-offs against ultra-fast C2M algorithms and sustainability mandates.
+            <strong>How it shaped my thinking:</strong> At first I thought Zara was successful because of one thing, its fast shipping. Porter&#8217;s Five Forces and the main idea of Barney (1991), that a strength only lasts if rivals cannot copy it, showed me that single practices are easy to copy but the way Zara links store sales data, design, nearby production and stock is not. The same links also bring trade-offs, for example against faster online rivals and new sustainability rules. This is what my Inditex case study is built on.
           </p>
           <div class="pub-actions">
             <button class="btn btn-outline" onclick="openPdfModal('papers/Inditex-Competitive-Advantage-Strategic-Tradeoffs.pdf', 'Inditex: Competitive Advantage and Strategic Trade-offs')">📄 See in Inditex Strategic Case Study</button>
@@ -974,29 +974,29 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 
     <div id="methodology" class="section" role="tabpanel">
       <div class="section-title">Methods & <span>Sources</span></div>
-      <div class="section-subtitle">What this project measures, what it does not establish, and how to reproduce the displayed data.</div>
+      <div class="section-subtitle">What the chart shows, what it cannot show, and how to get the same numbers yourself.</div>
       <div class="card">
         <p style="font-size:14px; color:var(--fg-dim); line-height:1.7; text-align:justify">
-          The data chart uses World Bank indicator <code>NY.GDP.MKTP.KD.ZG</code> for annual real GDP growth and <code>FP.CPI.TOTL.ZG</code> for annual consumer-price inflation. The page requests the 2019-2023 observations directly from the World Bank API for the five selected economies and displays a clearly labelled fallback dataset only when that request cannot be completed.
+          The chart uses two World Bank indicators: <code>NY.GDP.MKTP.KD.ZG</code> for annual real GDP growth and <code>FP.CPI.TOTL.ZG</code> for annual consumer-price inflation (CPI). The countries are Turkey, the US, Germany, the UK and Japan, and the years are 2019 to 2023. The page first shows saved values, then asks the World Bank API for the live numbers and replaces them. If the request fails, the saved values stay on screen.
         </p>
         <p style="font-size:14px; color:var(--fg-dim); line-height:1.7; text-align:justify; margin-top:14px">
-          <strong style="color:var(--fg)">Analytical Scope:</strong> The Macro Data Lab displays official historical observations from the World Bank Open Data API. It is designed for comparative student exploration and descriptive analysis across different macroeconomic regimes.
+          <strong style="color:var(--fg)">Limits:</strong> The Data Lab only shows World Bank figures side by side. It has no interest-rate data and no statistical tests. It is a student project for comparing five economies, and it describes what happened without explaining why.
         </p>
       </div>
       <div class="card">
-        <h3 style="font-family:'Playfair Display', serif; font-size:18px; color:var(--accent); margin-bottom:10px;">Reproducibility &amp; Open-Source Verification</h3>
+        <h3 style="font-family:'Playfair Display', serif; font-size:18px; color:var(--accent); margin-bottom:10px;">How to check the data</h3>
         <ul class="source-list">
-          <li><strong>Author &amp; Maintainer:</strong> Ege Umut Can, Independent Student Research Portfolio.</li>
-          <li><strong>GitHub Source Repository:</strong> <a href="https://github.com/ege211/macroeconomic-data-lab" target="_blank" rel="noopener noreferrer">github.com/ege211/macroeconomic-data-lab</a> (Full HTML/JS source code and PDF archive).</li>
+          <li><strong>Author &amp; Maintainer:</strong> Ege Umut Can, student.</li>
+          <li><strong>GitHub Source Repository:</strong> <a href="https://github.com/ege211/macroeconomic-data-lab" target="_blank" rel="noopener noreferrer">github.com/ege211/macroeconomic-data-lab</a> (site code and PDFs).</li>
           <li><strong>Live World Bank API Endpoints:</strong>
             <a href="https://api.worldbank.org/v2/country/TR;US;DE;GB;JP/indicator/NY.GDP.MKTP.KD.ZG?date=2019:2023&format=json" target="_blank" rel="noopener noreferrer">Real GDP Growth JSON</a> &nbsp;·&nbsp;
             <a href="https://api.worldbank.org/v2/country/TR;US;DE;GB;JP/indicator/FP.CPI.TOTL.ZG?date=2019:2023&format=json" target="_blank" rel="noopener noreferrer">CPI Inflation JSON</a>
           </li>
-          <li><strong>Scope:</strong> Descriptive comparisons and transparent sensitivity illustrations; causal claims require formal identification.</li>
+          <li><strong>Scope:</strong> Descriptive comparisons only. Five countries and five years cannot show what caused the differences.</li>
         </ul>
         <div class="pub-actions" style="margin-top:16px;">
           <a class="btn" href="https://github.com/ege211/macroeconomic-data-lab" target="_blank" rel="noopener noreferrer">🔗 View GitHub Repository</a>
-          <button class="btn btn-outline" onclick="exportDataCubeCSV()">📁 Download the Five-Economy Dataset (CSV)</button>
+          <button class="btn btn-outline" onclick="exportDataCubeCSV()">📁 Download the chart data (CSV)</button>
         </div>
       </div>
     </div>
@@ -1005,19 +1005,19 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
 
   <aside role="complementary">
     <div class="card" style="margin-bottom:24px;">
-      <div class="header-eyebrow" style="margin-bottom:6px;">About the Researcher</div>
+      <div class="header-eyebrow" style="margin-bottom:6px;">About me</div>
       <h2 style="font-family:'Playfair Display', serif; font-size:21px; color:var(--fg); margin-bottom:4px;">Ege Umut <span style="color:var(--accent)">Can</span></h2>
       <div style="font-family:'DM Mono', monospace; font-size:10.5px; color:var(--accent); margin-bottom:10px;">
-        FMV Işık Schools, Istanbul · Class of 2027 · GPA: 90.0/100
+        FMV Işık High School, Istanbul · Class of 2027 · GPA 90.0/100
       </div>
       <p style="font-size:12.5px; color:var(--fg-dim); line-height:1.65; text-align:justify; margin-bottom:10px;">
-        12th-grade student at FMV Işık High School exploring how macroeconomic policies, inflation, and business strategies affect everyday life. I built this website to combine my student essays with public World Bank data and simple interactive charts.
+        I am a 12th-grade student at FMV Işık High School in Istanbul. I live in a country with high inflation, so I want to understand inflation, economic policy and how companies make decisions. I built this site to put my essays next to public World Bank data.
       </p>
       <div style="font-size:11.5px; color:var(--silver); margin-bottom:12px; line-height:1.6;">
-        <strong style="color:var(--fg);">AP Courses:</strong> Macroeconomics, Microeconomics, Calculus, Psychology<br>
-        <strong style="color:var(--fg);">UK Summer School:</strong> Docklands Academy London (CEFR B2, B2+ &amp; C1)<br>
-        <strong style="color:var(--fg);">Internships:</strong> TEB Faktoring · TEB Arval (BNP Paribas Group) · Tenda Technology · Haber Tekstil · Hazev &amp; Limehouse Hotel (London)<br>
-        <strong style="color:var(--fg);">Interests:</strong> School Football Team (3rd Place Medal), Piano, Economics &amp; Data Analysis
+        <strong style="color:var(--fg);">AP exams:</strong> Macroeconomics (score 5) and Microeconomics, self-studied because my school offers no AP courses. Calculus and Psychology are planned for May 2027.<br>
+        <strong style="color:var(--fg);">UK Summer School:</strong> Docklands Academy London, June 2024 and 2025 (CEFR B2, B2+ and C1)<br>
+        <strong style="color:var(--fg);">Internships:</strong> TEB Faktoring (Aug 2026), TEB Arval (Jan 2026), Tenda Technology (Aug 2026), Haber Tekstil (Jan to Feb 2026). Work placements at Hazev Restaurant and Limehouse Library Hotel, London (summers 2024 and 2025).<br>
+        <strong style="color:var(--fg);">Interests:</strong> school football team (3rd place, Istanbul Inter-District High School Tournament, 2024 to 2025), piano, economics and data analysis
       </div>
       <div class="pub-taxonomies" style="margin-bottom:14px;">
         <span>Macroeconomics</span>
@@ -1038,7 +1038,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
     <div class="card">
       <h2>Research Notes <span>& FAQ</span></h2>
       <p style="font-size:11px; color:var(--silver); margin-bottom:14px; line-height:1.5;">
-        Questions that guided the project. These are written notes, not a live AI assistant.
+        Questions behind the project. These are written notes, not a live AI assistant.
       </p>
       <div class="chat-box" id="chatBox">
         <div class="msg system">Pick a question below. These are my own written answers, not generated live.</div>
