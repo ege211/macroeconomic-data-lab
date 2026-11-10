@@ -757,7 +757,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
             <span>Sports Economics &amp; Football Finance</span>
           </div>
           <h3 class="pub-title">Financial Resources, Investment Decisions, and Sporting Performance: A Longitudinal Investigation of Arsenal Football Club (2015/16 to 2024/25)</h3>
-          <div class="pub-subtitle">10-Season Empirical Panel: Companies House Statutory Accounts, Transfer Census &amp; Advanced Pitch Analytics</div>
+          <div class="pub-subtitle">10-Season Empirical Panel: Companies House Statutory Accounts, Transfer Data &amp; Match Statistics</div>
           <div class="pub-author">Independent Student Research Project · Ege Umut Can (FMV Işık High School)</div>
           <p class="pub-abstract">
             <strong>Summary:</strong> I asked whether Arsenal's spending explains its results over ten seasons, 2015/16 to 2024/25. I built a dataset from audited Companies House accounts, 128 transfers and Premier League and Understat match statistics. Revenue nearly doubled (up 97.1% to £691m), and transfer spending was more closely linked to the next season's expected points (r = 0.62) than to the same season's. With only nine season pairs, this is a pattern to test further, not proof that spending causes results.
@@ -786,7 +786,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
           </div>
           <h3 class="pub-title">Strategic Capital Allocation in Investment Banking: A Comparative Longitudinal Study of Major U.S. Firms (2020 to 2024)</h3>
           <div class="pub-subtitle">Comparing Bank Holding Companies (GS, MS, JPM, SF) and Independent Boutiques (EVR, LAZ, MC, JEF) across Market Cycles</div>
-          <div class="pub-author">Independent Student Research Project · Ege Can (FMV Işık High School)</div>
+          <div class="pub-author">Independent Student Research Project · Ege Umut Can (FMV Işık High School)</div>
           <p class="pub-abstract">
             <strong>Summary:</strong> I asked how eight US investment banks and advisory firms used their money from 2020 to 2024: keeping it as capital, paying staff, or returning it to shareholders ($233.2 billion in total payouts). I collected the data by hand from 40 Form 10-K filings. Buybacks rose and fell with profits and had almost no link to the large banks' next-year return on equity (r = -0.049); the large banks kept CET1 capital ratios (a regulatory measure of safety) of 13.1% to 17.4%, while the advisory boutiques handled the 2023 slowdown through pay, which reached 72% of revenue. Eight firms over five years is a small sample, so these are patterns, not causes.
           </p>
@@ -1144,7 +1144,7 @@ async function fetchWorldBankData() {
     updateChartDatasets();
   } catch (error) {
     console.error("API Error:", error);
-    document.getElementById('apiStatus').innerText = "API unavailable - verified fallback active";
+    document.getElementById('apiStatus').innerText = "API unavailable - showing saved World Bank values";
     document.getElementById('apiStatus').style.color = "#c8a96e";
     updateChartDatasets();
   }
@@ -1246,7 +1246,7 @@ function exportDataCubeCSV() {
 const FAQ_ENTRIES = [
   {
     q: "Why does Turkey's inflation move more sharply in this sample?",
-    a: "The chart shows much larger year-to-year variation in Turkey's annual consumer-price inflation. This reflects exchange-rate pass-through, domestic credit expansions, import price shocks, and shifting monetary stances, which I examine in detail in Essay 1 and Essay 3."
+    a: "The chart shows much larger year-to-year variation in Turkey's annual consumer-price inflation. The chart itself cannot say why. In my essays on Turkey's central bank and the lira, I argue that weak trust in the central bank was one reason, and the rate cuts that followed also played a part."
   },
   {
     q: "Why examine these specific five economies?",
@@ -1258,7 +1258,7 @@ const FAQ_ENTRIES = [
   },
   {
     q: "Where does the data actually come from?",
-    a: "Values are fetched dynamically from the World Bank Open Data API using indicators NY.GDP.MKTP.KD.ZG (Real GDP Growth) and FP.CPI.TOTL.ZG (CPI Inflation). If the API is momentarily unavailable, a verified local baseline dataset is displayed."
+    a: "Values are fetched dynamically from the World Bank Open Data API using indicators NY.GDP.MKTP.KD.ZG (Real GDP Growth) and FP.CPI.TOTL.ZG (CPI Inflation). If the API is momentarily unavailable, saved World Bank values are displayed."
   }
 ];
 
