@@ -170,6 +170,26 @@ a:hover { color: var(--fg); }
 .chart-note { color: var(--silver); font-size: 11px; line-height: 1.5; margin-top: -14px; margin-bottom: 16px; }
 .source-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; margin-top: 20px; margin-bottom: 20px; }
 footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver); font-size: 11px; text-align: center; }
+
+.ff-inputs { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 20px; }
+@media(min-width: 600px) { .ff-inputs { grid-template-columns: 1fr 1fr; } }
+.ff-field { display: flex; flex-direction: column; gap: 6px; }
+.ff-field label { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--silver); text-transform: uppercase; letter-spacing: 0.05em; }
+.ff-field input { background: var(--navy-mid); border: 1px solid var(--border); color: var(--fg); padding: 10px 12px; border-radius: 4px; font-size: 15px; font-family: 'DM Mono', monospace; width: 100%; box-sizing: border-box; }
+.ff-field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ff-field .ff-hint { font-size: 11px; color: var(--fg-dim); }
+.ff-results { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.ff-res { background: var(--navy-mid); border-radius: 4px; padding: 14px; }
+.ff-res .r-title { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--silver); display: block; margin-bottom: 6px; }
+.ff-res .r-val { font-size: 19px; font-family: 'Playfair Display', serif; color: var(--fg); font-weight: 600; word-break: break-word; }
+.ff-res.key .r-val { color: var(--accent); }
+.ff-verdict { border-left: 3px solid var(--accent); background: rgba(200,169,110,0.06); padding: 12px 16px; border-radius: 4px; font-size: 13px; line-height: 1.6; color: var(--fg); margin-bottom: 18px; }
+.ff-error { color: var(--chart-red); font-size: 13px; margin-bottom: 12px; min-height: 1em; }
+.ff-learned { border: 1px dashed var(--accent); border-radius: 4px; padding: 16px 18px; margin-top: 8px; }
+.ff-learned h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--accent); margin: 0 0 8px; }
+.ff-learned ol { margin: 0; padding-left: 20px; font-size: 13px; color: var(--fg-dim); line-height: 1.7; }
+.ff-formula { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--fg); background: rgba(0,0,0,0.2); padding: 10px 12px; border-radius: 4px; overflow-x: auto; white-space: pre-wrap; line-height: 1.7; }
+.ff-assist { font-size: 11px; color: var(--silver); margin-top: 18px; }
 @media(max-width: 600px) {
   header { padding: 46px 18px 30px; }
   header h1 { font-size: 31px; }
@@ -362,6 +382,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
   <button role="tab" aria-selected="false" aria-controls="coderepos" id="nav-coderepos" onclick="show('coderepos', this)">GitHub Projects (4)</button>
   <button role="tab" aria-selected="false" aria-controls="research" id="nav-research" onclick="show('research', this)">Essays &amp; Papers (8)</button>
   <button role="tab" aria-selected="false" aria-controls="datalab" id="nav-datalab" onclick="show('datalab', this)">Macro Data Lab</button>
+  <button role="tab" aria-selected="false" aria-controls="firmfinance" id="nav-firmfinance" onclick="show('firmfinance', this)">Firm Finance Tools</button>
   <button role="tab" aria-selected="false" aria-controls="reading" id="nav-reading" onclick="show('reading', this)">Reading List &amp; Influences (7)</button>
   <button role="tab" aria-selected="false" aria-controls="methodology" onclick="show('methodology', this)">Methods &amp; Sources</button>
 </nav>
@@ -884,6 +905,85 @@ footer { max-width: 1200px; margin: 0 auto; padding: 0 20px; color: var(--silver
       </div>
     </div>
 
+
+    <!-- Firm Finance Tools: real interest rate chart and factoring calculator -->
+    <div id="firmfinance" class="section" role="tabpanel">
+      <div class="section-title">Firm Finance <span>Tools</span></div>
+      <div class="section-subtitle">Two small tools about how inflation changes the cost of money for a Turkish firm: the real policy interest rate since 2019, and the cost of turning an invoice into cash early through factoring.</div>
+
+      <div class="card">
+        <h3 style="font-family:'Playfair Display', serif; font-size:19px; color:var(--accent); margin-bottom:6px;">1. Real interest rate in Turkey, 2019 to 2026</h3>
+        <p style="font-size:13px; color:var(--fg-dim); line-height:1.7; margin-bottom:16px;">The nominal rate is the central bank's one-week repo rate (the policy rate). The real rate is what is left after inflation. When the real rate is below zero, borrowing in lira and paying it back later costs less than the rise in prices.</p>
+
+        <div class="metric-grid">
+          <div class="metric-btn" style="cursor:default"><span class="m-title">Lowest real rate</span><span class="m-val" id="rr-min">...</span></div>
+          <div class="metric-btn" style="cursor:default"><span class="m-title">Latest real rate</span><span class="m-val" id="rr-last">...</span></div>
+          <div class="metric-btn" style="cursor:default"><span class="m-title">Months below zero</span><span class="m-val" id="rr-neg">...</span></div>
+        </div>
+
+        <div class="chart-container">
+          <canvas id="realRateChart" role="img" aria-label="Line chart of Turkey's policy rate, annual CPI inflation and real policy rate, monthly, January 2019 to October 2026"></canvas>
+        </div>
+        <p class="chart-note">Monthly, January 2019 to October 2026. Policy rate: the one-week repo rate in force at the end of each month. Inflation: annual change in the consumer price index. Real rate = (1 + policy rate) / (1 + inflation) minus 1.</p>
+
+        <div class="source-row">
+          <p style="font-size: 11px; color: var(--silver); margin: 0;"><strong>Sources:</strong> <a href="https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Core+Functions/Monetary+Policy/Central+Bank+Interest+Rates/1+Week+Repo" target="_blank" rel="noopener noreferrer">TCMB, one-week repo rate</a>; <a href="https://www.tcmb.gov.tr/wps/wcm/connect/EN/TCMB+EN/Main+Menu/Statistics/Inflation+Data" target="_blank" rel="noopener noreferrer">TURKSTAT consumer price index, via TCMB</a>. Retrieved 13 November 2026.</p>
+          <a class="btn btn-outline" href="data/turkey_real_policy_rate_monthly.csv" download>Download data (CSV)</a>
+        </div>
+
+        <div class="card" style="background: rgba(0,0,0,0.15); margin-bottom:0;">
+          <h3 style="font-family:'Playfair Display', serif; font-size:16px; color:var(--accent); margin-bottom:8px;">Limits of this chart</h3>
+          <p style="font-size:13px; color:var(--fg-dim); line-height:1.7; margin:0;">It uses past inflation (the last twelve months), not the inflation people expected, so it is an after-the-fact real rate. Firms do not borrow at the policy rate: bank loan rates are higher and can move differently, and a sourced loan rate series is not included yet. In some stress periods the central bank funded banks at rates other than the one-week repo rate, so the effective cost of money could differ from the line shown.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="font-family:'Playfair Display', serif; font-size:19px; color:var(--accent); margin-bottom:6px;">2. Factoring cost calculator</h3>
+        <p style="font-size:13px; color:var(--fg-dim); line-height:1.7; margin-bottom:16px;">A firm that sells on credit holds an invoice that will be paid later. A factoring company pays most of it now and collects the full amount at maturity. Enter the terms to see what getting the cash early costs, and compare it with what inflation does to money that arrives later.</p>
+
+        <div class="ff-inputs">
+          <div class="ff-field"><label for="ff-amount">Invoice amount (TL)</label><input id="ff-amount" type="number" inputmode="decimal" min="0" step="1000" value="100000"></div>
+          <div class="ff-field"><label for="ff-days">Days until the client pays</label><input id="ff-days" type="number" inputmode="numeric" min="1" max="730" step="1" value="90"></div>
+          <div class="ff-field"><label for="ff-rate">Annual discount rate (%)</label><input id="ff-rate" type="number" inputmode="decimal" min="0" step="0.5" value="45"><span class="ff-hint">Interest the factoring company charges, per year</span></div>
+          <div class="ff-field"><label for="ff-fee">Commission (% of invoice)</label><input id="ff-fee" type="number" inputmode="decimal" min="0" step="0.1" value="0.5"><span class="ff-hint">One-off fee, charged once</span></div>
+          <div class="ff-field"><label for="ff-infl">Expected annual inflation (%)</label><input id="ff-infl" type="number" inputmode="decimal" min="-50" step="0.5" value="30"><span class="ff-hint">Latest annual CPI (October 2026): 29.77%</span></div>
+        </div>
+        <div class="ff-error" id="ff-error" role="alert"></div>
+
+        <div class="ff-results" aria-live="polite">
+          <div class="ff-res"><span class="r-title">Interest discount</span><span class="r-val" id="ff-o-disc">...</span></div>
+          <div class="ff-res"><span class="r-title">Commission</span><span class="r-val" id="ff-o-fee">...</span></div>
+          <div class="ff-res key"><span class="r-title">Cash received now</span><span class="r-val" id="ff-o-cash">...</span></div>
+          <div class="ff-res"><span class="r-title">Annual cost, simple</span><span class="r-val" id="ff-o-simple">...</span></div>
+          <div class="ff-res key"><span class="r-title">Annual cost, compound</span><span class="r-val" id="ff-o-comp">...</span></div>
+          <div class="ff-res key"><span class="r-title">Real annual cost</span><span class="r-val" id="ff-o-real">...</span></div>
+          <div class="ff-res"><span class="r-title">Invoice at maturity, in today's lira</span><span class="r-val" id="ff-o-pv">...</span></div>
+        </div>
+        <div class="ff-verdict" id="ff-verdict">...</div>
+
+        <h3 style="font-family:'Playfair Display', serif; font-size:16px; color:var(--accent); margin-bottom:8px;">Method</h3>
+        <div class="ff-formula">Discount       D = Invoice x rate x days / 365
+Commission     C = Invoice x commission
+Cash now       P = Invoice - D - C
+Period cost    k = Invoice / P - 1
+Simple annual    = k x 365 / days
+Compound annual  = (1 + k) ^ (365 / days) - 1
+Real annual      = (1 + compound annual) / (1 + inflation) - 1
+Today's value    = Invoice / (1 + inflation) ^ (days / 365)</div>
+        <p style="font-size:13px; color:var(--fg-dim); line-height:1.7; margin-top:12px;">The discount is charged on the full invoice and taken at the start, as factoring companies usually do, so the true cost is higher than the stated rate. Taxes on the transaction (such as BSMV) and the client's credit risk are left out. With recourse factoring, the firm must pay back if its client does not pay; with non-recourse factoring, the factoring company takes that risk, so it usually charges more.</p>
+
+        <div class="ff-learned">
+          <h3>What I learned</h3>
+          <ol>
+            <li>[Ege to answer] How does the real rate chart connect to my uncle borrowing when loan rates were below inflation?</li>
+            <li>[Ege to answer] What happened to real rates in 2021 to 2023 compared with 2024 to 2026, and why might that matter?</li>
+            <li>[Ege to answer] When does factoring make sense for a firm, and what did I see about this at TEB Faktoring?</li>
+          </ol>
+        </div>
+        <p class="ff-assist">Built with AI coding assistance; data choices and conclusions are my own.</p>
+      </div>
+    </div>
+
     <!-- Annotated Reading List & Intellectual Influences -->
     <div id="reading" class="section" role="tabpanel">
       <div class="section-title">Reading List &amp; <span>Intellectual Influences</span></div>
@@ -1083,6 +1183,9 @@ function show(sectionId, btnElement) {
   document.getElementById(sectionId).classList.add('active');
   btnElement.classList.add('active');
   btnElement.setAttribute('aria-selected', 'true');
+  if (sectionId === 'firmfinance' && realRateChart) {
+    setTimeout(() => realRateChart.resize(), 30);
+  }
   if (sectionId === 'datalab') {
     setTimeout(() => {
       if (compChart) {
@@ -1361,6 +1464,87 @@ function closePdfModal() {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closePdfModal();
 });
+
+/* ---------- Firm Finance Tools ---------- */
+const RR_DATA = [["2019-01", 24.0, 20.35, 3.03], ["2019-02", 24.0, 19.67, 3.62], ["2019-03", 24.0, 19.71, 3.58], ["2019-04", 24.0, 19.5, 3.77], ["2019-05", 24.0, 18.71, 4.46], ["2019-06", 24.0, 15.72, 7.16], ["2019-07", 19.75, 16.65, 2.66], ["2019-08", 19.75, 15.01, 4.12], ["2019-09", 16.5, 9.26, 6.63], ["2019-10", 14.0, 8.55, 5.02], ["2019-11", 14.0, 10.56, 3.11], ["2019-12", 12.0, 11.84, 0.14], ["2020-01", 11.25, 12.15, -0.8], ["2020-02", 10.75, 12.37, -1.44], ["2020-03", 9.75, 11.86, -1.89], ["2020-04", 8.75, 10.94, -1.97], ["2020-05", 8.25, 11.39, -2.82], ["2020-06", 8.25, 12.62, -3.88], ["2020-07", 8.25, 11.76, -3.14], ["2020-08", 8.25, 11.77, -3.15], ["2020-09", 10.25, 11.75, -1.34], ["2020-10", 10.25, 11.89, -1.47], ["2020-11", 15.0, 14.03, 0.85], ["2020-12", 17.0, 14.6, 2.09], ["2021-01", 17.0, 14.97, 1.77], ["2021-02", 17.0, 15.61, 1.2], ["2021-03", 19.0, 16.19, 2.42], ["2021-04", 19.0, 17.14, 1.59], ["2021-05", 19.0, 16.59, 2.07], ["2021-06", 19.0, 17.53, 1.25], ["2021-07", 19.0, 18.95, 0.04], ["2021-08", 19.0, 19.25, -0.21], ["2021-09", 18.0, 19.58, -1.32], ["2021-10", 16.0, 19.89, -3.24], ["2021-11", 15.0, 21.31, -5.2], ["2021-12", 14.0, 36.08, -16.23], ["2022-01", 14.0, 48.69, -23.33], ["2022-02", 14.0, 54.44, -26.18], ["2022-03", 14.0, 61.14, -29.25], ["2022-04", 14.0, 69.97, -32.93], ["2022-05", 14.0, 73.5, -34.29], ["2022-06", 14.0, 78.62, -36.18], ["2022-07", 14.0, 79.6, -36.53], ["2022-08", 13.0, 80.21, -37.3], ["2022-09", 12.0, 83.45, -38.95], ["2022-10", 10.5, 85.51, -40.43], ["2022-11", 9.0, 84.39, -40.89], ["2022-12", 9.0, 64.27, -33.65], ["2023-01", 9.0, 57.68, -30.87], ["2023-02", 8.5, 55.18, -30.08], ["2023-03", 8.5, 50.51, -27.91], ["2023-04", 8.5, 43.68, -24.48], ["2023-05", 8.5, 39.59, -22.27], ["2023-06", 15.0, 38.21, -16.79], ["2023-07", 17.5, 47.83, -20.52], ["2023-08", 25.0, 58.94, -21.35], ["2023-09", 30.0, 61.53, -19.52], ["2023-10", 35.0, 61.36, -16.34], ["2023-11", 40.0, 61.98, -13.57], ["2023-12", 42.5, 64.77, -13.52], ["2024-01", 45.0, 64.86, -12.05], ["2024-02", 45.0, 67.07, -13.21], ["2024-03", 50.0, 68.5, -10.98], ["2024-04", 50.0, 69.8, -11.66], ["2024-05", 50.0, 75.45, -14.51], ["2024-06", 50.0, 71.6, -12.59], ["2024-07", 50.0, 61.78, -7.28], ["2024-08", 50.0, 51.97, -1.3], ["2024-09", 50.0, 49.38, 0.42], ["2024-10", 50.0, 48.58, 0.96], ["2024-11", 50.0, 47.09, 1.98], ["2024-12", 47.5, 44.38, 2.16], ["2025-01", 45.0, 42.12, 2.03], ["2025-02", 45.0, 39.05, 4.28], ["2025-03", 42.5, 38.1, 3.19], ["2025-04", 46.0, 37.86, 5.9], ["2025-05", 46.0, 35.41, 7.82], ["2025-06", 46.0, 35.05, 8.11], ["2025-07", 43.0, 33.52, 7.1], ["2025-08", 43.0, 32.95, 7.56], ["2025-09", 40.5, 33.29, 5.41], ["2025-10", 39.5, 32.87, 4.99], ["2025-11", 39.5, 31.07, 6.43], ["2025-12", 38.0, 30.89, 5.43], ["2026-01", 37.0, 30.65, 4.86], ["2026-02", 37.0, 31.53, 4.16], ["2026-03", 37.0, 30.87, 4.68], ["2026-04", 37.0, 32.37, 3.5], ["2026-05", 37.0, 32.61, 3.31], ["2026-06", 37.0, 32.11, 3.7], ["2026-07", 37.0, 31.75, 3.98], ["2026-08", 37.0, 31.51, 4.17], ["2026-09", 37.0, 29.73, 5.6], ["2026-10", 36.0, 29.77, 4.8]]; // [month, policy rate %, annual CPI %, real rate %]
+let realRateChart = null;
+function fmtPct(x){ return (x>0?'+':'') + x.toFixed(1) + '%'; }
+function fmtMonth(m){ const [y,mo]=m.split('-'); return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+mo-1] + ' ' + y; }
+function initRealRate(){
+  const min = RR_DATA.reduce((a,b)=> b[3]<a[3]?b:a);
+  const last = RR_DATA[RR_DATA.length-1];
+  document.getElementById('rr-min').textContent = fmtPct(min[3]) + ' (' + fmtMonth(min[0]) + ')';
+  document.getElementById('rr-last').textContent = fmtPct(last[3]) + ' (' + fmtMonth(last[0]) + ')';
+  document.getElementById('rr-neg').textContent = RR_DATA.filter(r=>r[3]<0).length + ' of ' + RR_DATA.length;
+  if (typeof Chart === 'undefined') return;
+  const ctx = document.getElementById('realRateChart').getContext('2d');
+  realRateChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: RR_DATA.map(r=>r[0]),
+      datasets: [
+        { label: 'Policy rate (%)', data: RR_DATA.map(r=>r[1]), borderColor: '#4a9eff', backgroundColor: '#4a9eff', borderWidth: 2, pointRadius: 0, stepped: true },
+        { label: 'Annual CPI inflation (%)', data: RR_DATA.map(r=>r[2]), borderColor: '#ff6b6b', backgroundColor: '#ff6b6b', borderWidth: 2, pointRadius: 0 },
+        { label: 'Real policy rate (%)', data: RR_DATA.map(r=>r[3]), borderColor: '#c8a96e', backgroundColor: 'rgba(200,169,110,0.15)', borderWidth: 2.5, pointRadius: 0, fill: 'origin' }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+      plugins: { legend: { labels: { color: '#9db0c4', boxWidth: 12 } },
+        tooltip: { callbacks: { label: c => c.dataset.label.replace(' (%)','') + ': ' + c.parsed.y.toFixed(2) + '%' } } },
+      scales: {
+        x: { ticks: { color: '#8fa3bc', maxTicksLimit: 9, autoSkip: true }, grid: { color: 'rgba(143,163,188,0.08)' } },
+        y: { ticks: { color: '#8fa3bc', callback: v => v + '%' }, grid: { color: c => c.tick.value === 0 ? 'rgba(240,244,248,0.5)' : 'rgba(143,163,188,0.08)' } }
+      }
+    }
+  });
+}
+function factoringCalc(F, days, ratePct, feePct, inflPct){
+  const D = F * (ratePct/100) * days / 365;
+  const C = F * (feePct/100);
+  const P = F - D - C;
+  if (!(P > 0)) return null;
+  const k = F / P - 1;
+  const simple = k * 365 / days;
+  const comp = Math.pow(1 + k, 365 / days) - 1;
+  const real = (1 + comp) / (1 + inflPct/100) - 1;
+  const pv = F / Math.pow(1 + inflPct/100, days / 365);
+  return { D, C, P, k, simple, comp, real, pv };
+}
+const tl = x => x.toLocaleString('en-GB', { maximumFractionDigits: 0 }) + ' TL';
+const pc = x => (x*100).toFixed(1) + '%';
+function runFactoring(){
+  const v = id => parseFloat(document.getElementById(id).value);
+  const F = v('ff-amount'), days = v('ff-days'), rate = v('ff-rate'), fee = v('ff-fee'), infl = v('ff-infl');
+  const err = document.getElementById('ff-error');
+  const ids = ['ff-o-disc','ff-o-fee','ff-o-cash','ff-o-simple','ff-o-comp','ff-o-real','ff-o-pv'];
+  let msg = '';
+  if ([F,days,rate,fee,infl].some(x => !isFinite(x))) msg = 'Please fill in every box with a number.';
+  else if (F <= 0) msg = 'The invoice amount must be above zero.';
+  else if (days < 1 || days > 730) msg = 'Days must be between 1 and 730.';
+  else if (rate < 0 || fee < 0) msg = 'Rates cannot be negative.';
+  else if (infl <= -100) msg = 'Inflation must be above minus 100%.';
+  const r = msg ? null : factoringCalc(F, days, rate, fee, infl);
+  if (!msg && !r) msg = 'With these terms the discount and commission are larger than the invoice.';
+  err.textContent = msg;
+  if (msg) { ids.forEach(i => document.getElementById(i).textContent = '...'); document.getElementById('ff-verdict').textContent = ''; return; }
+  document.getElementById('ff-o-disc').textContent = tl(r.D);
+  document.getElementById('ff-o-fee').textContent = tl(r.C);
+  document.getElementById('ff-o-cash').textContent = tl(r.P);
+  document.getElementById('ff-o-simple').textContent = pc(r.simple);
+  document.getElementById('ff-o-comp').textContent = pc(r.comp);
+  document.getElementById('ff-o-real').textContent = pc(r.real);
+  document.getElementById('ff-o-pv').textContent = tl(r.pv);
+  const gap = r.P - r.pv;
+  let text = 'If the firm waits, the ' + tl(F) + ' arrives in ' + days + ' days and is worth about ' + tl(r.pv) + ' in today\'s prices. Factoring gives ' + tl(r.P) + ' now. ';
+  text += gap >= 0
+    ? 'So, counting inflation only, factoring leaves the firm about ' + tl(gap) + ' better off. The real annual cost is ' + pc(r.real) + '.'
+    : 'So, counting inflation only, factoring costs the firm about ' + tl(-gap) + ' in today\'s money. The real annual cost is ' + pc(r.real) + '. It can still make sense if the firm needs cash now or wants to avoid the risk that the client pays late.';
+  document.getElementById('ff-verdict').textContent = text;
+}
+document.querySelectorAll('.ff-field input').forEach(el => el.addEventListener('input', runFactoring));
+initRealRate();
+runFactoring();
 </script>
 
 <div id="pdfModalBackdrop" class="pdf-modal-backdrop" onclick="if(event.target === this) closePdfModal()" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
